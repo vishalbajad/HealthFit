@@ -1,0 +1,8 @@
+G:\Personal\Varian-HealthFit\Source Code\HealthFit Database\bin\Debug\HealthFit.dacpac
+G:\Personal\Varian-HealthFit\Source Code\HealthFit Database\obj\Debug\HealthFit.sqlproj.AssemblyReference.cache
+G:\Personal\Varian-HealthFit\Source Code\HealthFit Database\obj\Debug\Model.xml
+G:\Personal\Varian-HealthFit\Source Code\HealthFit Database\obj\Debug\refactor.xml
+G:\Personal\Varian-HealthFit\Source Code\HealthFit Database\obj\Debug\postdeploy.sql
+G:\Personal\Varian-HealthFit\Source Code\HealthFit Database\obj\Debug\predeploy.sql
+G:\Personal\Varian-HealthFit\Source Code\HealthFit Database\obj\Debug\HealthFit_Database.dll
+G:\Personal\Varian-HealthFit\Source Code\HealthFit Database\obj\Debug\HealthFit_Database.pdb

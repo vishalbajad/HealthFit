@@ -1,0 +1,12 @@
+G:\Personal\Varian-HealthFit\Source Code\HealthFit Libs\Log_Client\bin\Debug\net6.0\Log_Client.deps.json
+G:\Personal\Varian-HealthFit\Source Code\HealthFit Libs\Log_Client\bin\Debug\net6.0\Log_Client.dll
+G:\Personal\Varian-HealthFit\Source Code\HealthFit Libs\Log_Client\bin\Debug\net6.0\Log_Client.pdb
+G:\Personal\Varian-HealthFit\Source Code\HealthFit Libs\Log_Client\obj\Debug\net6.0\Log_Client.csproj.AssemblyReference.cache
+G:\Personal\Varian-HealthFit\Source Code\HealthFit Libs\Log_Client\obj\Debug\net6.0\Log_Client.GeneratedMSBuildEditorConfig.editorconfig
+G:\Personal\Varian-HealthFit\Source Code\HealthFit Libs\Log_Client\obj\Debug\net6.0\Log_Client.AssemblyInfoInputs.cache
+G:\Personal\Varian-HealthFit\Source Code\HealthFit Libs\Log_Client\obj\Debug\net6.0\Log_Client.AssemblyInfo.cs
+G:\Personal\Varian-HealthFit\Source Code\HealthFit Libs\Log_Client\obj\Debug\net6.0\Log_Client.csproj.CoreCompileInputs.cache
+G:\Personal\Varian-HealthFit\Source Code\HealthFit Libs\Log_Client\obj\Debug\net6.0\Log_Client.dll
+G:\Personal\Varian-HealthFit\Source Code\HealthFit Libs\Log_Client\obj\Debug\net6.0\refint\Log_Client.dll
+G:\Personal\Varian-HealthFit\Source Code\HealthFit Libs\Log_Client\obj\Debug\net6.0\Log_Client.pdb
+G:\Personal\Varian-HealthFit\Source Code\HealthFit Libs\Log_Client\obj\Debug\net6.0\ref\Log_Client.dll

@@ -1,0 +1,32 @@
+G:\Personal\Varian-HealthFit\Source Code\HealthFit APIs\bin\Debug\net6.0\appsettings.Development.json
+G:\Personal\Varian-HealthFit\Source Code\HealthFit APIs\bin\Debug\net6.0\appsettings.json
+G:\Personal\Varian-HealthFit\Source Code\HealthFit APIs\bin\Debug\net6.0\HealthFit APIs.exe
+G:\Personal\Varian-HealthFit\Source Code\HealthFit APIs\bin\Debug\net6.0\HealthFit APIs.deps.json
+G:\Personal\Varian-HealthFit\Source Code\HealthFit APIs\bin\Debug\net6.0\HealthFit APIs.runtimeconfig.json
+G:\Personal\Varian-HealthFit\Source Code\HealthFit APIs\bin\Debug\net6.0\HealthFit APIs.dll
+G:\Personal\Varian-HealthFit\Source Code\HealthFit APIs\bin\Debug\net6.0\HealthFit APIs.pdb
+G:\Personal\Varian-HealthFit\Source Code\HealthFit APIs\bin\Debug\net6.0\Microsoft.OpenApi.dll
+G:\Personal\Varian-HealthFit\Source Code\HealthFit APIs\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+G:\Personal\Varian-HealthFit\Source Code\HealthFit APIs\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+G:\Personal\Varian-HealthFit\Source Code\HealthFit APIs\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+G:\Personal\Varian-HealthFit\Source Code\HealthFit APIs\obj\Debug\net6.0\HealthFit APIs.csproj.AssemblyReference.cache
+G:\Personal\Varian-HealthFit\Source Code\HealthFit APIs\obj\Debug\net6.0\HealthFit APIs.GeneratedMSBuildEditorConfig.editorconfig
+G:\Personal\Varian-HealthFit\Source Code\HealthFit APIs\obj\Debug\net6.0\HealthFit APIs.AssemblyInfoInputs.cache
+G:\Personal\Varian-HealthFit\Source Code\HealthFit APIs\obj\Debug\net6.0\HealthFit APIs.AssemblyInfo.cs
+G:\Personal\Varian-HealthFit\Source Code\HealthFit APIs\obj\Debug\net6.0\HealthFit APIs.csproj.CoreCompileInputs.cache
+G:\Personal\Varian-HealthFit\Source Code\HealthFit APIs\obj\Debug\net6.0\HealthFit APIs.MvcApplicationPartsAssemblyInfo.cs
+G:\Personal\Varian-HealthFit\Source Code\HealthFit APIs\obj\Debug\net6.0\HealthFit APIs.MvcApplicationPartsAssemblyInfo.cache
+G:\Personal\Varian-HealthFit\Source Code\HealthFit APIs\obj\Debug\net6.0\staticwebassets\msbuild.HealthFit APIs.Microsoft.AspNetCore.StaticWebAssets.props
+G:\Personal\Varian-HealthFit\Source Code\HealthFit APIs\obj\Debug\net6.0\staticwebassets\msbuild.build.HealthFit APIs.props
+G:\Personal\Varian-HealthFit\Source Code\HealthFit APIs\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.HealthFit APIs.props
+G:\Personal\Varian-HealthFit\Source Code\HealthFit APIs\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.HealthFit APIs.props
+G:\Personal\Varian-HealthFit\Source Code\HealthFit APIs\obj\Debug\net6.0\staticwebassets.pack.json
+G:\Personal\Varian-HealthFit\Source Code\HealthFit APIs\obj\Debug\net6.0\staticwebassets.build.json
+G:\Personal\Varian-HealthFit\Source Code\HealthFit APIs\obj\Debug\net6.0\staticwebassets.development.json
+G:\Personal\Varian-HealthFit\Source Code\HealthFit APIs\obj\Debug\net6.0\scopedcss\bundle\HealthFit APIs.styles.css
+G:\Personal\Varian-HealthFit\Source Code\HealthFit APIs\obj\Debug\net6.0\HealthFit APIs.csproj.CopyComplete
+G:\Personal\Varian-HealthFit\Source Code\HealthFit APIs\obj\Debug\net6.0\HealthFit APIs.dll
+G:\Personal\Varian-HealthFit\Source Code\HealthFit APIs\obj\Debug\net6.0\refint\HealthFit APIs.dll
+G:\Personal\Varian-HealthFit\Source Code\HealthFit APIs\obj\Debug\net6.0\HealthFit APIs.pdb
+G:\Personal\Varian-HealthFit\Source Code\HealthFit APIs\obj\Debug\net6.0\HealthFit APIs.genruntimeconfig.cache
+G:\Personal\Varian-HealthFit\Source Code\HealthFit APIs\obj\Debug\net6.0\ref\HealthFit APIs.dll

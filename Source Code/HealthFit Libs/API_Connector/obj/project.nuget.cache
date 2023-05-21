@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "0joRexvR1H/jIjFL7kgPcSYfXWDNRjtzEZsODTOyjU1lAUPPXV9Y/020R3zvTsuJ9VB4vVottWkw7JfP03evog==",
+  "success": true,
+  "projectFilePath": "G:\\Personal\\Varian-HealthFit\\Source Code\\HealthFit Libs\\API_Connector\\API_Connector.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\vishal\\.nuget\\packages\\system.diagnostics.eventlog\\7.0.0\\system.diagnostics.eventlog.7.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

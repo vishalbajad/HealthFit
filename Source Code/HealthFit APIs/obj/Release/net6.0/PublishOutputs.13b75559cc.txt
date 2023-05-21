@@ -1,0 +1,11 @@
+G:\Personal\Varian-HealthFit\Source Code\HealthFit APIs\obj\Release\net6.0\PubTmp\Out\HealthFit APIs.exe
+G:\Personal\Varian-HealthFit\Source Code\HealthFit APIs\obj\Release\net6.0\PubTmp\Out\appsettings.Development.json
+G:\Personal\Varian-HealthFit\Source Code\HealthFit APIs\obj\Release\net6.0\PubTmp\Out\appsettings.json
+G:\Personal\Varian-HealthFit\Source Code\HealthFit APIs\obj\Release\net6.0\PubTmp\Out\HealthFit APIs.dll
+G:\Personal\Varian-HealthFit\Source Code\HealthFit APIs\obj\Release\net6.0\PubTmp\Out\HealthFit APIs.deps.json
+G:\Personal\Varian-HealthFit\Source Code\HealthFit APIs\obj\Release\net6.0\PubTmp\Out\HealthFit APIs.runtimeconfig.json
+G:\Personal\Varian-HealthFit\Source Code\HealthFit APIs\obj\Release\net6.0\PubTmp\Out\HealthFit APIs.pdb
+G:\Personal\Varian-HealthFit\Source Code\HealthFit APIs\obj\Release\net6.0\PubTmp\Out\Microsoft.OpenApi.dll
+G:\Personal\Varian-HealthFit\Source Code\HealthFit APIs\obj\Release\net6.0\PubTmp\Out\Swashbuckle.AspNetCore.Swagger.dll
+G:\Personal\Varian-HealthFit\Source Code\HealthFit APIs\obj\Release\net6.0\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerGen.dll
+G:\Personal\Varian-HealthFit\Source Code\HealthFit APIs\obj\Release\net6.0\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerUI.dll

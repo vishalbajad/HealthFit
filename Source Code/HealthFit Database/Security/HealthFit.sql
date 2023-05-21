@@ -1,0 +1,1 @@
+﻿CREATE USER HealthFitAdmin FOR LOGIN [HealthFit]

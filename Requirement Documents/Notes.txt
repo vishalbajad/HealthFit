@@ -1,0 +1,40 @@
+Powerful Search SOLR/Elastic Serch
+File Versions
+Import Documents Over E-mail
+
+https://journals.lww.com/acsm-healthfitness/pages/currenttoc.aspx
+
+Page
+https://shop.lww.com/cms/files/524c0aef-06dd-45e7-8deb-5db59620bb31?max=350&quality=75
+https://shop.lww.com/ACSM-s-Health---Fitness-Journal-/p/1091-5397
+
+IMP : https://shop.lww.com/ACSM-s-Health---Fitness-Journal--Online/p/1536-593X
+https://shop.lww.com/ACSM-s-Health---Fitness-Journal--Online/p/1536-593X
+
+
+1. Home Page Design
+2. Register Publisher
+3. Register Public User
+3. Login User
+4. Manage Health and fitness Journals.
+5. Add / Edit / Delete health and fitness Journals.
+6. Edit/ Delete Registered Users
+7. Subscribe the health and fitness Journals.
+8. View or download the health and fitness Journals.
+
+ 
+Admin
+Publisher
+- Create / Update/ Delete Publisher User
+- health and fitness Journals.
+	- Manage list of health and fitness Journals.
+	- Add / Update / Delete health and fitness Journals.
+	- Add Review 
+	
+Public User
+
+
+Setup Steps
+https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-aspnetcore-7.0.5-windows-hosting-bundle-installer
+
+
