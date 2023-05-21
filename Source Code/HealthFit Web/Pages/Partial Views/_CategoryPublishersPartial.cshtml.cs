@@ -12,7 +12,6 @@ namespace HealthFit_Web.Pages
             _logger = logger;
         }
 
-        public IActionResult OnGetPartial() => Partial("Category");
         public void OnGet()
         {
 

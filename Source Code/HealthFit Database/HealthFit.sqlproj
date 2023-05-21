@@ -65,5 +65,10 @@
   <ItemGroup>
     <Build Include="Data\Data_Master.sql" />
     <Build Include="Security\HealthFit.sql" />
+    <Build Include="Data\Table\tblUsers.sql" />
+    <Build Include="Data\Table\tblJournals.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <RefactorLog Include="HealthFit.refactorlog" />
   </ItemGroup>
 </Project>

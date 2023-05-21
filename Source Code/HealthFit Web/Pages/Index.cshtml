@@ -8,7 +8,7 @@
 <div id="main" class="shell">
     <!-- Sidebar -->
     <div id="sidebar">
-        @await Html.PartialAsync("_CategoryPublishersPartial",model: null)
+        @await Html.PartialAsync("Partial Views/_CategoryPublishersPartial",model: null)
     </div>
     <!-- End Sidebar -->
     <!-- Content -->
@@ -38,110 +38,12 @@
                 </select>
             </div>
             <ul>
-                <li>
-                    <div class="product">
-                        <a href="#" class="info">
-                            <span class="holder">
-                                <img src="images/image01.jpg" alt="" />
-                                <span class="book-name">Book Name</span>
-                                <span class="author">by John Smith</span>
-                                <span class="description">Maecenas vehicula ante eu enim pharetra<br />scelerisque dignissim <br />sollicitudin nisi</span>
-                            </span>
-                        </a>
-                        <a href="#" class="buy-btn">BUY NOW <span class="price"><span class="low">$</span>22<span class="high">00</span></span></a>
-                    </div>
-                </li>
-                <li>
-                    <div class="product">
-                        <a href="#" class="info">
-                            <span class="holder">
-                                <img src="images/image02.jpg" alt="" />
-                                <span class="book-name">Book Name</span>
-                                <span class="author">by John Smith</span>
-                                <span class="description">Maecenas vehicula ante eu enim pharetra<br />scelerisque dignissim <br />sollicitudin nisi</span>
-                            </span>
-                        </a>
-                        <a href="#" class="buy-btn">BUY NOW <span class="price"><span class="low">$</span>22<span class="high">00</span></span></a>
-                    </div>
-                </li>
-                <li>
-                    <div class="product">
-                        <a href="#" class="info">
-                            <span class="holder">
-                                <img src="images/image03.jpg" alt="" />
-                                <span class="book-name">Book Name</span>
-                                <span class="author">by John Smith</span>
-                                <span class="description">Maecenas vehicula ante eu enim pharetra<br />scelerisque dignissim <br />sollicitudin nisi</span>
-                            </span>
-                        </a>
-                        <a href="#" class="buy-btn">BUY NOW <span class="price"><span class="low">$</span>22<span class="high">00</span></span></a>
-                    </div>
-                </li>
-                <li>
-                    <div class="product">
-                        <a href="#" class="info">
-                            <span class="holder">
-                                <img src="images/image04.jpg" alt="" />
-                                <span class="book-name">Book Name</span>
-                                <span class="author">by John Smith</span>
-                                <span class="description">Maecenas vehicula ante eu enim pharetra<br />scelerisque dignissim <br />sollicitudin nisi</span>
-                            </span>
-                        </a>
-                        <a href="#" class="buy-btn">BUY NOW <span class="price"><span class="low">$</span>22<span class="high">00</span></span></a>
-                    </div>
-                </li>
-                <li>
-                    <div class="product">
-                        <a href="#" class="info">
-                            <span class="holder">
-                                <img src="images/image05.jpg" alt="" />
-                                <span class="book-name">Book Name</span>
-                                <span class="author">by John Smith</span>
-                                <span class="description">Maecenas vehicula ante eu enim pharetra<br />scelerisque dignissim <br />sollicitudin nisi</span>
-                            </span>
-                        </a>
-                        <a href="#" class="buy-btn">BUY NOW <span class="price"><span class="low">$</span>22<span class="high">00</span></span></a>
-                    </div>
-                </li>
-                <li>
-                    <div class="product">
-                        <a href="#" class="info">
-                            <span class="holder">
-                                <img src="images/image06.jpg" alt="" />
-                                <span class="book-name">Book Name</span>
-                                <span class="author">by John Smith</span>
-                                <span class="description">Maecenas vehicula ante eu enim pharetra<br />scelerisque dignissim <br />sollicitudin nisi</span>
-                            </span>
-                        </a>
-                        <a href="#" class="buy-btn">BUY NOW <span class="price"><span class="low">$</span>22<span class="high">00</span></span></a>
-                    </div>
-                </li>
-                <li>
-                    <div class="product">
-                        <a href="#" class="info">
-                            <span class="holder">
-                                <img src="images/image07.jpg" alt="" />
-                                <span class="book-name">Book Name</span>
-                                <span class="author">by John Smith</span>
-                                <span class="description">Maecenas vehicula ante eu enim pharetra<br />scelerisque dignissim <br />sollicitudin nisi</span>
-                            </span>
-                        </a>
-                        <a href="#" class="buy-btn">BUY NOW <span class="price"><span class="low">$</span>22<span class="high">00</span></span></a>
-                    </div>
-                </li>
-                <li>
-                    <div class="product">
-                        <a href="#" class="info">
-                            <span class="holder">
-                                <img src="images/image08.jpg" alt="" />
-                                <span class="book-name">Book Name</span>
-                                <span class="author">by John Smith</span>
-                                <span class="description">Maecenas vehicula ante eu enim pharetra<br />scelerisque dignissim <br />sollicitudin nisi</span>
-                            </span>
-                        </a>
-                        <a href="#" class="buy-btn">BUY NOW <span class="price"><span class="low">$</span>22<span class="high">00</span></span></a>
-                    </div>
-                </li>
+                    @for (int i = 0; i < 20; i++)
+                    {
+                    <li>
+                        @await Html.PartialAsync("Partial Views/_ProductWidgetViewPartial",model: null)
+                    </li>
+                    }
             </ul>
             <!-- End Products -->
         </div>

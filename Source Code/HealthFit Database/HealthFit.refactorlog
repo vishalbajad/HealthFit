@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Operations Version="1.0" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+  <Operation Name="Rename Refactor" Key="3a67cd7e-1998-473c-9760-b2bfa19f2228" ChangeDateTime="05/21/2023 17:37:42">
+    <Property Name="ElementName" Value="[dbo].[tblUsers].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[tblUsers]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="UserId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="dc23f278-ed2f-47bc-8312-e4124cb7b98c" ChangeDateTime="05/21/2023 17:57:40">
+    <Property Name="ElementName" Value="[dbo].[tblJournals].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[tblJournals]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="JournalID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="4bb4b1bc-9bb6-43c0-a08d-b38ef81fdf35" ChangeDateTime="05/21/2023 17:58:34">
+    <Property Name="ElementName" Value="[dbo].[tblJournals].[JournalID]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[tblJournals]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="JournalId" />
+  </Operation>
+</Operations>
