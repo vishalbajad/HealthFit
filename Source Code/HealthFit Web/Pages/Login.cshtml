@@ -1,0 +1,25 @@
+﻿@page
+@model LoginModel
+@{
+    ViewData["Title"] = "Home page";
+    Layout = "_Form_Layout.cshtml";
+}
+<div class="container" style="margin-left: 24%;width: 50%;">
+    <h2 class="login_box">Login</h2>
+    <form>
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" placeholder="Enter your username" required>
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Enter your password" required>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="green">Login</button> <button type="button" class="cancel" onclick="location.href ='/index'">Cancel</button>
+        </div> 
+        <div class="form-group">
+            <br />
+        </div>
+    </form>
+</div>

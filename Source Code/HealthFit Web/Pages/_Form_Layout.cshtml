@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - AppName</title>
+    <script src="~/js/jquery-1.6.2.min.js"></script>
+    <link href="~/css/style.css" rel="stylesheet" />
+    <script src="~/js/site.js"></script>
+    <script src="~/js/functions.js"></script>
+    <script src="~/js/jquery.jcarousel.min.js"></script>
+    <script src="~/js/png-fix.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <div id="header" class="shell" style="padding-bottom: 30px;">
+        <div id="logo"><h1><a href="#">HelathFit</a></h1><span><a href="#">By Varian</a></span></div>
+        <div class="cl">&nbsp;</div>
+        <!-- Login-details -->
+        <div id="login-details">
+            <p><a href="/Index" id="user">Home </a> &nbsp; | <a href="/Login" id="user">Login </a> &nbsp| <a href="/signup" id="user">Signup</a> .</p>
+        </div>
+        <!-- End Login-details -->
+    </div>
+    <!-- End Header -->
+    <!-- Main -->
+    <div id="main" class="shell" style="border-top: solid 5px lightblue;padding-top: 1% !important;">
+        @RenderBody()
+    </div>
+    <!-- End Main -->
+    <!-- Footer -->
+    <div id="footer" class="shell">
+        <div class="top">
+            <div class="cnt">
+                <div class="">
+                    <p>© <a href="#">HealthFit.com</a>. Design by Varian </p>
+                    <p>&nbsp;</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- End Footer -->
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

@@ -12,11 +12,11 @@ a { color: #0252aa; text-decoration: none; cursor: pointer; }
 a:hover { text-decoration: underline; }
 a img { border: 0; }
 
-h2 { font-family: 'Georgia', Arial, serif; font-style: italic; font-size: 65px; line-height: 70px; color: #fff; }
+/*h2 { font-family: 'Georgia', Arial, serif; font-style: italic; font-size: 65px; line-height: 70px; color: #fff; }*/
 h3 { font-family: 'Georgia', Arial, serif; font-style: italic; font-size: 22px; line-height: 24px; color: #0182b5; }
 h4 { font-family: 'Georgia', Arial, serif; font-style: italic; font-size: 16px; line-height: 17px; color: #0871b3; font-weight: normal; }
 
-input, textarea, select { font-size: 10px; font-family: arial, sans-serif; }
+/*input, textarea, select { font-size: 10px; font-family: arial, sans-serif; }*/
 textarea { overflow: auto; }
 
 .cl { display: block; height: 0; font-size: 0; line-height: 0; text-indent: -4000px; clear: both; }
@@ -135,3 +135,31 @@ textarea { overflow: auto; }
 #newsletter .form-buttons { float: right; display: inline; text-align: right; padding-right: 2px; }
 #newsletter .submit-btn { margin-top: 4px; display: inline-block; font-size: 10px; line-height: 16px; height: 24px; background: url(../images/submit-btn.png); padding: 0 8px 0 10px; border: 0; color: #fff; text-transform: uppercase; cursor: pointer; }
 #newsletter .submit-btn:hover { color: #015faa; }
+
+.container { background-color: #ffffff; border-radius: 5px;box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);padding: 40px;max-width: 100%;}
+.container .login_box { text-align: left;margin-bottom: 20px;border-bottom: #e5d8d8 4px solid;padding-bottom: 11px}
+.form-group {margin-bottom: 20px;}
+.form-group label {display: block;font-weight: bold;margin-bottom: 5px;}
+.form-group input[type="text"],.form-group input[type="password"] { width: 95%; padding: 10px; border: 1px solid #ccc;border-radius: 4px;}
+.form-group button { display: block;width: 45%;padding: 10px;color: #ffffff;border: none;border-radius: 4px;cursor: pointer;float: left;margin-right: 5%;font-weight: bolder;}
+
+.green { background-color: #4CAF50;}
+.cancel { background-color: #e7e7e7;color: black !important}
+.form-group button:hover {border-color: black}
+.form-group .error {color: #ff0000;margin-top: 5px;}
+.radio-group { margin-bottom: 10px;}
+.radio-group label { display: inline-block;margin-right: 10px;}
+.radio-group input[type="radio"] {display: none;}
+.radio-group input[type="radio"] + label {padding: 5px 10px;background-color: #e6e6e6;border: 1px solid #cccccc;border-radius: 4px;cursor: pointer;}
+.radio-group input[type="radio"]:checked + label {background-color: royalblue;color: #ffffff;}
+table {width: 100%;border-collapse: collapse;}
+table th, table td {padding: 8px;text-align: left;border-bottom: 1px solid #ddd;}
+table th {background-color: #f2f2f2;}
+table td.actions {white-space: nowrap;}
+table td.actions a {display: inline-block;padding: 5px 10px;text-decoration: none;background-color: #4caf50;color: #ffffff;border-radius: 4px;}
+table td.actions a.edit {background-color: #337ab7;}
+table td.actions a.delete {background-color: #d9534f;}
+table td.actions a:hover {background-color: #45a049;}
+.pagination {margin-top: 20px;text-align: center;}
+.pagination a {display: inline-block;padding: 8px 16px;text-decoration: none;color: #000;border: 1px solid #ddd;margin: 0 4px;border-radius: 4px;}
+.pagination a.active {background-color: #4caf50;color: #fff;}

@@ -1,0 +1,113 @@
+﻿@page
+@model HealthFit_Web.Pages.Publishers.JournalListModel
+@{
+    Layout = "../_Form_Layout.cshtml";
+    ViewData["Title"] = "Home page";
+}
+<div class="container">
+    <h2 class="login_box">Journal Lists</h2>
+    <form>
+<table id="data-table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Table rows will be dynamically generated using JavaScript -->
+    </tbody>
+</table>
+
+<div class="pagination" id="pagination">
+    <!-- Pagination links will be dynamically generated using JavaScript -->
+</div>
+        <script>
+            // Sample data for demonstration purposes
+            var data = [
+                { id: 1, name: "John Doe", email: "johndoe@example.com" },
+                { id: 2, name: "Jane Smith", email: "janesmith@example.com" },
+                // Add more data as needed
+            ];
+
+            var table = document.getElementById("data-table");
+            var tbody = table.getElementsByTagName("tbody")[0];
+            var pagination = document.getElementById("pagination");
+
+            var rowsPerPage = 5;
+            var currentPage = 1;
+
+            function renderTable() {
+                tbody.innerHTML = "";
+
+                var startIndex = (currentPage - 1) * rowsPerPage;
+                var endIndex = startIndex + rowsPerPage;
+
+                var rowData = data.slice(startIndex, endIndex);
+
+                for (var i = 0; i < rowData.length; i++) {
+                    var row = document.createElement("tr");
+                    var rowDataItem = rowData[i];
+
+                    var idCell = document.createElement("td");
+                    idCell.textContent = rowDataItem.id;
+                    row.appendChild(idCell);
+
+                    var nameCell = document.createElement("td");
+                    nameCell.textContent = rowDataItem.name;
+                    row.appendChild(nameCell);
+
+                    var emailCell = document.createElement("td");
+                    emailCell.textContent = rowDataItem.email;
+                    row.appendChild(emailCell);
+
+                    var actionsCell = document.createElement("td");
+                    actionsCell.className = "actions";
+
+                    var editLink = document.createElement("a");
+                    editLink.href = "#";
+                    editLink.textContent = "Edit";
+                    editLink.className = "edit";
+                    actionsCell.appendChild(editLink);
+
+                    var deleteLink = document.createElement("a");
+                    deleteLink.href = "#";
+                    deleteLink.textContent = "Delete";
+                    deleteLink.className = "delete";
+                    actionsCell.appendChild(deleteLink);
+
+                    row.appendChild(actionsCell);
+                    tbody.appendChild(row);
+                }
+
+                renderPagination();
+            }
+
+            function renderPagination() {
+                pagination.innerHTML = "";
+
+                var totalPages = Math.ceil(data.length / rowsPerPage);
+
+                for (var i = 1; i <= totalPages; i++) {
+                    var pageLink = document.createElement("a");
+                    pageLink.href = "#";
+                    pageLink.textContent = i;
+                    pageLink.addEventListener("click", function () {
+                        currentPage = parseInt(this.textContent);
+                        renderTable();
+                    });
+
+                    if (currentPage === i) {
+                        pageLink.classList.add("active");
+                    }
+
+                    pagination.appendChild(pageLink);
+                }
+            }
+
+            renderTable();
+        </script>
+</form>
+</div>
