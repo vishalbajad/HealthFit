@@ -28,6 +28,7 @@
   <ItemGroup>
     <ProjectReference Include="..\HealthFit Libs\API_Connector\API_Connector.csproj" />
     <ProjectReference Include="..\HealthFit Libs\Object_Provider\Object_Provider.csproj" />
+    <ProjectReference Include="..\HealthFit Libs\Utilities\Utilities.csproj" />
   </ItemGroup>
 
 </Project>

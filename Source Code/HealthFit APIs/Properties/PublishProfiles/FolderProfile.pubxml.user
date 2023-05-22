@@ -4,8 +4,8 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 -->
 <Project>
   <PropertyGroup>
-    <_PublishTargetUrl>G:\Personal\Varian-HealthFit\Published Sites\HealthFit APIs\</_PublishTargetUrl>
-    <History>True|2023-05-21T06:01:23.7534740Z;</History>
+    <_PublishTargetUrl>C:\Users\vishal\Downloads\HealthFit APIs\</_PublishTargetUrl>
+    <History>True|2023-05-22T16:34:28.3513156Z;True|2023-05-22T22:04:10.2111287+05:30;True|2023-05-22T20:07:19.9952411+05:30;True|2023-05-21T11:31:23.7534740+05:30;</History>
     <LastFailureDetails />
   </PropertyGroup>
 </Project>

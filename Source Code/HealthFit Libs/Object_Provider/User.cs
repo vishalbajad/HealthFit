@@ -8,26 +8,37 @@ namespace HealthFit.Object_Provider.Model
     public class User
     {
         public int UserId { get; set; }
+        
         [Required]
         public string FullName { get; set; }
+        
         [Required]
         public string Address { get; set; }
+        
         [Required]
         public string City { get; set; }
+        
         [Required]
         public string State { get; set; }
+        
         [Required]
         public string Country { get; set; }
+        
         [Required]
         [DataType(DataType.EmailAddress)]
         [EmailAddress(ErrorMessage = "Invalid Email Address")]
         public string Email { get; set; }
+        
         [Required]
         [Phone(ErrorMessage = "Invalid Phone Number")]
         public string PhoneNo { get; set; }
-        public string Website { get; set; }
+
+        private string _Website = string.Empty;
+        public string Website { get { return _Website; } set { value = _Website; } }
+        
         [Required]
         public byte UserType { get; set; }
+        
         [Required]
         public string UserName { get; set; }
         

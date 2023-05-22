@@ -27,7 +27,14 @@
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "G:\\Personal\\Varian-HealthFit\\Source Code\\HealthFit Libs\\Data_Layer\\Data_Layer.csproj": {
+                "projectPath": "G:\\Personal\\Varian-HealthFit\\Source Code\\HealthFit Libs\\Data_Layer\\Data_Layer.csproj"
+              },
+              "G:\\Personal\\Varian-HealthFit\\Source Code\\HealthFit Libs\\Object_Provider\\Object_Provider.csproj": {
+                "projectPath": "G:\\Personal\\Varian-HealthFit\\Source Code\\HealthFit Libs\\Object_Provider\\Object_Provider.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -40,6 +47,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[7.0.5, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.2.3, )"
@@ -60,6 +71,130 @@
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
             },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "G:\\Personal\\Varian-HealthFit\\Source Code\\HealthFit Libs\\Data_Layer\\Data_Layer.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "G:\\Personal\\Varian-HealthFit\\Source Code\\HealthFit Libs\\Data_Layer\\Data_Layer.csproj",
+        "projectName": "Data_Layer",
+        "projectPath": "G:\\Personal\\Varian-HealthFit\\Source Code\\HealthFit Libs\\Data_Layer\\Data_Layer.csproj",
+        "packagesPath": "C:\\Users\\vishal\\.nuget\\packages\\",
+        "outputPath": "G:\\Personal\\Varian-HealthFit\\Source Code\\HealthFit Libs\\Data_Layer\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\vishal\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "G:\\Personal\\Varian-HealthFit\\Source Code\\HealthFit Libs\\Object_Provider\\Object_Provider.csproj": {
+                "projectPath": "G:\\Personal\\Varian-HealthFit\\Source Code\\HealthFit Libs\\Object_Provider\\Object_Provider.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "EntityFramework": {
+              "target": "Package",
+              "version": "[6.4.4, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.5, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "G:\\Personal\\Varian-HealthFit\\Source Code\\HealthFit Libs\\Object_Provider\\Object_Provider.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "G:\\Personal\\Varian-HealthFit\\Source Code\\HealthFit Libs\\Object_Provider\\Object_Provider.csproj",
+        "projectName": "Object_Provider",
+        "projectPath": "G:\\Personal\\Varian-HealthFit\\Source Code\\HealthFit Libs\\Object_Provider\\Object_Provider.csproj",
+        "packagesPath": "C:\\Users\\vishal\\.nuget\\packages\\",
+        "outputPath": "G:\\Personal\\Varian-HealthFit\\Source Code\\HealthFit Libs\\Object_Provider\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\vishal\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }

@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33530.505
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthFit APIs", "HealthFit APIs.csproj", "{55E940D6-94D9-4EC6-808B-4CBBCEE63672}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HealthFit APIs", "HealthFit APIs.csproj", "{55E940D6-94D9-4EC6-808B-4CBBCEE63672}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Object_Provider", "..\HealthFit Libs\Object_Provider\Object_Provider.csproj", "{A60FFB83-6DD9-4E19-9BCC-37DAC7E7A846}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data_Layer", "..\HealthFit Libs\Data_Layer\Data_Layer.csproj", "{F1CF76C5-9E6E-468C-AA9A-AAC4EB22AE52}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{55E940D6-94D9-4EC6-808B-4CBBCEE63672}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{55E940D6-94D9-4EC6-808B-4CBBCEE63672}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{55E940D6-94D9-4EC6-808B-4CBBCEE63672}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A60FFB83-6DD9-4E19-9BCC-37DAC7E7A846}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A60FFB83-6DD9-4E19-9BCC-37DAC7E7A846}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A60FFB83-6DD9-4E19-9BCC-37DAC7E7A846}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A60FFB83-6DD9-4E19-9BCC-37DAC7E7A846}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1CF76C5-9E6E-468C-AA9A-AAC4EB22AE52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1CF76C5-9E6E-468C-AA9A-AAC4EB22AE52}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1CF76C5-9E6E-468C-AA9A-AAC4EB22AE52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1CF76C5-9E6E-468C-AA9A-AAC4EB22AE52}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

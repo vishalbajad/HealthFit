@@ -9,7 +9,7 @@ namespace HealthFit_Libs.InterfaceLibrary
 {
     public interface IUser : IBaseInterfact
     {
-        HttpResponseMessage CreateUser(User user);
-        HttpResponseMessage GetUser(int UserId);
+        bool CreateUser(User user);
+        User GetUser(int UserId);
     }
 }

@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace API_Connector
@@ -17,16 +18,16 @@ namespace API_Connector
         {
             _apiserver = apiserver;
         }
-        public HttpResponseMessage CreateUser(HealthFit.Object_Provider.Model.User user)
+        public bool CreateUser(HealthFit.Object_Provider.Model.User user)
         {
             HttpClient httpClient = new HttpClient();
             HTTPConnector apiConnector = new HTTPConnector(httpClient, _apiserver);
-            return apiConnector.ConnectToRemoteApiAsync(string.Empty, string.Empty, string.Empty, string.Empty);
+            return apiConnector.SendJsonRequest<bool>("/User/CreateUser/", HTTPConnector.RequestMethod.POST, JsonSerializer.Serialize(user), string.Empty);
         }
 
-        public HttpResponseMessage GetUser(int UserId)
+        public HealthFit.Object_Provider.Model.User GetUser(int UserId)
         {
-            throw new NotImplementedException();
+            return new HealthFit.Object_Provider.Model.User();
         }
     }
 }

@@ -1,1 +1,1 @@
-﻿CREATE USER HealthFitAdmin FOR LOGIN [HealthFit]
+﻿-- CREATE USER HealthFitAdmin FOR LOGIN [HealthFit]

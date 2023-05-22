@@ -4,6 +4,8 @@ using HealthFit_Web.Models;
 using Microsoft.Extensions.Options;
 using HealthFit.Object_Provider.Model;
 using Microsoft.AspNetCore.Http;
+using HealthFit.Utilities;
+
 namespace HealthFit_Web.Pages
 {
     public class SignupModel : BasePageModel
@@ -31,10 +33,17 @@ namespace HealthFit_Web.Pages
                 return Page();
             }
             
+            string password = UserDetails.Password;
+            string salt;
+            string hashedPassword = PasswordHasher.HashPassword(password, out salt);
+            UserDetails.UserDetails.HashedPassword = hashedPassword;
+            UserDetails.UserDetails.PasswordSalt = salt;
+
             API_Connector.User userProxy = new API_Connector.User(this.GetAPIServerDetails());
-            HttpResponseMessage responce = userProxy.CreateUser(UserDetails.UserDetails);
+
+            bool responce = userProxy.CreateUser(UserDetails.UserDetails);
             
-            if (responce.IsSuccessStatusCode)
+            if (responce)
             {
                 responseMessage = "Congradulations ! . You have been successfully sign up !!";
                 responseCode = "success";

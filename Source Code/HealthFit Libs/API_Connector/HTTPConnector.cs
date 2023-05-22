@@ -1,18 +1,19 @@
 ﻿using System.Collections.Specialized;
 using System.Net;
 using System.Text;
+using System.Text.Json;
 using HealthFit.Object_Provider.Model;
 using HealthFit_LogClient;
 namespace HealthFit.API_Connector
 {
     public class HTTPConnector
     {
-        protected struct RequestMethod
+        public struct RequestMethod
         {
-            public const string GET = "GET";
-            public const string POST = "POST";
-            public const string PUT = "PUT";
-            public const string DELETE = "DELETE";
+            public static string GET = "GET";
+            public static string POST = "POST";
+            public static string PUT = "PUT";
+            public static string DELETE = "DELETE";
         }
 
         private string requestContentType = "application/json; charset=utf-8";
@@ -20,19 +21,18 @@ namespace HealthFit.API_Connector
         private readonly HttpClient _httpClient;
         private readonly APIServer _apiserver;
 
-        public HTTPConnector(HttpClient httpClient , APIServer apiserver)
+        public HTTPConnector(HttpClient httpClient, APIServer apiserver)
         {
             _httpClient = httpClient;
             _apiserver = apiserver;
         }
 
-        public HttpResponseMessage ConnectToRemoteApiAsync(string action, string queryString, string requestMethod, string jsonData)
+        public T SendJsonRequest<T>(string apiUrl, string apiMethod, string apiJson = "", string queryString = "")
         {
-            UriBuilder actionUri = new UriBuilder(_apiserver.ServerBaseUrl.TrimEnd('/') + "/" + action.TrimStart('/'));
+            T result;
+            UriBuilder actionUri = new UriBuilder(_apiserver.ServerBaseUrl.TrimEnd('/') + "/" + apiUrl.TrimStart('/'));
             string ResponseText = String.Empty;
             HttpStatusCode ResponseStatusCode = HttpStatusCode.Unused;
-
-            Logs.WriteMessage(string.Format(" Preparing Request{0}Action: {1}{0}QueryString: {2}{0}RequestMethod: {3}{0}JsonData: {4}{0}", Environment.NewLine, action, queryString, requestMethod, jsonData));
 
             if (!String.IsNullOrEmpty(queryString))
             {
@@ -44,15 +44,15 @@ namespace HealthFit.API_Connector
 
             ServicePointManager.SecurityProtocol = (SecurityProtocolType)3072;
             HttpWebRequest request = WebRequest.Create(actionUri.Uri) as HttpWebRequest;
-            request.Method = requestMethod;
-            Logs.WriteMessage(string.Format(" Web Request: {0}{1} Web Request Method: ", actionUri.Uri, Environment.NewLine, requestMethod));
-            if (!String.IsNullOrEmpty(jsonData))
+            request.Method = apiMethod;
+            Logs.WriteMessage(string.Format(" Web Request: {0}{1} Web Request Method: ", actionUri.Uri, Environment.NewLine, apiJson));
+            if (!String.IsNullOrEmpty(apiJson))
             {
 
-                byte[] bytes = UTF8Encoding.UTF8.GetBytes(jsonData);
+                byte[] bytes = UTF8Encoding.UTF8.GetBytes(apiJson);
                 request.ContentType = requestContentType;
                 request.ContentLength = bytes.Length;
-                Logs.WriteMessage(string.Format(" Web Request ContentType: {0}{1}Web Request ContentLength: {2}{1}Web Request Content: {3}", requestContentType, Environment.NewLine, bytes.Length, jsonData));
+                Logs.WriteMessage(string.Format(" Web Request ContentType: {0}{1}Web Request ContentLength: {2}{1}Web Request Content: {3}", requestContentType, Environment.NewLine, bytes.Length, apiJson));
                 using (Stream postStream = request.GetRequestStream())
                 {
                     postStream.Write(bytes, 0, bytes.Length);
@@ -70,7 +70,10 @@ namespace HealthFit.API_Connector
                 Logs.WriteMessage(" Response: " + ResponseText);
 
             }
-            return new HttpResponseMessage { StatusCode = ResponseStatusCode, Content = new StringContent(ResponseText) };
+
+            result = JsonSerializer.Deserialize<T>(ResponseText);
+
+            return result;
         }
 
         public enum AuthorizationType
