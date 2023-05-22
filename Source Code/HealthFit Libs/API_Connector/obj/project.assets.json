@@ -40,6 +40,16 @@
         "runtime": {
           "bin/placeholder/Log_Client.dll": {}
         }
+      },
+      "Object_Provider/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/Object_Provider.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Object_Provider.dll": {}
+        }
       }
     }
   },
@@ -81,11 +91,17 @@
       "type": "project",
       "path": "../Log_Client/Log_Client.csproj",
       "msbuildProject": "../Log_Client/Log_Client.csproj"
+    },
+    "Object_Provider/1.0.0": {
+      "type": "project",
+      "path": "../Object_Provider/Object_Provider.csproj",
+      "msbuildProject": "../Object_Provider/Object_Provider.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "Log_Client >= 1.0.0"
+      "Log_Client >= 1.0.0",
+      "Object_Provider >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -117,6 +133,9 @@
           "projectReferences": {
             "G:\\Personal\\Varian-HealthFit\\Source Code\\HealthFit Libs\\Log_Client\\Log_Client.csproj": {
               "projectPath": "G:\\Personal\\Varian-HealthFit\\Source Code\\HealthFit Libs\\Log_Client\\Log_Client.csproj"
+            },
+            "G:\\Personal\\Varian-HealthFit\\Source Code\\HealthFit Libs\\Object_Provider\\Object_Provider.csproj": {
+              "projectPath": "G:\\Personal\\Varian-HealthFit\\Source Code\\HealthFit Libs\\Object_Provider\\Object_Provider.csproj"
             }
           }
         }

@@ -140,7 +140,7 @@ textarea { overflow: auto; }
 .container .login_box { text-align: left;margin-bottom: 20px;border-bottom: #e5d8d8 4px solid;padding-bottom: 11px}
 .form-group {margin-bottom: 20px;}
 .form-group label {display: block;font-weight: bold;margin-bottom: 5px;}
-.form-group input[type="text"],.form-group input[type="password"] { width: 95%; padding: 10px; border: 1px solid #ccc;border-radius: 4px;}
+ .form-group input[type="text"], .form-group input[type="email"], .form-group input[type="password"] { width: 95%; padding: 10px;border: 1px solid #ccc;border-radius: 4px;}
 .form-group button { display: block;width: 45%;padding: 10px;color: #ffffff;border: none;border-radius: 4px;cursor: pointer;float: left;margin-right: 5%;font-weight: bolder;}
 
 .green { background-color: #4CAF50;}
@@ -163,3 +163,11 @@ table td.actions a:hover {background-color: #45a049;}
 .pagination {margin-top: 20px;text-align: center;}
 .pagination a {display: inline-block;padding: 8px 16px;text-decoration: none;color: #000;border: 1px solid #ddd;margin: 0 4px;border-radius: 4px;}
 .pagination a.active {background-color: #4caf50;color: #fff;}
+
+.message {display: flex;align-items: center;padding: 10px;border-radius: 4px;margin-bottom: 10px;position: fixed;right: 2%;bottom: 2%;font-size: 15px;font-weight: bold;}
+.success {background-color: #DFF2BF;color: #4F8A10;}
+.error {background-color: #F8D7DA;color: #721C24;}
+.warning {background-color: #FFF3CD;color: #856404;}
+.icon {margin-right: 10px;}
+.text {font-weight: bold;}
+

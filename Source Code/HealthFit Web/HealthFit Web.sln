@@ -5,6 +5,10 @@ VisualStudioVersion = 17.5.33530.505
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HealthFit Web", "HealthFit Web.csproj", "{A9287AB3-775D-48A1-9F1D-098E25D42408}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Object_Provider", "..\HealthFit Libs\Object_Provider\Object_Provider.csproj", "{6DDECE57-C8B3-4867-9A42-92ACD0C3C1F5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API_Connector", "..\HealthFit Libs\API_Connector\API_Connector.csproj", "{A454AA55-BE91-43A8-BC34-31947E515873}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{A9287AB3-775D-48A1-9F1D-098E25D42408}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A9287AB3-775D-48A1-9F1D-098E25D42408}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A9287AB3-775D-48A1-9F1D-098E25D42408}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6DDECE57-C8B3-4867-9A42-92ACD0C3C1F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6DDECE57-C8B3-4867-9A42-92ACD0C3C1F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6DDECE57-C8B3-4867-9A42-92ACD0C3C1F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6DDECE57-C8B3-4867-9A42-92ACD0C3C1F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A454AA55-BE91-43A8-BC34-31947E515873}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A454AA55-BE91-43A8-BC34-31947E515873}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A454AA55-BE91-43A8-BC34-31947E515873}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A454AA55-BE91-43A8-BC34-31947E515873}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

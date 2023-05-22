@@ -11,6 +11,7 @@ https://shop.lww.com/ACSM-s-Health---Fitness-Journal-/p/1091-5397
 IMP : https://shop.lww.com/ACSM-s-Health---Fitness-Journal--Online/p/1536-593X
 https://shop.lww.com/ACSM-s-Health---Fitness-Journal--Online/p/1536-593X
 
+** [ValidateAntiForgeryToken]
 
 1. Home Page Design
 2. Register Publisher
@@ -36,5 +37,31 @@ Public User
 
 Setup Steps
 https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-aspnetcore-7.0.5-windows-hosting-bundle-installer
+
+
+
+Use HTTPS: Always use HTTPS (HTTP over SSL/TLS) to encrypt communication between the web server and clients. Obtain and install an SSL/TLS certificate for your domain to enable secure connections.
+
+Input Validation: Validate and sanitize all user inputs to prevent common attacks like cross-site scripting (XSS), SQL injection, and cross-site request forgery (CSRF). Use built-in validation attributes, such as [Required], [StringLength], or implement custom validation logic.
+
+Authentication and Authorization: Implement proper authentication and authorization mechanisms to control access to your application. Use ASP.NET Core Identity or third-party authentication providers like OAuth or OpenID Connect for user authentication. Apply role-based or claims-based authorization to restrict access to sensitive resources.
+
+Password Security: Follow best practices for password storage. Hash passwords using a strong hashing algorithm (e.g., bcrypt or Argon2) with unique per-user salts. Implement password policies to enforce strong passwords.
+
+Secure Session Management: Ensure secure session management by using appropriate session storage mechanisms, setting secure cookie options, and applying session timeouts. Consider using cookie authentication with secure settings.
+
+Cross-Site Scripting (XSS) Protection: Enable XSS protection by properly encoding and validating user-generated content before displaying it in the application. Use security-focused frameworks and libraries to handle user input safely.
+
+Cross-Site Request Forgery (CSRF) Protection: Protect against CSRF attacks by applying CSRF tokens to sensitive requests and verifying them on the server side. Utilize the built-in anti-forgery features in ASP.NET Core.
+
+Secure Configuration: Safeguard sensitive configuration values (e.g., database connection strings, API keys) by using built-in configuration providers and storing secrets outside the source code. Consider using Azure Key Vault or other secure storage solutions.
+
+Logging and Monitoring: Implement logging and monitoring mechanisms to detect and respond to security incidents. Monitor application logs, set up alerts for suspicious activities, and enable application-level logging to capture security-related events.
+
+Regular Updates and Patching: Keep your application and dependencies up to date with the latest security patches and updates. Regularly review and update the versions of ASP.NET Core, frameworks, and libraries used in your application.
+
+Security Testing: Perform security testing, including vulnerability scanning, penetration testing, and code reviews, to identify and address potential security flaws. Consider using security tools and services for automated scanning and testing.
+
+Error Handling and Information Leakage: Implement appropriate error handling to avoid exposing sensitive information to users. Use custom error pages or response filters to display generic error messages to users, while logging detailed errors for troubleshooting purposes.
 
 

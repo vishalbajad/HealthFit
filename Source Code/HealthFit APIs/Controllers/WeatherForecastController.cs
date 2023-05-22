@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace HealthFit_APIs.Controllers
 {
+    [ValidateAntiForgeryToken]
     [ApiController]
     [Route("[controller]")]
     public class WeatherForecastController : ControllerBase

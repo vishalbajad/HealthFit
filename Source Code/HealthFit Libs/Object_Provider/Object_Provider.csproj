@@ -5,6 +5,7 @@
     <RootNamespace>HealthFit_Libs</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <BaseOutputPath>bin\</BaseOutputPath>
   </PropertyGroup>
 
 </Project>

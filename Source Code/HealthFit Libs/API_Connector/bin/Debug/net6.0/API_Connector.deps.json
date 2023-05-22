@@ -8,7 +8,8 @@
     ".NETCoreApp,Version=v6.0": {
       "API_Connector/1.0.0": {
         "dependencies": {
-          "Log_Client": "1.0.0"
+          "Log_Client": "1.0.0",
+          "Object_Provider": "1.0.0"
         },
         "runtime": {
           "API_Connector.dll": {}
@@ -43,6 +44,11 @@
         "runtime": {
           "Log_Client.dll": {}
         }
+      },
+      "Object_Provider/1.0.0": {
+        "runtime": {
+          "Object_Provider.dll": {}
+        }
       }
     }
   },
@@ -60,6 +66,11 @@
       "hashPath": "system.diagnostics.eventlog.7.0.0.nupkg.sha512"
     },
     "Log_Client/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Object_Provider/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
