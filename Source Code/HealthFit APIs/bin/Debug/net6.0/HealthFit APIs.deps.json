@@ -11,7 +11,8 @@
           "Data_Layer": "1.0.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "7.0.5",
           "Object_Provider": "1.0.0",
-          "Swashbuckle.AspNetCore": "6.2.3"
+          "Swashbuckle.AspNetCore": "6.2.3",
+          "Utilities": "1.0.0"
         },
         "runtime": {
           "HealthFit APIs.dll": {}
@@ -763,6 +764,11 @@
         "runtime": {
           "Object_Provider.dll": {}
         }
+      },
+      "Utilities/1.0.0": {
+        "runtime": {
+          "Utilities.dll": {}
+        }
       }
     }
   },
@@ -1310,6 +1316,11 @@
       "sha512": ""
     },
     "Object_Provider/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Utilities/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

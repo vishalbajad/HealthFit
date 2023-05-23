@@ -90,3 +90,5 @@ G:\Personal\Varian-HealthFit\Source Code\HealthFit APIs\obj\Debug\net6.0\refint\
 G:\Personal\Varian-HealthFit\Source Code\HealthFit APIs\obj\Debug\net6.0\HealthFit APIs.pdb
 G:\Personal\Varian-HealthFit\Source Code\HealthFit APIs\obj\Debug\net6.0\HealthFit APIs.genruntimeconfig.cache
 G:\Personal\Varian-HealthFit\Source Code\HealthFit APIs\obj\Debug\net6.0\ref\HealthFit APIs.dll
+G:\Personal\Varian-HealthFit\Source Code\HealthFit APIs\bin\Debug\net6.0\Utilities.dll
+G:\Personal\Varian-HealthFit\Source Code\HealthFit APIs\bin\Debug\net6.0\Utilities.pdb

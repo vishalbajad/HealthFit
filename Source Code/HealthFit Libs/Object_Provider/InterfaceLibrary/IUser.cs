@@ -10,6 +10,6 @@ namespace HealthFit_Libs.InterfaceLibrary
     public interface IUser : IBaseInterfact
     {
         bool CreateUser(User user);
-        User GetUser(int UserId);
+        User? AunthenticateUser(string userName, string password);
     }
 }

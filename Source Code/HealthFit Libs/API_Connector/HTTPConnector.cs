@@ -68,8 +68,12 @@ namespace HealthFit.API_Connector
                 Logs.WriteMessage(" Response: " + ResponseText);
 
             }
-
-            result = JsonSerializer.Deserialize<T>(ResponseText);
+            var options = new JsonSerializerOptions
+            {
+                PropertyNameCaseInsensitive = true
+            };
+            
+            result = JsonSerializer.Deserialize<T>(ResponseText, options);
 
             return result;
         }

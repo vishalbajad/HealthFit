@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace API_Connector
 {
-    public class User : IUser       
+    public class User : IUser
     {
         readonly APIServer _apiserver;
         readonly HTTPConnector apiConnector;
@@ -24,9 +24,9 @@ namespace API_Connector
             return apiConnector.SendJsonRequest<bool>("/User/CreateUser/", HTTPConnector.RequestMethod.POST, JsonSerializer.Serialize(user), string.Empty);
         }
 
-        public HealthFit.Object_Provider.Model.User GetUser(int UserId)
+        public HealthFit.Object_Provider.Model.User? AunthenticateUser(string userName, string password)
         {
-            return new HealthFit.Object_Provider.Model.User();
+            return apiConnector.SendJsonRequest<HealthFit.Object_Provider.Model.User?>("/User/AunthenticateUser/", HTTPConnector.RequestMethod.GET, string.Empty, string.Format("userName={0}&password={1}", userName, password));
         }
     }
 }

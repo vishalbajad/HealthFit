@@ -1,0 +1,77 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = HealthFit_Web
+build_property.RootNamespace = HealthFit_Web
+build_property.ProjectDir = G:\Personal\Varian-HealthFit\Source Code\HealthFit Web\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = G:\Personal\Varian-HealthFit\Source Code\HealthFit Web
+build_property._RazorSourceGeneratorDebug = 
+
+[G:/Personal/Varian-HealthFit/Source Code/HealthFit Web/Pages/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Personal/Varian-HealthFit/Source Code/HealthFit Web/Pages/Layouts/_Form_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTGF5b3V0c1xfRm9ybV9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Personal/Varian-HealthFit/Source Code/HealthFit Web/Pages/Layouts/_Main_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTGF5b3V0c1xfTWFpbl9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Personal/Varian-HealthFit/Source Code/HealthFit Web/Pages/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9naW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Personal/Varian-HealthFit/Source Code/HealthFit Web/Pages/Partial Views/_CategoryPublishersPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGFydGlhbCBWaWV3c1xfQ2F0ZWdvcnlQdWJsaXNoZXJzUGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Personal/Varian-HealthFit/Source Code/HealthFit Web/Pages/Partial Views/_Login_Menu_Partial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGFydGlhbCBWaWV3c1xfTG9naW5fTWVudV9QYXJ0aWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Personal/Varian-HealthFit/Source Code/HealthFit Web/Pages/Partial Views/_ProductWidgetViewPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGFydGlhbCBWaWV3c1xfUHJvZHVjdFdpZGdldFZpZXdQYXJ0aWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Personal/Varian-HealthFit/Source Code/HealthFit Web/Pages/Publishers/AddJournal.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHVibGlzaGVyc1xBZGRKb3VybmFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Personal/Varian-HealthFit/Source Code/HealthFit Web/Pages/Publishers/JournalList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHVibGlzaGVyc1xKb3VybmFsTGlzdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Personal/Varian-HealthFit/Source Code/HealthFit Web/Pages/Publishers/ViewJournalDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHVibGlzaGVyc1xWaWV3Sm91cm5hbERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Personal/Varian-HealthFit/Source Code/HealthFit Web/Pages/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Personal/Varian-HealthFit/Source Code/HealthFit Web/Pages/Signup.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2lnbnVwLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Personal/Varian-HealthFit/Source Code/HealthFit Web/Pages/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Personal/Varian-HealthFit/Source Code/HealthFit Web/Pages/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Personal/Varian-HealthFit/Source Code/HealthFit Web/Pages/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-xqaddmnu2r

@@ -1,0 +1,115 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - AppName</title>
+    <script src="~/js/jquery-1.6.2.min.js"></script>
+    <link href="~/css/style.css" rel="stylesheet" />
+    <script src="~/js/site.js"></script>
+    <script src="~/js/functions.js"></script>
+    <script src="~/js/jquery.jcarousel.min.js"></script>
+    <script src="~/js/png-fix.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <div id="header" class="shell">
+        <div id="logo"><h1><a href="#">HelathFit</a></h1><span><a href="#">By Varian</a></span></div>
+        <!-- Navigation -->
+        <div id="navigation">
+            <ul>
+                <li><a href="#" class="active">Medical Educations</a></li>
+                <li><a href="#">Nursing Educations</a></li>
+                <li><a href="#">Allied Health</a></li>
+                <li><a href="#">Physical Fitness</a></li>
+                <li><a href="#">Support</a></li>
+            </ul>
+        </div>
+        <!-- End Navigation -->
+        <div class="cl">&nbsp;</div>
+        <!-- Login-details -->
+        @await Html.PartialAsync("../Partial Views/_Login_Menu_Partial.cshtml" ,model: null)
+        <!-- End Login-details -->
+    </div>
+    <!-- End Header -->
+    <!-- Slider -->
+    <div id="slider">
+        <div class="shell">
+            <ul>
+                <li>
+                    <div class="image">
+                        <img src="images/books.png" alt="" />
+                    </div>
+                    <div class="details">
+                        <h2>Bestsellers</h2>
+                        <h3>Special Offers</h3>
+                        <p class="title">Pellentesque congue lorem quis massa blandit non pretium nisi pharetra</p>
+                        <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent id odio in tortor scelerisque dictum. Phasellus varius sem sit amet metus volutpat vel vehicula nunc lacinia.</p>
+                        <a href="#" class="read-more-btn">Read More</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="image">
+                        <img src="images/books.png" alt="" />
+                    </div>
+                    <div class="details">
+                        <h2>Bestsellers</h2>
+                        <h3>Special Offers</h3>
+                        <p class="title">Pellentesque congue lorem quis massa blandit non pretium nisi pharetra</p>
+                        <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent id odio in tortor scelerisque dictum. Phasellus varius sem sit amet metus volutpat vel vehicula nunc lacinia.</p>
+                        <a href="#" class="read-more-btn">Read More</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="image">
+                        <img src="images/books.png" alt="" />
+                    </div>
+                    <div class="details">
+                        <h2>Bestsellers</h2>
+                        <h3>Special Offers</h3>
+                        <p class="title">Pellentesque congue lorem quis massa blandit non pretium nisi pharetra</p>
+                        <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent id odio in tortor scelerisque dictum. Phasellus varius sem sit amet metus volutpat vel vehicula nunc lacinia.</p>
+                        <a href="#" class="read-more-btn">Read More</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="image">
+                        <img src="images/books.png" alt="" />
+                    </div>
+                    <div class="details">
+                        <h2>Bestsellers</h2>
+                        <h3>Special Offers</h3>
+                        <p class="title">Pellentesque congue lorem quis massa blandit non pretium nisi pharetra</p>
+                        <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent id odio in tortor scelerisque dictum. Phasellus varius sem sit amet metus volutpat vel vehicula nunc lacinia.</p>
+                        <a href="#" class="read-more-btn">Read More</a>
+                    </div>
+                </li>
+            </ul>
+            <div class="nav">
+                <a href="#">1</a>
+                <a href="#">2</a>
+                <a href="#">3</a>
+                <a href="#">4</a>
+            </div>
+        </div>
+    </div>
+    <!-- End Slider -->
+    <!-- Main --> 
+    @RenderBody()
+    <!-- End Main -->
+    <!-- Footer -->
+    <!-- Footer -->
+    <div id="footer" class="shell">
+        <div class="top">
+            <div class="cnt">
+                <div class="">
+                    <p>© <a href="#">HealthFit.com</a>. Design by Varian </p>
+                    <p>&nbsp;</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Footer -->
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

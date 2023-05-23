@@ -48,7 +48,12 @@ namespace HealthFit_APIs.Controllers
             if (objUser?.UserId > 0)
             {
                 bool isPasswordValid = HealthFit.Utilities.PasswordHasher.VerifyPassword(password, objUser.PasswordSalt, objUser.HashedPassword);
-                if(isPasswordValid) return objUser;
+                if (isPasswordValid)
+                {
+                    objUser.PasswordSalt = string.Empty;
+                    objUser.HashedPassword = string.Empty;
+                    return objUser;
+                }
             }
 
             return null;

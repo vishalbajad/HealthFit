@@ -9,8 +9,9 @@ namespace HealthFit_Web.Models
     public class BasePageModel : PageModel
     {
         private readonly SystemConfigurations sysConfig ;
-        private readonly ILogger<IndexModel> _logger;
-        public BasePageModel(IOptions<SystemConfigurations> options , ILogger<IndexModel> logger)
+        private readonly ILogger<BasePageModel> _logger;
+        
+        public BasePageModel(IOptions<SystemConfigurations> options , ILogger<BasePageModel> logger)
         {
             sysConfig = options.Value;
             _logger = logger;
@@ -34,6 +35,27 @@ namespace HealthFit_Web.Models
                 return apiserver;
             }
             return JsonSerializer.Deserialize<APIServer>(serializedObject) ?? new APIServer();
+        }
+        public HealthFit.Object_Provider.Model.User? LoggedInUser
+        {
+            get {
+                HealthFit.Object_Provider.Model.User? objUser = null;
+                string? serializedObject = HttpContext?.Session?.GetString("LoggedInUser");
+                if (!string.IsNullOrWhiteSpace(serializedObject))
+                {
+                    HttpContext?.Session?.SetString("LoggedInUser", serializedObject);
+                    objUser =  JsonSerializer.Deserialize<HealthFit.Object_Provider.Model.User>(serializedObject);
+                }
+                return objUser;
+            }
+            set
+            {
+                HealthFit.Object_Provider.Model.User? objUser = value;
+                if (objUser != null)
+                {
+                    HttpContext?.Session?.SetString("LoggedInUser", JsonSerializer.Serialize<HealthFit.Object_Provider.Model.User>(objUser));
+                }
+            }
         }
     }
 }

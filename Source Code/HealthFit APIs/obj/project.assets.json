@@ -1277,6 +1277,16 @@
         "runtime": {
           "bin/placeholder/Object_Provider.dll": {}
         }
+      },
+      "Utilities/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/Utilities.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Utilities.dll": {}
+        }
       }
     }
   },
@@ -3900,6 +3910,11 @@
       "type": "project",
       "path": "../HealthFit Libs/Object_Provider/Object_Provider.csproj",
       "msbuildProject": "../HealthFit Libs/Object_Provider/Object_Provider.csproj"
+    },
+    "Utilities/1.0.0": {
+      "type": "project",
+      "path": "../HealthFit Libs/Utilities/Utilities.csproj",
+      "msbuildProject": "../HealthFit Libs/Utilities/Utilities.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -3907,7 +3922,8 @@
       "Data_Layer >= 1.0.0",
       "Microsoft.EntityFrameworkCore.SqlServer >= 7.0.5",
       "Object_Provider >= 1.0.0",
-      "Swashbuckle.AspNetCore >= 6.2.3"
+      "Swashbuckle.AspNetCore >= 6.2.3",
+      "Utilities >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -3942,6 +3958,9 @@
             },
             "G:\\Personal\\Varian-HealthFit\\Source Code\\HealthFit Libs\\Object_Provider\\Object_Provider.csproj": {
               "projectPath": "G:\\Personal\\Varian-HealthFit\\Source Code\\HealthFit Libs\\Object_Provider\\Object_Provider.csproj"
+            },
+            "G:\\Personal\\Varian-HealthFit\\Source Code\\HealthFit Libs\\Utilities\\Utilities.csproj": {
+              "projectPath": "G:\\Personal\\Varian-HealthFit\\Source Code\\HealthFit Libs\\Utilities\\Utilities.csproj"
             }
           }
         }
