@@ -10,9 +10,12 @@ namespace HealthFit_Web.Pages
 {
     public class SignupModel : BasePageModel
     {
-        public SignupModel(IOptions<SystemConfigurations> options, ILogger<IndexModel> logger) : base(options, logger)
+        public SignupModel(IOptions<SystemConfigurations> options, ILogger<SignupModel> logger, IHttpContextAccessor httpContextAccessor) : base(options, logger, httpContextAccessor)
         {
         }
+
+        [BindProperty] 
+        public HealthFit_Web.Models.User UserDetails { get; set; }
 
         public string responseMessage { get; set; }
         public string responseCode { get; set; }
@@ -23,7 +26,7 @@ namespace HealthFit_Web.Pages
         }
 
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> OnPostAsync(HealthFit_Web.Models.User UserDetails)
+        public async Task<IActionResult> OnPostAsync()
         {
             
             if (!TryValidateModel(UserDetails, nameof(UserDetails)))

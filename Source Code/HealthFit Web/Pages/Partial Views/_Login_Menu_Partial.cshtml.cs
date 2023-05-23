@@ -10,7 +10,7 @@ namespace HealthFit_Web.Pages
     {
         private readonly ILogger<LoginMenuModel> _logger;
 
-        public LoginMenuModel(IOptions<SystemConfigurations> options, ILogger<LoginMenuModel> logger) : base(options, logger)
+        public LoginMenuModel(IOptions<SystemConfigurations> options, ILogger<LoginMenuModel> logger, IHttpContextAccessor httpContextAccessor) : base(options, logger, httpContextAccessor)
         {
             _logger = logger;
         }

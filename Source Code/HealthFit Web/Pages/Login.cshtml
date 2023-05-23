@@ -4,17 +4,21 @@
     ViewData["Title"] = "Home page";
     Layout = "Layouts/_Form_Layout.cshtml";
 }
-<form method="post">
+@using (Html.BeginForm())
+{
     @Html.AntiForgeryToken()
     <div class="container" style="margin-left: 24%;width: 50%;">
         <h2 class="login_box">Login</h2>
         <div class="form-group">
-            <label for="username">Username</label>
-            <input type="text" id="username" name="UserDetails.UserDetails.UserName" placeholder="Enter your username" required maxlength="30">
+            <label asp-for="UserDetails.UserDetails.UserName"></label>
+            <input asp-for="UserDetails.UserDetails.UserName" placeholder="Enter your UserName" maxlength="30" />
+            <span asp-validation-for="UserDetails.UserDetails.UserName" class="text-danger"></span>
         </div>
+
         <div class="form-group">
-            <label for="password">Password</label>
-            <input type="password" id="password" name="UserDetails.Password" placeholder="Enter your password" required maxlength="30">
+            <label asp-for="UserDetails.Password"></label>
+            <input asp-for="UserDetails.Password" placeholder="Enter your Password" maxlength="30" required />
+            <span asp-validation-for="UserDetails.Password" class="text-danger"></span>
         </div>
         <div class="form-group">
             <button type="submit" class="green">Login</button> <button type="button" class="cancel" onclick="location.href ='/index'">Cancel</button>
@@ -22,6 +26,12 @@
         <div class="form-group">
             <br />
         </div>
-
     </div>
-</form>
+    @if (!string.IsNullOrWhiteSpace(Model.responseMessage))
+    {
+        <div class="message @Model.responseCode">
+            <span class="icon"></span>
+            <span class="text">@Model.responseMessage</span>
+        </div>
+    }
+}

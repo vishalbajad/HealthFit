@@ -10,17 +10,23 @@ namespace HealthFit_Web.Pages
     public class LoginModel : BasePageModel
     {
         readonly API_Connector.User userProxy;
-        public LoginModel(IOptions<SystemConfigurations> options, ILogger<IndexModel> logger) : base(options, logger)
+        public LoginModel(IOptions<SystemConfigurations> options, ILogger<LoginModel> logger, IHttpContextAccessor httpContextAccessor) : base(options, logger, httpContextAccessor)
         {
             userProxy = new API_Connector.User(this.GetAPIServerDetails());
         }
+
+        [BindProperty]
+        public HealthFit_Web.Models.User UserDetails { get; set; }
+
+        public string responseMessage { get; set; }
+        public string responseCode { get; set; }
 
         public void OnGet()
         {
 
         }
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> OnPostAsync(HealthFit_Web.Models.User UserDetails)
+        public async Task<IActionResult> OnPostAsync()
         {
             var user = userProxy.AunthenticateUser(UserDetails.UserDetails.UserName, UserDetails.Password);
 
@@ -32,8 +38,14 @@ namespace HealthFit_Web.Pages
                 else if (user.UserType == 2)
                     return RedirectToPage("Publishers/JournalList");
             }
+            else
+            {
+                responseMessage = "Invalid Username or Password !";
+                responseCode = "error";
+            }
 
-            return RedirectToPage("./Login");
+
+            return Page();
         }
     }
 }

@@ -2,11 +2,11 @@
 @model HealthFit_Web.Pages.Publishers.JournalListModel
 @{
     Layout = "../Layouts/_Form_Layout.cshtml";
-    ViewData["Title"] = "Home page";
 }
 <div class="container">
+    <button class="add-button" style="float:right" onclick="location.href ='AddJournal'">New Journal</button>
     <h2 class="login_box">Journal Lists</h2>
-
+    
     <table id="data-table">
         <thead>
             <tr>

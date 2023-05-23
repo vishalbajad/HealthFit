@@ -136,11 +136,11 @@ textarea { overflow: auto; }
 #newsletter .submit-btn { margin-top: 4px; display: inline-block; font-size: 10px; line-height: 16px; height: 24px; background: url(../images/submit-btn.png); padding: 0 8px 0 10px; border: 0; color: #fff; text-transform: uppercase; cursor: pointer; }
 #newsletter .submit-btn:hover { color: #015faa; }
 
-.container { background-color: #ffffff; border-radius: 5px;box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);padding: 40px;max-width: 100%;}
+.container { background-color: #ffffff; border-radius: 5px;box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);padding: 20px;max-width: 100%;}
 .container .login_box { text-align: left;margin-bottom: 20px;border-bottom: #e5d8d8 4px solid;padding-bottom: 11px}
 .form-group {margin-bottom: 20px;}
 .form-group label {display: block;font-weight: bold;margin-bottom: 5px;}
-.form-group input[type="text"], .form-group input[type="email"], .form-group input[type="number"], .form-group input[type="password"] {width: 95%;padding: 10px;border: 1px solid #ccc;border-radius: 4px;}
+    .form-group input[type="text"], .form-group input[type="email"], .form-group input[type="number"], .form-group input[type="tel"], .form-group input[type="password"] { width: 95%; padding: 10px;border: 1px solid #ccc;border-radius: 4px;}
 .form-group button { display: block;width: 45%;padding: 10px;color: #ffffff;border: none;border-radius: 4px;cursor: pointer;float: left;margin-right: 5%;font-weight: bolder;}
 
 .green { background-color: #4CAF50;}
@@ -171,3 +171,7 @@ table td.actions a:hover {background-color: #45a049;}
 .icon {margin-right: 10px;}
 .text {font-weight: bold;}
 
+.add-button { background-color: #4CAF50;color: white;border: none;padding: 6px 10px;text-align: center;text-decoration: none;display: inline-block;font-size: 12px;cursor: pointer;}
+.add-button:hover {background-color: #45a049;}
+.add-button:active {background-color: #3e8e41;}
+.text-danger {color:red}

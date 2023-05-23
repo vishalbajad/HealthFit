@@ -17,6 +17,7 @@ namespace HealthFit_Web
             services.AddRazorPages();
             services.AddDistributedMemoryCache();
             services.AddScoped<HTTPConnector>();
+            services.AddSession();
             services.Configure<SystemConfigurations>(Configuration);
         }
 
@@ -37,6 +38,7 @@ namespace HealthFit_Web
             app.UseRouting();
             app.UseAuthentication();
             app.UseAuthorization();
+            app.UseSession();
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();

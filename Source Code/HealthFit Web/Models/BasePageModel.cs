@@ -10,16 +10,17 @@ namespace HealthFit_Web.Models
     {
         private readonly SystemConfigurations sysConfig ;
         private readonly ILogger<BasePageModel> _logger;
-        
-        public BasePageModel(IOptions<SystemConfigurations> options , ILogger<BasePageModel> logger)
+        private readonly IHttpContextAccessor _httpContextAccessor;
+        public BasePageModel(IOptions<SystemConfigurations> options , ILogger<BasePageModel> logger, IHttpContextAccessor httpContextAccessor)
         {
             sysConfig = options.Value;
             _logger = logger;
+            _httpContextAccessor = httpContextAccessor;
         }
 
         public APIServer GetAPIServerDetails()
         {
-            string? serializedObject = HttpContext?.Session?.GetString("APIServer");
+            string? serializedObject = _httpContextAccessor.HttpContext?.Session?.GetString("APIServer");
             if (string.IsNullOrWhiteSpace(serializedObject))
             {
                 APIServer apiserver = new APIServer { 
@@ -31,7 +32,7 @@ namespace HealthFit_Web.Models
               
 
                 string serializedapiObject = JsonSerializer.Serialize(apiserver);
-                HttpContext?.Session?.SetString("APIServer", serializedapiObject);
+                _httpContextAccessor.HttpContext?.Session?.SetString("APIServer", serializedapiObject);
                 return apiserver;
             }
             return JsonSerializer.Deserialize<APIServer>(serializedObject) ?? new APIServer();
@@ -40,7 +41,7 @@ namespace HealthFit_Web.Models
         {
             get {
                 HealthFit.Object_Provider.Model.User? objUser = null;
-                string? serializedObject = HttpContext?.Session?.GetString("LoggedInUser");
+                string? serializedObject = _httpContextAccessor.HttpContext?.Session?.GetString("LoggedInUser");
                 if (!string.IsNullOrWhiteSpace(serializedObject))
                 {
                     HttpContext?.Session?.SetString("LoggedInUser", serializedObject);
@@ -53,7 +54,7 @@ namespace HealthFit_Web.Models
                 HealthFit.Object_Provider.Model.User? objUser = value;
                 if (objUser != null)
                 {
-                    HttpContext?.Session?.SetString("LoggedInUser", JsonSerializer.Serialize<HealthFit.Object_Provider.Model.User>(objUser));
+                    _httpContextAccessor.HttpContext?.Session?.SetString("LoggedInUser", JsonSerializer.Serialize<HealthFit.Object_Provider.Model.User>(objUser));
                 }
             }
         }
