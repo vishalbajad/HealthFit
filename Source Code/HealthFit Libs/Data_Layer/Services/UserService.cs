@@ -12,13 +12,28 @@ namespace Data_Layer.Services
             _userRepository = userRepository;
         }
 
-        public List<User> GetUsers()
+        public List<User> GetAllUsers()
         {
             return _userRepository.GetAllUsers();
         }
+
+        public User? GetUser(int id)
+        {
+            return _userRepository.GetUser(id);
+        }
+
+        public User? GetUserByUsername(string userName)
+        {
+            return _userRepository.GetUserByUsername(userName);
+        }
         public bool CreateUser(User user)
         {
-            return _userRepository.CreateUser(user);
+            _userRepository.CreateUser(user);
+            return true;
+        }
+        public bool DeleteUser(int id)
+        {
+            return _userRepository.DeleteUser(id);
         }
     }
 }

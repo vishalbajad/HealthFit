@@ -18,10 +18,30 @@ namespace Data_Layer.Repositories
         {
             return _dbContext.Users.ToList();
         }
+
+        public User? GetUser(int id)
+        {
+            return _dbContext.Users.FirstOrDefault(obj => obj.UserId == id);
+        }
+        public User? GetUserByUsername(string userName)
+        {
+            return _dbContext.Users.FirstOrDefault(obj => obj.UserName == userName);
+        }
+        
         public bool CreateUser(User user)
         {
             _dbContext.Users.Add(user);
             _dbContext.SaveChanges();
+            return true;
+        }
+        public bool DeleteUser(int id)
+        {
+            User? objuser = GetUser(id);
+            if (objuser?.UserId > 0)
+            {
+                _dbContext.Users.Remove(objuser);
+                _dbContext.SaveChanges();
+            }
             return true;
         }
     }

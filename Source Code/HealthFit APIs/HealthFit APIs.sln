@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Object_Provider", "..\Healt
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data_Layer", "..\HealthFit Libs\Data_Layer\Data_Layer.csproj", "{F1CF76C5-9E6E-468C-AA9A-AAC4EB22AE52}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Utilities", "..\HealthFit Libs\Utilities\Utilities.csproj", "{2EE6216D-B8CC-4F59-AA6B-1C39734D7473}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{F1CF76C5-9E6E-468C-AA9A-AAC4EB22AE52}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F1CF76C5-9E6E-468C-AA9A-AAC4EB22AE52}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F1CF76C5-9E6E-468C-AA9A-AAC4EB22AE52}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2EE6216D-B8CC-4F59-AA6B-1C39734D7473}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2EE6216D-B8CC-4F59-AA6B-1C39734D7473}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2EE6216D-B8CC-4F59-AA6B-1C39734D7473}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2EE6216D-B8CC-4F59-AA6B-1C39734D7473}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

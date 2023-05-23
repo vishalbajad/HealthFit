@@ -15,6 +15,7 @@
   <ItemGroup>
     <ProjectReference Include="..\HealthFit Libs\Data_Layer\Data_Layer.csproj" />
     <ProjectReference Include="..\HealthFit Libs\Object_Provider\Object_Provider.csproj" />
+    <ProjectReference Include="..\HealthFit Libs\Utilities\Utilities.csproj" />
   </ItemGroup>
 
 </Project>
