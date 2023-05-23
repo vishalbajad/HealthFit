@@ -32,7 +32,7 @@ namespace API_Connector
 
         public List<HealthFit.Object_Provider.Model.Journal> GetAllJournal(int publisherId)
         {
-            return apiConnector.SendJsonRequest<List<HealthFit.Object_Provider.Model.Journal>>("/Journal/GetAllJournal/", HTTPConnector.RequestMethod.GET, string.Empty, "publisherId=" + publisherId);
+            return apiConnector.SendJsonRequest<List<HealthFit.Object_Provider.Model.Journal>>("/Journal/GetAllJournal/", HTTPConnector.RequestMethod.GET, string.Empty, string.Format("publisherId={0}&active={1}", publisherId, true));
         }
 
         public HealthFit.Object_Provider.Model.Journal GetJournal(int id)

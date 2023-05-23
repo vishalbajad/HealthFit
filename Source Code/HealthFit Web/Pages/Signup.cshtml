@@ -21,27 +21,27 @@
 
                     <div class="form-group">
                         <label asp-for="UserDetails.UserDetails.PhoneNo"></label>
-                        <input asp-for="UserDetails.UserDetails.PhoneNo" placeholder="Enter your PhoneNo" required maxlength="12" />
+                        <input asp-for="UserDetails.UserDetails.PhoneNo" placeholder="Enter your PhoneNo" maxlength="12" />
                         <span asp-validation-for="UserDetails.UserDetails.PhoneNo" class="text-danger"></span>
                     </div>
                     <div class="form-group">
                         <label asp-for="UserDetails.UserDetails.Address"></label>
-                        <input asp-for="UserDetails.UserDetails.Address" placeholder="Enter your address" required maxlength="100" />
+                        <input asp-for="UserDetails.UserDetails.Address" placeholder="Enter your address" maxlength="100" />
                         <span asp-validation-for="UserDetails.UserDetails.Address" class="text-danger"></span>
                     </div>
                     <div class="form-group">
                         <label asp-for="UserDetails.UserDetails.City"></label>
-                        <input asp-for="UserDetails.UserDetails.City" class="txtOnly" placeholder="Enter your city" required maxlength="50" />
+                        <input asp-for="UserDetails.UserDetails.City" class="txtOnly" placeholder="Enter your city" maxlength="50" />
                         <span asp-validation-for="UserDetails.UserDetails.City" class="text-danger"></span>
                     </div>
                     <div class="form-group">
                         <label asp-for="UserDetails.UserDetails.State"></label>
-                        <input asp-for="UserDetails.UserDetails.State" class="txtOnly" placeholder="Enter your State" required maxlength="50" />
+                        <input asp-for="UserDetails.UserDetails.State" class="txtOnly" placeholder="Enter your State" maxlength="50" />
                         <span asp-validation-for="UserDetails.UserDetails.State" class="text-danger"></span>
                     </div>
                     <div class="form-group">
                         <label asp-for="UserDetails.UserDetails.Country"></label>
-                        <input asp-for="UserDetails.UserDetails.Country" class="txtOnly" placeholder="Enter your Country" required maxlength="50" />
+                        <input asp-for="UserDetails.UserDetails.Country" class="txtOnly" placeholder="Enter your Country" maxlength="50" />
                         <span asp-validation-for="UserDetails.UserDetails.Country" class="text-danger"></span>
                     </div>
                 </td>
@@ -69,7 +69,7 @@
 
                     <div class="form-group">
                         <label asp-for="UserDetails.UserDetails.UserName"></label>
-                        <input asp-for="UserDetails.UserDetails.UserName" placeholder="Enter your UserName" class="txtOnly" maxlength="30" />
+                        <input asp-for="UserDetails.UserDetails.UserName" placeholder="Enter your UserName" class="txtOnly" maxlength="30" required />
                         <span asp-validation-for="UserDetails.UserDetails.UserName" class="text-danger"></span>
                     </div>
 
@@ -88,7 +88,7 @@
             <tr>
                 <td>
                     <div class="form-group">
-                        <button type="submit" class="green" name="submit" formmethod="post"> Sign Up</button> <button id="btnClancel" type="button" class="cancel" onclick="location.href ='/index'">Cancel</button>
+                        <button type="submit" class="green" name="submit" formmethod="post"> Sign Up</button> <button id="btnClancel" type="button" class="cancel" onclick="location.href ='/Login'">Cancel</button>
                     </div>
                 </td>
                 <td></td>
@@ -103,7 +103,7 @@
         </div>
         <script>
             $(document).ready(function () {
-                setTimeout(function () { $("#btnClancel").click(); }, 5000);
+                setTimeout(function () { $("#btnClancel").click(); }, 3000);
             });
         </script>
     }

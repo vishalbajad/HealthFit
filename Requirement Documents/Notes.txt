@@ -12,6 +12,7 @@ IMP : https://shop.lww.com/ACSM-s-Health---Fitness-Journal--Online/p/1536-593X
 https://shop.lww.com/ACSM-s-Health---Fitness-Journal--Online/p/1536-593X
 
 ** [ValidateAntiForgeryToken]
+** Salt and Hashed Password
 
 1. Home Page Design
 2. Register Publisher
@@ -65,3 +66,4 @@ Security Testing: Perform security testing, including vulnerability scanning, pe
 Error Handling and Information Leakage: Implement appropriate error handling to avoid exposing sensitive information to users. Use custom error pages or response filters to display generic error messages to users, while logging detailed errors for troubleshooting purposes.
 
 
+** Make Sure you have installed SQL Server 

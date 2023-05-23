@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "8pAhevmkvtSnZOdWDDKd2VeUEXeJmw5UyqFLh81Gsdw=",
+  "Hash": "oBLvE+Z3UXTH54MKGKbjFfZFrDCWVhSfWI4OxdIeYnw=",
   "Source": "HealthFit Web",
   "BasePath": "_content/HealthFit Web",
   "Mode": "Default",
@@ -219,6 +219,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\cart-icon.png"
+    },
+    {
+      "Identity": "G:\\Personal\\Varian-HealthFit\\Source Code\\HealthFit Web\\wwwroot\\images\\Delete.png",
+      "SourceId": "HealthFit Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "G:\\Personal\\Varian-HealthFit\\Source Code\\HealthFit Web\\wwwroot\\",
+      "BasePath": "_content/HealthFit Web",
+      "RelativePath": "images/Delete.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\Delete.png"
+    },
+    {
+      "Identity": "G:\\Personal\\Varian-HealthFit\\Source Code\\HealthFit Web\\wwwroot\\images\\Edit.png",
+      "SourceId": "HealthFit Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "G:\\Personal\\Varian-HealthFit\\Source Code\\HealthFit Web\\wwwroot\\",
+      "BasePath": "_content/HealthFit Web",
+      "RelativePath": "images/Edit.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\Edit.png"
     },
     {
       "Identity": "G:\\Personal\\Varian-HealthFit\\Source Code\\HealthFit Web\\wwwroot\\images\\favicon.ico",

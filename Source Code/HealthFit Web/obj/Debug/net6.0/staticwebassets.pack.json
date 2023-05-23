@@ -21,6 +21,14 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "G:\\Personal\\Varian-HealthFit\\Source Code\\HealthFit Web\\wwwroot\\images\\Delete.png",
+      "PackagePath": "staticwebassets\\images\\Delete.png"
+    },
+    {
+      "Id": "G:\\Personal\\Varian-HealthFit\\Source Code\\HealthFit Web\\wwwroot\\images\\Edit.png",
+      "PackagePath": "staticwebassets\\images\\Edit.png"
+    },
+    {
       "Id": "G:\\Personal\\Varian-HealthFit\\Source Code\\HealthFit Web\\wwwroot\\images\\best-price.png",
       "PackagePath": "staticwebassets\\images\\best-price.png"
     },

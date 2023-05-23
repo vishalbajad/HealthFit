@@ -2,6 +2,7 @@
 using HealthFit.Object_Provider.Model;
 using Microsoft.EntityFrameworkCore;
 using System.Data.Entity;
+using System.Data.Entity.Migrations;
 using System.Security.Policy;
 
 namespace Data_Layer.Repositories
@@ -22,7 +23,7 @@ namespace Data_Layer.Repositories
                 var entity = _dbContext.Journals.Find(journal.JournalID);
                 if (entity != null)
                 {
-                    entity = journal;
+                    _dbContext.Journals.AddOrUpdate(journal);
                     _dbContext.SaveChanges();
                 }
             }

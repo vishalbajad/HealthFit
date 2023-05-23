@@ -17,23 +17,27 @@ namespace HealthFit_Web.Pages
 
         public AddJournalModel(IOptions<SystemConfigurations> options, ILogger<AddJournalModel> logger, IHttpContextAccessor httpContextAccessor) : base(options, logger, httpContextAccessor)
         {
+
         }
 
-        public void OnGet()
+        public void OnGet(int id)
         {
-
+            API_Connector.Journal journalProxy = new API_Connector.Journal(this.GetAPIServerDetails());
+            JournalVM = journalProxy.GetJournal(id);
         }
 
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> OnPostAsync()
         {
             JournalVM.PublisherID = LoggedInUser.UserId;
-            
+
+            ModelState.ClearValidationState(nameof(JournalVM));
+
             if (!TryValidateModel(JournalVM, nameof(JournalVM)))
             {
                 return Page();
             }
-            
+
             API_Connector.Journal journalProxy = new API_Connector.Journal(this.GetAPIServerDetails());
 
             bool responce = journalProxy.EditJournal(JournalVM);

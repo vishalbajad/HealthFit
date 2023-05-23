@@ -7,6 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Moq" Version="4.18.4" />
+    <PackageReference Include="NUnit" Version="3.13.3" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Log_Client\Log_Client.csproj" />
     <ProjectReference Include="..\Object_Provider\Object_Provider.csproj" />
   </ItemGroup>
