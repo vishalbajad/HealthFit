@@ -34,7 +34,7 @@ namespace HealthFit.Object_Provider.Model
         public string PhoneNo { get; set; }
 
         private string _Website = string.Empty;
-        public string Website { get { return _Website; } set { value = _Website; } }
+        public string Website { get { return _Website; } set { _Website = value; } }
         
         [Required]
         public byte UserType { get; set; }
@@ -43,10 +43,10 @@ namespace HealthFit.Object_Provider.Model
         public string UserName { get; set; }
         
         private string _HashedPassword = string.Empty;
-        public string HashedPassword { get { return _HashedPassword; } set { value = _HashedPassword; } }
+        public string HashedPassword { get { return _HashedPassword; } set { _HashedPassword = value ; } }
         
         private string _PasswordSalt = string.Empty;
-        public string PasswordSalt { get { return _PasswordSalt; } set { value = _PasswordSalt; } }
+        public string PasswordSalt { get { return _PasswordSalt; } set { _PasswordSalt = value; } }
         
         private bool _isActive = true;
         public bool IsActive { get { return _isActive; } set { _isActive = value; } }

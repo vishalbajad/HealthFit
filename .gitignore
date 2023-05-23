@@ -1,2 +1,10 @@
 # Auto detect text files and perform LF normalization
-Source Code/HealthFit Web/bin/*
+Source Code/HealthFit Web/bin/
+Source Code/HealthFit APIs/.vs/
+Source Code/HealthFit APIs/bin/
+Source Code/HealthFit Database/.vs/
+*/bin/
+*/debug/
+*/obj/
+*/.vs/
+Source Code/HealthFit APIs/.vs/HealthFit APIs/DesignTimeBuild/.dtbcache.v2

@@ -12,56 +12,56 @@
         <h2 class="login_box">Sign Up</h2>
         <div class="form-group">
             <label for="fullname">Full Name</label>
-            <input type="text" id="txtfullname" name="UserDetails.UserDetails.FullName" placeholder="Enter your full name" required />
+            <input type="text" id="txtfullname" class="txtOnly" name="UserDetails.UserDetails.FullName" placeholder="Enter your full name" required maxlength="50" />
         </div>
         <div class="form-group">
             <label for="address">Address</label>
-            <input type="text" name="UserDetails.UserDetails.Address" id="txtaddress" placeholder="Enter your address" required />
+            <input type="text" class="txtOnly" name="UserDetails.UserDetails.Address" id="txtaddress" placeholder="Enter your address" required maxlength="100"/>
         </div>
         <div class="form-group">
             <label for="city">City</label>
-            <input type="text" id="txtcity" name="UserDetails.UserDetails.City" placeholder="Enter your city" required />
+            <input type="text" id="txtcity" class="txtOnly" name="UserDetails.UserDetails.City" placeholder="Enter your city" required maxlength="50" />
         </div>
         <div class="form-group">
             <label for="state">State</label>
-            <input type="text" id="txtstate" name="UserDetails.UserDetails.State" placeholder="Enter your state" required />
+            <input type="text" id="txtstate" class="txtOnly" name="UserDetails.UserDetails.State" placeholder="Enter your state" required maxlength="50" />
         </div>
         <div class="form-group">
             <label for="country">Country</label>
-            <input type="text" id="txtcountry" name="UserDetails.UserDetails.Country" placeholder="Enter your country" required />
+            <input type="text" id="txtcountry" class="txtOnly" name="UserDetails.UserDetails.Country" placeholder="Enter your country" required maxlength="50" />
         </div>
         <div class="form-group">
             <label for="email">Email</label>
-            <input type="email" id="txtemail" name="UserDetails.UserDetails.Email" placeholder="Enter your email" required />
+            <input type="email" id="txtemail" name="UserDetails.UserDetails.Email" placeholder="Enter your email" required maxlength="100"  />
         </div>
         <div class="form-group">
             <label for="phoneno">Phone No</label>
-            <input type="text" id="txtphoneno" name="UserDetails.UserDetails.PhoneNo" placeholder="Enter your phone no" required />
+            <input type="number" id="txtphoneno" name="UserDetails.UserDetails.PhoneNo" placeholder="Enter your phone no" required maxlength="12" />
         </div>
         <div class="form-group">
             <label for="website">Website/Social</label>
-            <input type="text" id="txtwebsite" name="UserDetails.UserDetails.Website" placeholder="Enter your details" />
+            <input type="text" id="txtwebsite" name="UserDetails.UserDetails.Website" placeholder="Enter your details" maxlength="100" />
         </div>
         <div class="form-group">
             <div class="radio-group">
                 <input type="radio" id="rbtnpublisher" name="UserDetails.UserDetails.UserType" value="2" />
                 <label for="rbtnpublisher">Publisher</label>
 
-                <input type="radio" id="rbtnpublicuser" name="UserDetails.UserDetails.UserType" value="1" />
+                <input type="radio" id="rbtnpublicuser" name="UserDetails.UserDetails.UserType" value="1" checked="checked" />
                 <label for="rbtnpublicuser">Public User</label>
             </div>
         </div>
         <div class="form-group">
             <label for="username">Username</label>
-            <input type="text" id="txtusername" name="UserDetails.UserDetails.UserName" placeholder="Enter your username" required />
+            <input type="text" id="txtusername" name="UserDetails.UserDetails.UserName" placeholder="Enter your username" required maxlength="30"  />
         </div>
         <div class="form-group">
             <label for="password">Password</label>
-            <input type="password" id="txtpassword" name="UserDetails.Password" placeholder="Enter your password" required />
+            <input type="password" id="txtpassword" name="UserDetails.Password" placeholder="Enter your password" required maxlength="30"  />
         </div>
         <div class="form-group">
             <label for="confirm-password">Confirm Password</label>
-            <input type="password" id="txtconfirmpassword" name="UserDetails.ConfirmPassword" placeholder="Confirm your password" required />
+            <input type="password" id="txtconfirmpassword" name="UserDetails.ConfirmPassword" placeholder="Confirm your password" required maxlength="30" />
         </div>
         <div class="form-group">
             <button type="submit" class="green" name="submit" formmethod="post"> Sign Up</button> <button type="button" class="cancel" onclick="location.href ='/index'">Cancel</button>
@@ -77,4 +77,14 @@
             <span class="text">@Model.responseMessage</span>
         </div>
     }
+    <script>
+        $(document).ready(function () {
+            $(".txtOnly").keypress(function (e) {
+                var key = e.keyCode;
+                if (key >= 48 && key <= 57) {
+                    e.preventDefault();
+                }
+            });
+        });
+    </script>
 }

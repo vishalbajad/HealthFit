@@ -18,12 +18,10 @@ namespace HealthFit.API_Connector
 
         private string requestContentType = "application/json; charset=utf-8";
 
-        private readonly HttpClient _httpClient;
         private readonly APIServer _apiserver;
 
-        public HTTPConnector(HttpClient httpClient, APIServer apiserver)
+        public HTTPConnector(APIServer apiserver)
         {
-            _httpClient = httpClient;
             _apiserver = apiserver;
         }
 

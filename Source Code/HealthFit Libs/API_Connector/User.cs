@@ -12,16 +12,15 @@ namespace API_Connector
 {
     public class User : IUser       
     {
-        APIServer _apiserver;
-
+        readonly APIServer _apiserver;
+        readonly HTTPConnector apiConnector;
         public User(APIServer apiserver)
         {
             _apiserver = apiserver;
+            apiConnector = new HTTPConnector(_apiserver);
         }
         public bool CreateUser(HealthFit.Object_Provider.Model.User user)
         {
-            HttpClient httpClient = new HttpClient();
-            HTTPConnector apiConnector = new HTTPConnector(httpClient, _apiserver);
             return apiConnector.SendJsonRequest<bool>("/User/CreateUser/", HTTPConnector.RequestMethod.POST, JsonSerializer.Serialize(user), string.Empty);
         }
 
