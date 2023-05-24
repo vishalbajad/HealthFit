@@ -6,6 +6,8 @@ using Data_Layer.DBContext;
 using HealthFit_Libs.InterfaceLibrary;
 using Microsoft.AspNetCore.Identity;
 using HealthFit.Utilities;
+using Microsoft.Extensions.Options;
+using HealthFit_APIs.Model;
 
 namespace HealthFit_APIs.Controllers
 {
@@ -17,12 +19,16 @@ namespace HealthFit_APIs.Controllers
         private readonly JournalContext journalContext;
         private readonly JournalRepository journalRepository;
         private readonly JournalService journalService;
-        public JournalController(ILogger<JournalController> logger)
+        private readonly IWebHostEnvironment _environment;
+        private readonly AppSettingsConfigurations appSettingsConfigurations;
+        public JournalController(ILogger<JournalController> logger, IWebHostEnvironment environment, IOptions<AppSettingsConfigurations> options)
         {
             _logger = logger;
             journalContext = new JournalContext();
             journalRepository = new JournalRepository(journalContext);
             journalService = new JournalService(journalRepository);
+            _environment = environment;
+            appSettingsConfigurations = options.Value;
         }
 
         [HttpGet]
@@ -56,5 +62,76 @@ namespace HealthFit_APIs.Controllers
         }
 
 
+        [HttpPost]
+        public async Task<IActionResult> UploadJournalCoverPhotoAndJournalFile([FromForm] List<IFormFile> file)
+        {
+            try
+            {
+                int journalId = 1;
+                IFormFile JournalFile = file[0];
+                IFormFile coverPhotofile = file[1];
+                Journal? journal = journalService.GetJournal(journalId);
+
+                if (journal?.JournalID > 0)
+                {
+                    bool coverPhotofileUploadStatus = false;
+                    string coverPhotofileUploadedName = string.Empty;
+                    bool JournalFileUploadStatus = false;
+                    string JournalFileUploadedName = string.Empty;
+
+                    if (coverPhotofile != null && coverPhotofile.Length > 0)
+                    {
+                        string uploadsFolder = Path.Combine(appSettingsConfigurations.FileServerPath, "Cover Photos");
+                        string uniqueFileName = Guid.NewGuid().ToString() + "_" + coverPhotofile.FileName;
+
+                        if (!Directory.Exists(uploadsFolder)) Directory.CreateDirectory(uploadsFolder);
+
+                        string filePath = Path.Combine(uploadsFolder, uniqueFileName);
+
+                        using (FileStream fileStream = new FileStream(filePath, FileMode.Create))
+                        {
+                            await coverPhotofile.CopyToAsync(fileStream);
+                        }
+                        coverPhotofileUploadedName = uniqueFileName;
+                        coverPhotofileUploadStatus = true;
+                    }
+
+                    if (JournalFile != null && JournalFile.Length > 0)
+                    {
+                        string uploadsFolder = Path.Combine(appSettingsConfigurations.FileServerPath, "Journals");
+                        string uniqueFileName = Guid.NewGuid().ToString() + "_" + JournalFile.FileName;
+
+                        if (!Directory.Exists(uploadsFolder)) Directory.CreateDirectory(uploadsFolder);
+
+                        string filePath = Path.Combine(uploadsFolder, uniqueFileName);
+
+                        using (FileStream fileStream = new FileStream(filePath, FileMode.Create))
+                        {
+                            await JournalFile.CopyToAsync(fileStream);
+                        }
+                        JournalFileUploadedName = uniqueFileName;
+                        JournalFileUploadStatus = true;
+                    }
+
+                    if (coverPhotofileUploadStatus)
+                        journal.JournalCoverPhotoPath = coverPhotofileUploadedName;
+
+                    if (coverPhotofileUploadStatus || JournalFileUploadStatus)
+                        journal.JournalPdfPath = JournalFileUploadedName;
+
+                    if (coverPhotofileUploadStatus || JournalFileUploadStatus)
+                        journalService.EditJournal(journal);
+
+                    return Ok();
+                }
+                else
+                    return StatusCode(500, $"Invalid Journal ID");
+
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"An error occurred: {ex.Message}");
+            }
+        }
     }
 }

@@ -3,12 +3,12 @@
 @{
     Layout = "../Layouts/_Form_Layout.cshtml";
 }
-@using (Html.BeginForm())
+@using (Html.BeginForm(FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
     <div class="container">
         <h2 class="login_box">New Journal</h2>
-        <table >
+        <table>
             <tr>
                 <td style="max-width:50%;vertical-align: top;">
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -96,14 +96,12 @@
                         <span asp-validation-for="JournalVM.SubmissionGuidelines" class="text-danger"></span>
                     </div>
                     <div class="form-group">
-                        <label asp-for="JournalVM.JournalPdfPath"></label>
-                        <input asp-for="JournalVM.JournalPdfPath" />
-                        <span asp-validation-for="JournalVM.JournalPdfPath" class="text-danger"></span>
+                        <label for="file1">Journal Cover Photo</label>
+                        <input type="file" id="journalCoverPhoto" name="journalCoverPhoto" accept=".png,.jpg,.jpeg" />
                     </div>
                     <div class="form-group">
-                        <label asp-for="JournalVM.JournalCoverPhotoPath"></label>
-                        <input asp-for="JournalVM.JournalCoverPhotoPath" />
-                        <span asp-validation-for="JournalVM.JournalCoverPhotoPath" class="text-danger"></span>
+                        <label for="file2">Journal File (.pdf Only)</label>
+                        <input type="file" id="journalDataFile" name="journalDataFile" accept=".pdf" />
                     </div>
                 </td>
             </tr>
