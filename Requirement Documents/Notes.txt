@@ -13,6 +13,8 @@ https://shop.lww.com/ACSM-s-Health---Fitness-Journal--Online/p/1536-593X
 
 ** [ValidateAntiForgeryToken]
 ** Salt and Hashed Password
+** Bundle and minify static assets in ASP.NET Core
+
 
 1. Home Page Design
 2. Register Publisher
@@ -67,3 +69,4 @@ Error Handling and Information Leakage: Implement appropriate error handling to 
 
 
 ** Make Sure you have installed SQL Server 
+** Keep Default.jpg in file server path

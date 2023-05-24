@@ -4,13 +4,15 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>HealthFit</title>
-    <script src="~/js/jquery-1.6.2.min.js"></script>
-    <link href="~/css/style.css" rel="stylesheet" />
-    <link href="~/css/portal.css" rel="stylesheet" />
-    <script src="~/js/site.js"></script>
-    <script src="~/js/functions.js"></script>
-    <script src="~/js/jquery.jcarousel.min.js"></script>
-    <script src="~/js/png-fix.js"></script>
+    <environment include="Development">
+        <script src="~/js/jquery-1.6.2.min.js" asp-append-version="true"></script>
+        <link href="~/css/style.css" rel="stylesheet" asp-append-version="true" />
+        <link href="~/css/portal.css" rel="stylesheet" asp-append-version="true"/>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+        <script src="~/js/functions.js" asp-append-version="true"></script>
+        <script src="~/js/jquery.jcarousel.min.js" asp-append-version="true"></script>
+        <script src="~/js/png-fix.js" asp-append-version="true"></script>
+    </environment>
 </head>
 <body>
     <!-- Header -->

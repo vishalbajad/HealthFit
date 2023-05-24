@@ -9,6 +9,7 @@
     height: 300px;
     object-fit: cover;
     border-radius: 4px;
+    border: solid lightblue 2px;
 }
 
 .book-info {

@@ -25,7 +25,7 @@
         <div class="products">
             <h3>Featured Products</h3>
             <div style="width:100%; height:50px;">
-                <input type="text" value="Search" style="border: solid 1px lightgray;padding: 5px;margin:2px;width:40%" />
+                <input id="txtSearch" type="text" placeholder="Search" style="border: solid 1px lightgray;padding: 5px;margin:2px;width:40%" />
                 <select id="relevance" style="float:right;border: solid 1px lightgray;padding: 5px; margin:2px">
                     <option>Relevance</option>
                     <option>Price: Low to High</option>
@@ -45,7 +45,7 @@
                     <option value="150">150 items at a time</option>
                 </select>
             </div>
-            <ul>
+            <ul id="journallistListForSearch">
                 @foreach (Journal journal in Model.JournalCollections)
                 {
                     <li>@await Html.PartialAsync("Partial Views/_ProductWidgetViewPartial",journal) </li>
@@ -145,6 +145,19 @@
     <!-- End Content -->
     <div class="cl">&nbsp;</div>
 </div>
+<script>
+    $(document).ready(function () {
+        $("#txtSearch").keyup(function () {
+            var txt = $('#txtSearch').val();
+            $("#journallistListForSearch").find(".product").each(function () {
+                if ($(this).text().toUpperCase().indexOf(txt.toUpperCase()) != -1) {
+                    $(this).closest("li").show();
+                } else
+                    $(this).closest("li").hide();
+            });
+        });
+    });
+</script>
 
 
 

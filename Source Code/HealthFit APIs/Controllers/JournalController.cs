@@ -34,13 +34,16 @@ namespace HealthFit_APIs.Controllers
         [HttpGet]
         public List<Journal>? GetAllJournal(int publisherId, bool active)
         {
-            return journalService.GetAllJournals(publisherId, active);
+            return journalService.GetAllJournals(publisherId, active)?.Select(x => { x.JournalCoverPhotoPathByte = HealthFit.Utilities.FileOperationsUtility.ImageToBase64(appSettingsConfigurations.FileServerPath, x.JournalCoverPhotoPath, "Default.jpg"); return x; }).ToList();
         }
 
         [HttpGet]
         public Journal? GetJournal(int id)
         {
-            return journalService.GetJournal(id);
+            Journal? journal = journalService.GetJournal(id);
+            if (journal != null && journal.JournalID > 0)
+                journal.JournalCoverPhotoPathByte = HealthFit.Utilities.FileOperationsUtility.ImageToBase64(appSettingsConfigurations.FileServerPath, journal.JournalCoverPhotoPath, "Default.jpg");
+            return journal;
         }
 
         [HttpPost]
@@ -83,7 +86,7 @@ namespace HealthFit_APIs.Controllers
 
                     if (coverPhotofile != null && coverPhotofile.Length > 0)
                     {
-                        string uploadsFolder = Path.Combine(appSettingsConfigurations.FileServerPath, "Cover Photos");
+                        string uploadsFolder = appSettingsConfigurations.FileServerPath;
                         string uniqueFileName = Guid.NewGuid().ToString() + "_" + coverPhotofile.FileName;
 
                         if (!Directory.Exists(uploadsFolder)) Directory.CreateDirectory(uploadsFolder);
@@ -100,7 +103,7 @@ namespace HealthFit_APIs.Controllers
 
                     if (JournalFile != null && JournalFile.Length > 0)
                     {
-                        string uploadsFolder = Path.Combine(appSettingsConfigurations.FileServerPath, "Journals");
+                        string uploadsFolder = appSettingsConfigurations.FileServerPath;
                         string uniqueFileName = Guid.NewGuid().ToString() + "_" + JournalFile.FileName;
 
                         if (!Directory.Exists(uploadsFolder)) Directory.CreateDirectory(uploadsFolder);

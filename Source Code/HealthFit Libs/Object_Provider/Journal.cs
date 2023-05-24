@@ -96,6 +96,16 @@ namespace HealthFit.Object_Provider.Model
         [ValidateNever]
         public string JournalPdfPath { get { return _JournalPdfPath; } set { _JournalPdfPath = value; } }
 
+        private string _JournalPdfPathByte = string.Empty;
+        [NotMapped]
+        [ValidateNever]
+        public string JournalPdfPathByte { get { return _JournalPdfPathByte; } set { _JournalPdfPathByte = value; } }
+
+        private string _JournalCoverPhotoPathByte = string.Empty;
+        [NotMapped]
+        [ValidateNever]
+        public string JournalCoverPhotoPathByte { get { return _JournalCoverPhotoPathByte; } set { _JournalCoverPhotoPathByte = value; } }
+
         private bool _isActive = true;
         [ValidateNever]
         public bool IsActive { get { return _isActive; } set { _isActive = value; } }
