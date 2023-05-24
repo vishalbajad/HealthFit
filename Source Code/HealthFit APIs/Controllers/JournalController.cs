@@ -63,14 +63,16 @@ namespace HealthFit_APIs.Controllers
 
 
         [HttpPost]
-        public async Task<IActionResult> UploadJournalCoverPhotoAndJournalFile([FromForm] List<IFormFile> file)
+        public async Task<IActionResult> UploadJournalCoverPhotoAndJournalFile([FromForm] JournalFileUpload journalFileUpload)
         {
             try
             {
-                int journalId = 1;
-                IFormFile JournalFile = file[0];
-                IFormFile coverPhotofile = file[1];
-                Journal? journal = journalService.GetJournal(journalId);
+                if (!(journalFileUpload.JournalId > 0))
+                    return StatusCode(500, $"Invalid Journal ID");
+
+                IFormFile JournalFile = journalFileUpload.JournalFile;
+                IFormFile coverPhotofile = journalFileUpload.CoverPhotofile;
+                Journal? journal = journalService.GetJournal(journalFileUpload.JournalId);
 
                 if (journal?.JournalID > 0)
                 {

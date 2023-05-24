@@ -44,5 +44,25 @@ namespace API_Connector
         {
             return apiConnector.SendJsonRequest<List<string>?>("/Journal/GetAllCategoryList/", HTTPConnector.RequestMethod.GET, string.Empty, string.Format("publisherId={0}&active={1}", publisherId, true));
         }
+        public string UploadJournalCoverPhotoAndJournalFile(JournalFileUpload journalFileUpload)
+        {
+
+            var httpClient = new HttpClient();
+            httpClient.BaseAddress = new Uri(string.Format(_apiserver.ServerBaseUrl + "/Journal/"));
+
+            using var requestMessage = new HttpRequestMessage(HttpMethod.Post, "UploadJournalCoverPhotoAndJournalFile");
+            using var multipartContent = new MultipartFormDataContent {
+                { new StreamContent(journalFileUpload.CoverPhotofile.OpenReadStream()), "CoverPhotofile", journalFileUpload.CoverPhotofile.FileName },
+                { new StreamContent(journalFileUpload.JournalFile.OpenReadStream()), "JournalFile", journalFileUpload.JournalFile.FileName } ,
+                { new StringContent(journalFileUpload.JournalId.ToString()), "JournalId"}
+            };
+
+            requestMessage.Content = multipartContent;
+
+            var responseStatus = httpClient.Send(requestMessage);
+
+            return responseStatus.ReasonPhrase;
+
+        }
     }
 }

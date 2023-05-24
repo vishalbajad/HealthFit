@@ -63,14 +63,7 @@ namespace HealthFit_Web.Pages
 
             bool responce = journalProxy.EditJournal(JournalVM);
 
-            var client1 = new HttpClient();
-            client1.BaseAddress = new Uri("https://localhost:7035/Journal/");
-
-            using var request1 = new HttpRequestMessage(HttpMethod.Post, "UploadJournalCoverPhotoAndJournalFile");
-            using var content1 = new MultipartFormDataContent { { new StreamContent(journalCoverPhoto.OpenReadStream()), "file", journalCoverPhoto.FileName }, { new StreamContent(journalDataFile.OpenReadStream()), "file", journalDataFile.FileName } };
-            request1.Content = content1;
-
-            var status1 = client1.Send(request1);
+            journalProxy.UploadJournalCoverPhotoAndJournalFile(new JournalFileUpload { JournalId = JournalVM.JournalID, CoverPhotofile = journalCoverPhoto, JournalFile = journalDataFile });
 
             if (responce)
             {
@@ -79,11 +72,6 @@ namespace HealthFit_Web.Pages
             }
 
             return Page();
-        }
-        private static async Task UploadSampleFile(IFormFile journalCoverPhoto, IFormFile journalDataFile)
-        {
-           
-
         }
     }
 }
