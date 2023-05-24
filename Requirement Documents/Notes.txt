@@ -11,10 +11,12 @@ https://shop.lww.com/ACSM-s-Health---Fitness-Journal-/p/1091-5397
 IMP : https://shop.lww.com/ACSM-s-Health---Fitness-Journal--Online/p/1536-593X
 https://shop.lww.com/ACSM-s-Health---Fitness-Journal--Online/p/1536-593X
 
-** [ValidateAntiForgeryToken]
+** ValidateAntiForgeryToken
 ** Salt and Hashed Password
 ** Bundle and minify static assets in ASP.NET Core
-
+** used HTTPS for secure connection
+** Showing journals cover and document in base 64 for more security
+** disabled right click
 
 1. Home Page Design
 2. Register Publisher
@@ -41,9 +43,6 @@ Public User
 Setup Steps
 https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-aspnetcore-7.0.5-windows-hosting-bundle-installer
 
-
-
-Use HTTPS: Always use HTTPS (HTTP over SSL/TLS) to encrypt communication between the web server and clients. Obtain and install an SSL/TLS certificate for your domain to enable secure connections.
 
 Input Validation: Validate and sanitize all user inputs to prevent common attacks like cross-site scripting (XSS), SQL injection, and cross-site request forgery (CSRF). Use built-in validation attributes, such as [Required], [StringLength], or implement custom validation logic.
 

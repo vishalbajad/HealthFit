@@ -48,27 +48,37 @@
                         option.classList.add('selected');
                     }
                 </script>
-                <div class="buy-options">
-                    <div class="buy-option selected" onclick="selectOption(this)">
-                        <h2>1 Year</h2>
-                        <p>$@Model.JournalVM.Price</p>
+                @if (!Model.IsSubscribedForJournal)
+                {
+                    <div class="buy-options">
+                        <div class="buy-option selected" onclick="selectOption(this)">
+                            <h2>1 Year</h2>
+                            <p>$@Model.JournalVM.Price</p>
+                        </div>
+                        <div class="buy-option" onclick="selectOption(this)">
+                            <h2>2 Years</h2>
+                            <p>$@(Model.JournalVM.Price * 2)</p>
+                        </div>
+                        <div class="buy-option" onclick="selectOption(this)">
+                            <h2>Lifetime</h2>
+                            <p>$@(Model.JournalVM.Price * 10) </p>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="green" style="margin-left:25%">Buy Now</button>
+                        </div>
                     </div>
-                    <div class="buy-option" onclick="selectOption(this)">
-                        <h2>2 Years</h2>
-                        <p>$@(Model.JournalVM.Price * 2)</p>
-                    </div>
-                    <div class="buy-option" onclick="selectOption(this)">
-                        <h2>Lifetime</h2>
-                        <p>$@(Model.JournalVM.Price * 10) </p>
-                    </div>
-                    <div class="form-group">
-                        <button type="submit" class="green" style="margin-left:25%">Buy Now</button>
-                    </div>
-                </div>
+                }
             </td>
         </tr>
         <tr>
             <td style="width:10%; vertical-align:top">
+                @if (Model.IsSubscribedForJournal)
+                {
+                    <div class="form-group">
+                        <button id="btnViewJournal" type="submit" class="green" style="margin-left:25%" onclick="location.href='PdfViewer?journalId=@Model.JournalVM.JournalID'">View Journal</button>
+                    </div>
+                    <br />
+                }
                 <div class="social-logos">
                     <a href="#"><i class="fab fa-facebook-f"><img src="~/images/fb.png" width="40" /></i></a>
                     <a href="#"><i class="fab fa-facebook-f"><img src="~/images/instalgram.png" width="40" /></i></a>
@@ -107,13 +117,4 @@
             </td>
         </tr>
     </table>
-
-    <div class="book-details">
-
-
-
-
-        <div>
-        </div>
-    </div>
 </div>

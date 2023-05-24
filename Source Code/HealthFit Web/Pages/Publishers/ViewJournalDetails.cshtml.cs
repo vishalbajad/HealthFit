@@ -19,6 +19,8 @@ namespace HealthFit_Web.Pages
         }
         [BindProperty]
         public Journal JournalVM { get; set; }
+        [BindProperty]
+        public bool IsSubscribedForJournal { get; set; }
 
         [BindProperty]
         public string PublisherName { get; set; }
@@ -37,6 +39,7 @@ namespace HealthFit_Web.Pages
                     {
                         JournalVM = journalProxy.GetJournal(journalid);
                         PublisherName = userlProxy.GetAllPublisherList(JournalVM.PublisherID).SingleOrDefault().FullName;
+                        IsSubscribedForJournal = JournalVM.PublisherID == LoggedInUser?.UserId;
                     }
                 }
             }

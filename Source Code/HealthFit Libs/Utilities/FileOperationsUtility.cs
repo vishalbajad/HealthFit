@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -27,6 +28,21 @@ namespace HealthFit.Utilities
                 return Path.Join(FileServerPath, DefaultImage);
             }
         }
+        public static byte[] PdfToBytes(string FileServerPath, string imagePath, string DefaultPdf)
+        {
+            try
+            {
+                string imageFullPath = Path.Join(FileServerPath, imagePath);
+                if (!File.Exists(imageFullPath))
+                    imageFullPath = Path.Join(FileServerPath, DefaultPdf);
+
+                return File.ReadAllBytes(imageFullPath);
+            }
+            catch
+            {
+                return default(byte[]);
+            }
+        }
         private static string GetMimeTypeFromExtension(string fileExtension)
         {
             switch (fileExtension)
@@ -40,6 +56,8 @@ namespace HealthFit.Utilities
                     return "image/gif";
                 case "txt":
                     return "text/plain";
+                case "pdf":
+                    return "application/pdf";
                 // Add more cases for other file extensions and corresponding MIME types
                 default:
                     return "application/octet-stream";

@@ -42,7 +42,10 @@ namespace HealthFit_APIs.Controllers
         {
             Journal? journal = journalService.GetJournal(id);
             if (journal != null && journal.JournalID > 0)
+            {
                 journal.JournalCoverPhotoPathByte = HealthFit.Utilities.FileOperationsUtility.ImageToBase64(appSettingsConfigurations.FileServerPath, journal.JournalCoverPhotoPath, "Default.jpg");
+                journal.JournalPdfPathByte = HealthFit.Utilities.FileOperationsUtility.PdfToBytes(appSettingsConfigurations.FileServerPath, journal.JournalPdfPath, "Default.pdf");
+            }
             return journal;
         }
 

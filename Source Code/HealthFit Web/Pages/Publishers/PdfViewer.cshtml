@@ -1,0 +1,44 @@
+﻿@page
+@model PdfViewerModel
+@{
+    ViewData["Title"] = "Home page";
+    Layout = "../Layouts/_Form_Layout.cshtml";
+}
+<div class="container">
+    <ul class="breadcrumbs">
+        <li><a href="../Index">Home</a></li>
+        <li class="current">@Model.JournalVM.Title</li>
+    </ul>
+    <table style="width:100%; vertical-align:top">
+        <tr>
+            <td style="width:100%; vertical-align:top">
+                <div class="book-info">
+                    <h2 class="book-title">@Model.JournalVM.Title</h2>
+                    <p>
+                        <div class="rating-snapshot">
+                            <div class="rating">
+                                <span class="rating-value">4.5</span>
+                                <span class="out-of">out of 5</span>
+                            </div>
+                            <div class="stars">
+                                <span class="filled-stars"></span>
+                                <span class="empty-stars"></span>
+                            </div>
+                            <div class="reviews">
+                                <span class="total-reviews">542</span>
+                                <span class="reviews-text">reviews</span>
+                            </div>
+                        </div>
+                    </p>
+                    <p class="book-description">ISSN : @Model.JournalVM.ISSN</p>
+                    <p class="book-description">@Model.JournalVM.Description.</p>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td style="width:100%; vertical-align:top">
+                <iframe src="PdfReader?journalId=@Model.JournalVM.JournalID" frameborder="0" width="820" height="600" disabled></iframe>
+            </td>
+        </tr>
+    </table>
+</div>
