@@ -21,7 +21,7 @@ namespace HealthFit_APIs.Controllers
         private readonly JournalService journalService;
         private readonly IWebHostEnvironment _environment;
         private readonly AppSettingsConfigurations appSettingsConfigurations;
-        public JournalController(ILogger<JournalController> logger, IWebHostEnvironment environment, IOptions<AppSettingsConfigurations> options)
+        public JournalController(IOptions<AppSettingsConfigurations> options, ILogger<JournalController> logger, IWebHostEnvironment environment)
         {
             _logger = logger;
             journalContext = new JournalContext();

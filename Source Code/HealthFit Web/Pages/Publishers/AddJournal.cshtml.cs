@@ -37,14 +37,14 @@ namespace HealthFit_Web.Pages
         public async Task<IActionResult> OnPostAsync(IFormFile journalCoverPhoto, IFormFile journalDataFile)
         {
             string[] allowedExtensionsForJournalCoverPhoto = { ".png", ".jpg", ".jpeg" };
-            if (!IsFileExtensionAllowed(journalCoverPhoto.FileName, allowedExtensionsForJournalCoverPhoto))
+            if (journalCoverPhoto!=null && !IsFileExtensionAllowed(journalCoverPhoto.FileName, allowedExtensionsForJournalCoverPhoto))
             {
                 ModelState.AddModelError("", "Only .png, .jpg, .jpeg files are allowed.");
                 return Page();
             }
 
             string[] allowedExtensionsForJournalDataFile = { ".pdf" };
-            if (!IsFileExtensionAllowed(journalDataFile.FileName, allowedExtensionsForJournalDataFile))
+            if (journalDataFile != null && !IsFileExtensionAllowed(journalDataFile.FileName, allowedExtensionsForJournalDataFile))
             {
                 ModelState.AddModelError("", "Only PDF files are allowed.");
                 return Page();

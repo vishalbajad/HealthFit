@@ -1,3 +1,5 @@
+using HealthFit.Object_Provider.Model;
+using HealthFit_APIs.Model;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
@@ -9,6 +11,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllers();
 builder.Services.AddRazorPages();
+builder.Services.Configure<AppSettingsConfigurations>(builder.Configuration.GetSection("AppSettingsConfigurations"));
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddSession(options =>
 {

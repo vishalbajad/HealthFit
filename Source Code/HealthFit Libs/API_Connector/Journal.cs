@@ -48,7 +48,7 @@ namespace API_Connector
         {
 
             var httpClient = new HttpClient();
-            httpClient.BaseAddress = new Uri(string.Format(_apiserver.ServerBaseUrl + "/Journal/"));
+            httpClient.BaseAddress = new Uri(_apiserver.ServerBaseUrl.TrimEnd('/') + "/" + "/Journal/".TrimStart('/'));
 
             using var requestMessage = new HttpRequestMessage(HttpMethod.Post, "UploadJournalCoverPhotoAndJournalFile");
             using var multipartContent = new MultipartFormDataContent {
