@@ -50,7 +50,7 @@ namespace Data_Layer.Repositories
         {
             return _dbContext.Journals.FirstOrDefault(obj => obj.JournalID == id);
         }
-       
+
         public List<Journal>? GetAllJournals(int publisherId = 0, bool active = true)
         {
             if (publisherId == 0)
@@ -66,6 +66,12 @@ namespace Data_Layer.Repositories
             else
                 return _dbContext.Journals.Where(obj => obj.PublisherID == publisherId && obj.IsActive == active)?.ToList();
         }
-
+        public List<string>? GetAllCategoryList(int publisherId = 0, bool active = true)
+        {
+            if (publisherId == 0)
+                return _dbContext.Journals.Where(obj => obj.IsActive == active)?.Select(cat => cat.Category).ToList();
+            else
+                return _dbContext.Journals.Where(obj => obj.PublisherID == publisherId && obj.IsActive == active)?.Select(cat => cat.Category).ToList();
+        }
     }
 }

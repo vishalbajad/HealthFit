@@ -1,4 +1,5 @@
 ﻿@page
+@using HealthFit.Object_Provider.Model
 @model IndexModel
 @{
     ViewData["Title"] = "Home page";
@@ -8,7 +9,14 @@
 <div id="main" class="shell">
     <!-- Sidebar -->
     <div id="sidebar">
-        @await Html.PartialAsync("Partial Views/_CategoryPublishersPartial",model: null)
+        <ul class="categories">
+            <li>
+                @await Html.PartialAsync("Partial Views/_CategoryListPartial",Model.CategoryCollections)
+            </li>
+            <li>
+                @await Html.PartialAsync("Partial Views/_PublishersList",Model.PublishersCollections)
+            </li>
+        </ul>
     </div>
     <!-- End Sidebar -->
     <!-- Content -->
@@ -38,12 +46,10 @@
                 </select>
             </div>
             <ul>
-                    @for (int i = 0; i < 20; i++)
-                    {
-                    <li>
-                        @await Html.PartialAsync("Partial Views/_ProductWidgetViewPartial",model: null)
-                    </li>
-                    }
+                @foreach (Journal journal in Model.JournalCollections)
+                {
+                    <li>@await Html.PartialAsync("Partial Views/_ProductWidgetViewPartial",journal) </li>
+                }
             </ul>
             <!-- End Products -->
         </div>

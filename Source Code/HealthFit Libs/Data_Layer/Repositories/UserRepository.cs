@@ -23,17 +23,19 @@ namespace Data_Layer.Repositories
         {
             return _dbContext.Users.FirstOrDefault(obj => obj.UserId == id);
         }
+
         public User? GetUserByUsername(string userName)
         {
             return _dbContext.Users.FirstOrDefault(obj => obj.UserName == userName);
         }
-        
+
         public bool CreateUser(User user)
         {
             _dbContext.Users.Add(user);
             _dbContext.SaveChanges();
             return true;
         }
+
         public bool DeleteUser(int id)
         {
             User? objuser = GetUser(id);
@@ -43,6 +45,21 @@ namespace Data_Layer.Repositories
                 _dbContext.SaveChanges();
             }
             return true;
+        }
+
+        public List<User>? GetAllPublisherList(int publisherId = 0, bool active = true)
+        {
+            if (publisherId == 0)
+                return _dbContext.Users.Where(obj => obj.IsActive == active && obj.UserType == 2)?.ToList();
+            else
+                return _dbContext.Users.Where(obj => obj.UserId == publisherId && obj.IsActive == active && obj.UserType == 2)?.ToList();
+        }
+        public List<User>? GetAllPublicUserList(int userId = 0, bool active = true)
+        {
+            if (userId == 0)
+                return _dbContext.Users.Where(obj => obj.IsActive == active && obj.UserType == 1)?.ToList();
+            else
+                return _dbContext.Users.Where(obj => obj.UserId == userId && obj.IsActive == active && obj.UserType == 1)?.ToList();
         }
     }
 }

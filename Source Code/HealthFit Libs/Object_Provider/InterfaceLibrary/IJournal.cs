@@ -13,5 +13,6 @@ namespace HealthFit_Libs.InterfaceLibrary
         List<HealthFit.Object_Provider.Model.Journal> GetAllJournal(int publisherId);
         bool EditJournal(Journal journal);
         bool DeleteJournal(int id);
+        List<string>? GetAllCategoryList(int publisherId = 0, bool active = true);
     }
 }

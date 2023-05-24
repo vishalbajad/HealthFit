@@ -1,0 +1,13 @@
+﻿@using HealthFit.Object_Provider.Model;
+@model List<User>?
+
+<h4>Publishers</h4>
+<ul>
+    @if (Model != null)
+    {
+        @foreach (User usr in Model)
+        {
+            <li><a href="#">@usr.FullName</a></li>
+        }
+    }
+</ul>

@@ -28,5 +28,14 @@ namespace API_Connector
         {
             return apiConnector.SendJsonRequest<HealthFit.Object_Provider.Model.User?>("/User/AunthenticateUser/", HTTPConnector.RequestMethod.GET, string.Empty, string.Format("userName={0}&password={1}", userName, password));
         }
+
+        public List<HealthFit.Object_Provider.Model.User>? GetAllPublisherList(int publisherId = 0, bool active = true)
+        {
+            return apiConnector.SendJsonRequest<List<HealthFit.Object_Provider.Model.User>?>("/User/GetAllPublisherList/", HTTPConnector.RequestMethod.GET, string.Empty, string.Format("publisherId={0}&active={1}", publisherId, true));
+        }
+        public List<HealthFit.Object_Provider.Model.User>? GetAllPublicUserList(int userId = 0, bool active = true)
+        {
+            return apiConnector.SendJsonRequest<List<HealthFit.Object_Provider.Model.User>?>("/User/GetAllPublicUserList/", HTTPConnector.RequestMethod.GET, string.Empty, string.Format("userId={0}&active={1}", userId, true));
+        }
     }
 }

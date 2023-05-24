@@ -12,13 +12,25 @@
         <h2 class="login_box">Sign Up</h2>
         <table style="vertical-align: top;">
             <tr>
+                <td colspan="2" style="vertical-align: top;">
+                    <div class="form-group">
+                        <div class="radio-group">
+                            <input type="radio" id="rbtnpublisher" name="UserDetails.UserDetails.UserType" value="2" />
+                            <label for="rbtnpublisher">Publisher</label>
+
+                            <input type="radio" id="rbtnpublicuser" name="UserDetails.UserDetails.UserType" value="1" checked="checked" />
+                            <label for="rbtnpublicuser">Public User</label>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
                 <td style="max-width:48%;vertical-align: top;">
                     <div class="form-group">
                         <label asp-for="UserDetails.UserDetails.FullName"></label>
                         <input asp-for="UserDetails.UserDetails.FullName" class="txtOnly" placeholder="Enter your full name" required maxlength="50" />
                         <span asp-validation-for="UserDetails.UserDetails.FullName" class="text-danger"></span>
                     </div>
-
                     <div class="form-group">
                         <label asp-for="UserDetails.UserDetails.PhoneNo"></label>
                         <input asp-for="UserDetails.UserDetails.PhoneNo" placeholder="Enter your PhoneNo" maxlength="12" />
@@ -56,23 +68,11 @@
                         <input asp-for="UserDetails.UserDetails.Website" placeholder="Enter your Website" maxlength="100" />
                         <span asp-validation-for="UserDetails.UserDetails.Website" class="text-danger"></span>
                     </div>
-
-                    <div class="form-group" style="padding: 7px">
-                        <div class="radio-group">
-                            <input type="radio" id="rbtnpublisher" name="UserDetails.UserDetails.UserType" value="2" />
-                            <label for="rbtnpublisher">Publisher</label>
-
-                            <input type="radio" id="rbtnpublicuser" name="UserDetails.UserDetails.UserType" value="1" checked="checked" />
-                            <label for="rbtnpublicuser">Public User</label>
-                        </div>
-                    </div>
-
                     <div class="form-group">
                         <label asp-for="UserDetails.UserDetails.UserName"></label>
                         <input asp-for="UserDetails.UserDetails.UserName" placeholder="Enter your UserName" class="txtOnly" maxlength="30" required />
                         <span asp-validation-for="UserDetails.UserDetails.UserName" class="text-danger"></span>
                     </div>
-
                     <div class="form-group">
                         <label asp-for="UserDetails.Password"></label>
                         <input asp-for="UserDetails.Password" placeholder="Enter your Password" maxlength="30" required />
@@ -103,7 +103,7 @@
         </div>
         <script>
             $(document).ready(function () {
-                setTimeout(function () { $("#btnClancel").click(); }, 3000);
+                setTimeout(function () { $("#btnClancel").click(); }, 2000);
             });
         </script>
     }

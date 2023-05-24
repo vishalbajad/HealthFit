@@ -11,5 +11,7 @@ namespace HealthFit_Libs.InterfaceLibrary
     {
         bool CreateUser(User user);
         User? AunthenticateUser(string userName, string password);
+        List<HealthFit.Object_Provider.Model.User>? GetAllPublisherList(int publisherId = 0, bool active = true);
+        List<HealthFit.Object_Provider.Model.User>? GetAllPublicUserList(int userId = 0, bool active = true);
     }
 }

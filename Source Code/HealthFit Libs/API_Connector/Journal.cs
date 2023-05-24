@@ -30,7 +30,7 @@ namespace API_Connector
             return apiConnector.SendJsonRequest<bool>("/Journal/DeleteJournal/", HTTPConnector.RequestMethod.GET, string.Empty, "id=" + id);
         }
 
-        public List<HealthFit.Object_Provider.Model.Journal> GetAllJournal(int publisherId)
+        public List<HealthFit.Object_Provider.Model.Journal> GetAllJournal(int publisherId = 0)
         {
             return apiConnector.SendJsonRequest<List<HealthFit.Object_Provider.Model.Journal>>("/Journal/GetAllJournal/", HTTPConnector.RequestMethod.GET, string.Empty, string.Format("publisherId={0}&active={1}", publisherId, true));
         }
@@ -38,6 +38,11 @@ namespace API_Connector
         public HealthFit.Object_Provider.Model.Journal GetJournal(int id)
         {
             return apiConnector.SendJsonRequest<HealthFit.Object_Provider.Model.Journal>("/Journal/GetJournal/", HTTPConnector.RequestMethod.GET, string.Empty, "id=" + id);
+        }
+
+        public List<string>? GetAllCategoryList(int publisherId = 0, bool active = true)
+        {
+            return apiConnector.SendJsonRequest<List<string>?>("/Journal/GetAllCategoryList/", HTTPConnector.RequestMethod.GET, string.Empty, string.Format("publisherId={0}&active={1}", publisherId, true));
         }
     }
 }

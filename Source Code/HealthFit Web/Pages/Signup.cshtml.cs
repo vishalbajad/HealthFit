@@ -22,7 +22,6 @@ namespace HealthFit_Web.Pages
        
         public void OnGet()
         {
-
         }
 
         [ValidateAntiForgeryToken]

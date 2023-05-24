@@ -1,15 +1,23 @@
-﻿@page
-@model ProductWidgetViewModel
-@{
-}
+﻿@using HealthFit.Object_Provider.Model;
+@model Journal
 <div class="product">
     <a href="#" class="info">
         <span class="holder">
             <img src="images/image01.jpg" alt="" />
-            <span class="book-name">Book Name</span>
-            <span class="author">by John Smith</span>
-            <span class="description">Maecenas vehicula ante eu enim pharetra<br />scelerisque dignissim <br />sollicitudin nisi</span>
+            <span class="book-name">@Model.Title</span>
+            <span class="author">@Model.ISSN</span>
+            <span class="description"> 
+                @if (Model.Description.Length < 30)
+                {
+                    @Model.Description
+                }
+                else
+                {
+                    @(Model.Description.Substring(0, 30) + " more..")
+                }
+            </span>
         </span>
     </a>
-    <a href="#" class="buy-btn">SUBSCRIBE<span class="price"><span class="low">$</span>22<span class="high">00</span></span></a>
+    <a href="#" class="buy-btn">SUBSCRIBE<span class="price"><span class="low">$</span>@Model.Price</span></a>
 </div>
+

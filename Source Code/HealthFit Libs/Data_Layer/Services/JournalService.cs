@@ -37,5 +37,10 @@ namespace Data_Layer.Services
         {
             return _journalRepository.GetAllJournals(publisherId, active);
         }
+
+        public List<string>? GetAllCategoryList(int publisherId = 0, bool active = true)
+        {
+            return _journalRepository.GetAllCategoryList(publisherId, active);
+        }
     }
 }

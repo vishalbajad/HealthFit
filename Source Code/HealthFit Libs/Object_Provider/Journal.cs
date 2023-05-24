@@ -17,7 +17,7 @@ namespace HealthFit.Object_Provider.Model
         [Required]
         [StringLength(50, ErrorMessage = "Maximum 50 characters exceeded")]
         public string Title { get; set; }
-       
+
         [Required]
         public string ISSN { get; set; }
 
@@ -29,6 +29,11 @@ namespace HealthFit.Object_Provider.Model
         [Display(Name = "Publication Frequency")]
         public string PublicationFrequency { get { return _PublicationFrequency; } set { _PublicationFrequency = value; } }
 
+        private string _category = string.Empty;
+        [Required]
+        [Display(Name = "Category")]
+        public string Category { get { return _category; } set { _category = value; } }
+
         [Required]
         [Display(Name = "Publication Year")]
         public string PublicationStartYear { get; set; }
@@ -37,8 +42,8 @@ namespace HealthFit.Object_Provider.Model
         public string Description { get; set; }
 
         [Required]
-        public string Price { get; set; }
-        
+        public decimal Price { get; set; }
+
         private string _subjectArea = string.Empty;
         [Display(Name = "Subject Area")]
         [ValidateNever]

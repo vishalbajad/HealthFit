@@ -1,5 +1,6 @@
 ﻿using Data_Layer.Repositories;
 using HealthFit.Object_Provider.Model;
+using System.Security.Policy;
 
 namespace Data_Layer.Services
 {
@@ -34,6 +35,14 @@ namespace Data_Layer.Services
         public bool DeleteUser(int id)
         {
             return _userRepository.DeleteUser(id);
+        }
+        public List<User>? GetAllPublisherList(int publisherId = 0, bool active = true)
+        {
+            return _userRepository.GetAllPublisherList(publisherId, active);
+        }
+        public List<User>? GetAllPublicUserList(int userId = 0, bool active = true)
+        {
+            return _userRepository.GetAllPublicUserList(userId, active);
         }
     }
 }

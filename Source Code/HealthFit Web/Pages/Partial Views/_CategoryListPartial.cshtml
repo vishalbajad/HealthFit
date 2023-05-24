@@ -1,0 +1,11 @@
+﻿@model List<string>?
+<h4>Categories</h4>
+<ul>
+    @if (Model != null)
+    {
+        @foreach (string category in Model)
+        {
+            <li><a href="#">@category</a></li>
+        }
+    }
+</ul>

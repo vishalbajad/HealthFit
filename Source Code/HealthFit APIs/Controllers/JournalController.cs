@@ -26,7 +26,7 @@ namespace HealthFit_APIs.Controllers
         }
 
         [HttpGet]
-        public List<Journal>? GetAllJournal(int publisherId,bool active)
+        public List<Journal>? GetAllJournal(int publisherId, bool active)
         {
             return journalService.GetAllJournals(publisherId, active);
         }
@@ -48,6 +48,13 @@ namespace HealthFit_APIs.Controllers
         {
             return journalService.DeleteJournal(id);
         }
+
+        [HttpGet]
+        public List<string>? GetAllCategoryList(int publisherId = 0, bool active = true)
+        {
+            return journalService.GetAllCategoryList(publisherId, active);
+        }
+
 
     }
 }

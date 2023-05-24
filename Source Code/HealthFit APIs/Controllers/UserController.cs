@@ -70,6 +70,16 @@ namespace HealthFit_APIs.Controllers
         {
             return userService.DeleteUser(id);
         }
+        [HttpGet]
+        public List<User>? GetAllPublisherList(int publisherId = 0, bool active = true)
+        {
+            return userService.GetAllPublisherList(publisherId, active);
+        }
+        [HttpGet]
+        public List<User>? GetAllPublicUserList(int userId = 0, bool active = true)
+        {
+            return userService.GetAllPublicUserList(userId, active);
+        }
 
     }
 }
