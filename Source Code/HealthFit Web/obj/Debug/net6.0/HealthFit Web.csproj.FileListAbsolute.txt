@@ -243,7 +243,6 @@ G:\Personal\Varian-HealthFit\Source Code\HealthFit Web\obj\Debug\net6.0\HealthFi
 G:\Personal\Varian-HealthFit\Source Code\HealthFit Web\obj\Debug\net6.0\HealthFit Web.AssemblyInfoInputs.cache
 G:\Personal\Varian-HealthFit\Source Code\HealthFit Web\obj\Debug\net6.0\HealthFit Web.AssemblyInfo.cs
 G:\Personal\Varian-HealthFit\Source Code\HealthFit Web\obj\Debug\net6.0\HealthFit Web.csproj.CoreCompileInputs.cache
-G:\Personal\Varian-HealthFit\Source Code\HealthFit Web\obj\Debug\net6.0\HealthFit Web.MvcApplicationPartsAssemblyInfo.cs
 G:\Personal\Varian-HealthFit\Source Code\HealthFit Web\obj\Debug\net6.0\HealthFit Web.MvcApplicationPartsAssemblyInfo.cache
 G:\Personal\Varian-HealthFit\Source Code\HealthFit Web\obj\Debug\net6.0\HealthFit Web.RazorAssemblyInfo.cache
 G:\Personal\Varian-HealthFit\Source Code\HealthFit Web\obj\Debug\net6.0\HealthFit Web.RazorAssemblyInfo.cs
