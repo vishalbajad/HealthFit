@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "oBLvE+Z3UXTH54MKGKbjFfZFrDCWVhSfWI4OxdIeYnw=",
+  "Hash": "hYEbFNBu9O/elrv5zHK09DM2hXCFk92O8Z1gFv8e0z8=",
   "Source": "HealthFit Web",
   "BasePath": "_content/HealthFit Web",
   "Mode": "Default",
@@ -270,6 +270,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\favicon.ico"
+    },
+    {
+      "Identity": "G:\\Personal\\Varian-HealthFit\\Source Code\\HealthFit Web\\wwwroot\\images\\fb.png",
+      "SourceId": "HealthFit Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "G:\\Personal\\Varian-HealthFit\\Source Code\\HealthFit Web\\wwwroot\\",
+      "BasePath": "_content/HealthFit Web",
+      "RelativePath": "images/fb.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\fb.png"
     },
     {
       "Identity": "G:\\Personal\\Varian-HealthFit\\Source Code\\HealthFit Web\\wwwroot\\images\\footer.png",
@@ -544,6 +561,40 @@
       "OriginalItemSpec": "wwwroot\\images\\image-best04.jpg"
     },
     {
+      "Identity": "G:\\Personal\\Varian-HealthFit\\Source Code\\HealthFit Web\\wwwroot\\images\\instalgram.png",
+      "SourceId": "HealthFit Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "G:\\Personal\\Varian-HealthFit\\Source Code\\HealthFit Web\\wwwroot\\",
+      "BasePath": "_content/HealthFit Web",
+      "RelativePath": "images/instalgram.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\instalgram.png"
+    },
+    {
+      "Identity": "G:\\Personal\\Varian-HealthFit\\Source Code\\HealthFit Web\\wwwroot\\images\\Linkedin.png",
+      "SourceId": "HealthFit Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "G:\\Personal\\Varian-HealthFit\\Source Code\\HealthFit Web\\wwwroot\\",
+      "BasePath": "_content/HealthFit Web",
+      "RelativePath": "images/Linkedin.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\Linkedin.png"
+    },
+    {
       "Identity": "G:\\Personal\\Varian-HealthFit\\Source Code\\HealthFit Web\\wwwroot\\images\\list-image.png",
       "SourceId": "HealthFit Web",
       "SourceType": "Discovered",
@@ -576,6 +627,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\logo.png"
+    },
+    {
+      "Identity": "G:\\Personal\\Varian-HealthFit\\Source Code\\HealthFit Web\\wwwroot\\images\\pint.png",
+      "SourceId": "HealthFit Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "G:\\Personal\\Varian-HealthFit\\Source Code\\HealthFit Web\\wwwroot\\",
+      "BasePath": "_content/HealthFit Web",
+      "RelativePath": "images/pint.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\pint.png"
     },
     {
       "Identity": "G:\\Personal\\Varian-HealthFit\\Source Code\\HealthFit Web\\wwwroot\\images\\price.png",
@@ -729,6 +797,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\submit-btn.png"
+    },
+    {
+      "Identity": "G:\\Personal\\Varian-HealthFit\\Source Code\\HealthFit Web\\wwwroot\\images\\twitter.png",
+      "SourceId": "HealthFit Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "G:\\Personal\\Varian-HealthFit\\Source Code\\HealthFit Web\\wwwroot\\",
+      "BasePath": "_content/HealthFit Web",
+      "RelativePath": "images/twitter.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\twitter.png"
     },
     {
       "Identity": "G:\\Personal\\Varian-HealthFit\\Source Code\\HealthFit Web\\wwwroot\\js\\functions.js",

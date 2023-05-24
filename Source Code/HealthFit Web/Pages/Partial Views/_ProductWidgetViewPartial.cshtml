@@ -1,7 +1,10 @@
 ﻿@using HealthFit.Object_Provider.Model;
 @model Journal
+@{
+    string viewJournalUrl = string.Format("publishers/viewjournaldetails?journalId={0}",Model.JournalID.ToString());
+}
 <div class="product">
-    <a href="#" class="info">
+    <a href="@viewJournalUrl" class="info">
         <span class="holder">
             <img src="images/image01.jpg" alt="" />
             <span class="book-name">@Model.Title</span>
@@ -18,6 +21,5 @@
             </span>
         </span>
     </a>
-    <a href="#" class="buy-btn">SUBSCRIBE<span class="price"><span class="low">$</span>@Model.Price</span></a>
+    <a href="@viewJournalUrl" class="buy-btn">SUBSCRIBE<span class="price"><span class="low">$</span>@Model.Price</span></a>
 </div>
-

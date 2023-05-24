@@ -29,6 +29,10 @@
       "PackagePath": "staticwebassets\\images\\Edit.png"
     },
     {
+      "Id": "G:\\Personal\\Varian-HealthFit\\Source Code\\HealthFit Web\\wwwroot\\images\\Linkedin.png",
+      "PackagePath": "staticwebassets\\images\\Linkedin.png"
+    },
+    {
       "Id": "G:\\Personal\\Varian-HealthFit\\Source Code\\HealthFit Web\\wwwroot\\images\\best-price.png",
       "PackagePath": "staticwebassets\\images\\best-price.png"
     },
@@ -55,6 +59,10 @@
     {
       "Id": "G:\\Personal\\Varian-HealthFit\\Source Code\\HealthFit Web\\wwwroot\\images\\favicon.ico",
       "PackagePath": "staticwebassets\\images\\favicon.ico"
+    },
+    {
+      "Id": "G:\\Personal\\Varian-HealthFit\\Source Code\\HealthFit Web\\wwwroot\\images\\fb.png",
+      "PackagePath": "staticwebassets\\images\\fb.png"
     },
     {
       "Id": "G:\\Personal\\Varian-HealthFit\\Source Code\\HealthFit Web\\wwwroot\\images\\footer-bg.png",
@@ -121,12 +129,20 @@
       "PackagePath": "staticwebassets\\images\\image08.jpg"
     },
     {
+      "Id": "G:\\Personal\\Varian-HealthFit\\Source Code\\HealthFit Web\\wwwroot\\images\\instalgram.png",
+      "PackagePath": "staticwebassets\\images\\instalgram.png"
+    },
+    {
       "Id": "G:\\Personal\\Varian-HealthFit\\Source Code\\HealthFit Web\\wwwroot\\images\\list-image.png",
       "PackagePath": "staticwebassets\\images\\list-image.png"
     },
     {
       "Id": "G:\\Personal\\Varian-HealthFit\\Source Code\\HealthFit Web\\wwwroot\\images\\logo.png",
       "PackagePath": "staticwebassets\\images\\logo.png"
+    },
+    {
+      "Id": "G:\\Personal\\Varian-HealthFit\\Source Code\\HealthFit Web\\wwwroot\\images\\pint.png",
+      "PackagePath": "staticwebassets\\images\\pint.png"
     },
     {
       "Id": "G:\\Personal\\Varian-HealthFit\\Source Code\\HealthFit Web\\wwwroot\\images\\price.png",
@@ -163,6 +179,10 @@
     {
       "Id": "G:\\Personal\\Varian-HealthFit\\Source Code\\HealthFit Web\\wwwroot\\images\\submit-btn.png",
       "PackagePath": "staticwebassets\\images\\submit-btn.png"
+    },
+    {
+      "Id": "G:\\Personal\\Varian-HealthFit\\Source Code\\HealthFit Web\\wwwroot\\images\\twitter.png",
+      "PackagePath": "staticwebassets\\images\\twitter.png"
     },
     {
       "Id": "G:\\Personal\\Varian-HealthFit\\Source Code\\HealthFit Web\\wwwroot\\js\\functions.js",

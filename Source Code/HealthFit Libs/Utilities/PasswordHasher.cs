@@ -58,12 +58,3 @@ namespace HealthFit.Utilities
         }
     }
 }
-
-//string password = "MyPassword123";
-//string salt;
-//string hashedPassword = PasswordHasher.HashPassword(password, out salt);
-
-//// Store the hashedPassword and salt in the database for the user
-
-//// Later, when verifying the password
-//bool isPasswordValid = PasswordHasher.VerifyPassword(password, salt, hashedPassword);
