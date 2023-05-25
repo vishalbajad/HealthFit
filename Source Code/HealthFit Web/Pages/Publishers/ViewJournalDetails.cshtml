@@ -14,7 +14,7 @@
         </ul>
         <table style="width:100%; vertical-align:top">
             <tr>
-                <td style="width:10%; vertical-align:top"><img class="book-cover" src="@Model.JournalVM.JournalCoverPhotoPathByte" alt="Book Cover"></td>
+                <td style="width:10%; vertical-align:top"><img class="book-cover" src="@Model.JournalVM.JournalCoverPhotoPathByte" alt="Book Cover" asp-append-version="true"></td>
                 <td style="width:80%; vertical-align:top">
                     <div class="book-info">
                         <h2 class="book-title">@Model.JournalVM.Title</h2>
@@ -92,10 +92,10 @@
                         <br />
                     }
                     <div class="social-logos">
-                        <a href="#"><i class="fab fa-facebook-f"><img src="~/images/fb.png" width="40" /></i></a>
-                        <a href="#"><i class="fab fa-facebook-f"><img src="~/images/instalgram.png" width="40" /></i></a>
-                        <a href="#"><i class="fab fa-twitter"><img src="~/images/twitter.png" width="40" /></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"><img src="~/images/linkedin.png" width="40" /></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"><img src="~/images/fb.png" width="40" asp-append-version="true" /></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"><img src="~/images/instalgram.png" width="40" asp-append-version="true" /></i></a>
+                        <a href="#"><i class="fab fa-twitter"><img src="~/images/twitter.png" width="40" asp-append-version="true" /></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"><img src="~/images/linkedin.png" width="40" asp-append-version="true" /></i></a>
                     </div>
                 </td>
                 <td style="vertical-align:top" colspan="2">
