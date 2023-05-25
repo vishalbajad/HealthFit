@@ -1,10 +1,8 @@
 ﻿using Data_Layer.DBContext;
 using HealthFit.Object_Provider.Model;
 using Microsoft.EntityFrameworkCore;
-using System.Data.Entity;
-using System.Data.Entity.Migrations;
-using System.Net;
-using System.Security.Policy;
+using Object_Provider.Enum;
+using System.Collections.Generic;
 
 namespace Data_Layer.Repositories
 {
@@ -52,12 +50,26 @@ namespace Data_Layer.Repositories
             return _dbContext.Journals.FirstOrDefault(obj => obj.JournalID == id);
         }
 
-        public List<Journal>? GetAllJournals(int publisherId = 0, bool active = true)
+        public List<Journal>? GetAllJournals(UserType userType, int userId = 0, bool active = true)
         {
-            if (publisherId == 0)
-                return _dbContext.Journals.Where(obj => obj.IsActive == active)?.ToList();
+            if (userId == 0) return _dbContext.Journals.Where(obj => obj.IsActive == active)?.ToList();
+
+            if (userType == UserType.Publisher)
+            {
+                return _dbContext.Journals.Where(obj => obj.PublisherID == userId && obj.IsActive == active)?.ToList();
+            }
+            else if (userType == UserType.PublicUser)
+            {
+                User? usr = _dbContext.Users.SingleOrDefault(u => u.UserId == userId);
+                if (usr != null)
+                {
+                    List<int> journalid = _dbContext.UserSubscriptionsDetails.Where(obj => obj.UserId == userId).Select(x => x.JournalId).ToList();
+                    return  _dbContext.Journals.Where(obj => journalid.Contains(obj.JournalID)).ToList();
+                }
+                return null;
+            }
             else
-                return _dbContext.Journals.Where(obj => obj.PublisherID == publisherId && obj.IsActive == active)?.ToList();
+                return null;
         }
 
         public List<Journal>? GetTopSellerJournals(int publisherId = 0, bool active = true)

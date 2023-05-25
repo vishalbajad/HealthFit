@@ -1,8 +1,8 @@
 ﻿using Data_Layer.DBContext;
 using HealthFit.Object_Provider.Model;
 using Microsoft.EntityFrameworkCore;
-using System.Data.Entity;
 using System.Net;
+using System.Reflection.Metadata.Ecma335;
 
 namespace Data_Layer.Repositories
 {
@@ -22,7 +22,15 @@ namespace Data_Layer.Repositories
 
         public User? GetUser(int id)
         {
-            return _dbContext.Users.FirstOrDefault(obj => obj.UserId == id);
+            User usr = _dbContext.Users.SingleOrDefault(u => u.UserId == id);
+            if (usr != null)
+            {
+                List<int> journalid = _dbContext.UserSubscriptionsDetails.Where(obj => obj.UserId == id).Select(x => x.JournalId).ToList();
+                usr.Journals = _dbContext.Journals.Where(obj => journalid.Contains(obj.JournalID)).ToList();
+                return usr;
+            }
+            else
+                return null;
         }
 
         public User? GetUserByUsername(string userName)

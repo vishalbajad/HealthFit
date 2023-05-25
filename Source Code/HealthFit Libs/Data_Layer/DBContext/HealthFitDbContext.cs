@@ -21,11 +21,11 @@ namespace Data_Layer.DBContext
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<UserSubscriptionsDetails>().HasIndex(e => new { e.UserId, e.JournalId }).IsUnique(); 
+            
             modelBuilder.Entity<UserSubscriptionsDetails>().HasKey(usd => new { usd.JournalId, usd.UserId });
-            modelBuilder.Entity<UserSubscriptionsDetails>().HasOne(usd => usd.Journals).WithMany(b => b.Subscribers).HasForeignKey(bs => bs.JournalId);
-            modelBuilder.Entity<UserSubscriptionsDetails>().HasOne(bs => bs.Users).WithMany(s => s.Journals).HasForeignKey(bs => bs.UserId);
-
-            modelBuilder.Entity<UserSubscriptionsDetails>().HasIndex(e => new { e.UserId, e.JournalId }).IsUnique();
+            modelBuilder.Entity<UserSubscriptionsDetails>().HasOne(usd => usd.Journals).WithMany(b => b.Subscribers_UserSubscriptionsDetails).HasForeignKey(bs => bs.JournalId);
+            modelBuilder.Entity<UserSubscriptionsDetails>().HasOne(bs => bs.Users).WithMany(s => s.Journals_UserSubscriptionsDetails).HasForeignKey(bs => bs.UserId);
         }
     }
 }

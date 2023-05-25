@@ -1,6 +1,7 @@
 ﻿using Data_Layer.Repositories;
 using HealthFit.Object_Provider.Model;
 using HealthFit_Libs.InterfaceLibrary;
+using Object_Provider.Enum;
 
 namespace Data_Layer.Services
 {
@@ -28,15 +29,15 @@ namespace Data_Layer.Services
             return _journalRepository.GetJournal(id);
         }
 
-        public List<Journal>? GetAllJournals(int publisherId = 0, bool active = true)
+        public List<Journal>? GetAllJournals(UserType userType, int userId = 0, bool active = true)
         {
-            return _journalRepository.GetAllJournals(publisherId, active);
+            return _journalRepository.GetAllJournals(userType, userId, active);
         }
 
-        public List<Journal>? GetTopSellerJournals(int publisherId = 0, bool active = true)
-        {
-            return _journalRepository.GetAllJournals(publisherId, active);
-        }
+        //public List<Journal>? GetTopSellerJournals(int publisherId = 0, bool active = true)
+        //{
+        //    return _journalRepository.GetAllJournals(publisherId, active);
+        //}
 
         public List<string>? GetAllCategoryList(int publisherId = 0, bool active = true)
         {

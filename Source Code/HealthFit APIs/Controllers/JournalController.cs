@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Identity;
 using HealthFit.Utilities;
 using Microsoft.Extensions.Options;
 using HealthFit_APIs.Model;
+using Object_Provider.Enum;
 
 namespace HealthFit_APIs.Controllers
 {
@@ -32,19 +33,20 @@ namespace HealthFit_APIs.Controllers
         }
 
         [HttpGet]
-        public List<Journal>? GetAllJournal(int publisherId, bool active)
+        public List<Journal>? GetAllJournal(UserType userType, int userId, bool active, bool pdfByteData = false)
         {
-            return journalService.GetAllJournals(publisherId, active)?.Select(x => { x.JournalCoverPhotoPathByte = HealthFit.Utilities.FileOperationsUtility.ImageToBase64(appSettingsConfigurations.FileServerPath, x.JournalCoverPhotoPath, "Default.jpg"); return x; }).ToList();
+            return journalService.GetAllJournals(userType, userId, active)?.Select(x => { x.JournalCoverPhotoPathByte = HealthFit.Utilities.FileOperationsUtility.ImageToBase64(appSettingsConfigurations.FileServerPath, x.JournalCoverPhotoPath, "Default.jpg"); return x; }).ToList();
         }
 
         [HttpGet]
-        public Journal? GetJournal(int id)
+        public Journal? GetJournal(int id, bool pdfByteData = false)
         {
             Journal? journal = journalService.GetJournal(id);
             if (journal != null && journal.JournalID > 0)
             {
                 journal.JournalCoverPhotoPathByte = HealthFit.Utilities.FileOperationsUtility.ImageToBase64(appSettingsConfigurations.FileServerPath, journal.JournalCoverPhotoPath, "Default.jpg");
-                journal.JournalPdfPathByte = HealthFit.Utilities.FileOperationsUtility.PdfToBytes(appSettingsConfigurations.FileServerPath, journal.JournalPdfPath, "Default.pdf");
+                if (pdfByteData)
+                    journal.JournalPdfPathByte = HealthFit.Utilities.FileOperationsUtility.PdfToBytes(appSettingsConfigurations.FileServerPath, journal.JournalPdfPath, "Default.pdf");
             }
             return journal;
         }

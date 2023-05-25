@@ -3,6 +3,7 @@ using HealthFit_Web.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Options;
+using Object_Provider.Enum;
 
 namespace HealthFit_Web.Pages.Publishers
 {
@@ -27,7 +28,7 @@ namespace HealthFit_Web.Pages.Publishers
         public void OnGet()
         {
             ViewData["LoggedInUser"] = LoggedInUser; 
-            JournalCollections = journalProxy.GetAllJournal(LoggedInUser.UserId);
+            JournalCollections = journalProxy.GetAllJournal((Object_Provider.Enum.UserType)LoggedInUser.UserType , LoggedInUser.UserId);
         }
 
         public void OnPostDelete()

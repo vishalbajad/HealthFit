@@ -29,15 +29,15 @@ namespace HealthFit_Web.Pages
         public List<User>? PublishersCollections { get; set; }
         public void OnGet()
         {
-            if (LoggedInUser?.UserId > 0 && LoggedInUser?.UserType == (byte)Object_Provider.Enum.UserType.Publisher)
+            if (LoggedInUser?.UserId > 0)
             {
-                JournalCollections = journalProxy.GetAllJournal(LoggedInUser.UserId);
+                JournalCollections = journalProxy.GetAllJournal((Object_Provider.Enum.UserType)LoggedInUser.UserType, LoggedInUser.UserId);
                 CategoryCollections = journalProxy.GetAllCategoryList(LoggedInUser.UserId);
                 PublishersCollections = userlProxy.GetAllPublisherList(LoggedInUser.UserId);
             }
             else
             {
-                JournalCollections = journalProxy.GetAllJournal();
+                JournalCollections = journalProxy.GetAllJournal((Object_Provider.Enum.UserType)1, 0, true);
                 CategoryCollections = journalProxy.GetAllCategoryList();
                 PublishersCollections = userlProxy.GetAllPublisherList();
             }

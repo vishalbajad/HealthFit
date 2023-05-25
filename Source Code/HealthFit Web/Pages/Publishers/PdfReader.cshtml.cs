@@ -24,7 +24,7 @@ namespace HealthFit_Web.Pages
         public IActionResult OnGet(int journalId)
         {
             API_Connector.Journal journalProxy = new API_Connector.Journal(this.GetAPIServerDetails());
-            JournalVM = journalProxy.GetJournal(journalId);
+            JournalVM = journalProxy.GetJournal(journalId, true);
             var fileContent = JournalVM.JournalPdfPathByte;
             return File(fileContent, "application/pdf");
         }

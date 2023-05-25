@@ -112,7 +112,11 @@ namespace HealthFit.Object_Provider.Model
 
         [ValidateNever]
         [NotMapped]
-        public ICollection<UserSubscriptionsDetails> Subscribers { get; set; }
+        public ICollection<UserSubscriptionsDetails> Subscribers_UserSubscriptionsDetails { get; set; }
+
+        [ValidateNever]
+        [NotMapped]
+        public List<User> Subscribers { get; set; }
     }
 
 }
