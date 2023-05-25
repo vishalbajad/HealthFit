@@ -1,25 +1,33 @@
 ﻿@using HealthFit.Object_Provider.Model;
-@model Journal
+@using HealthFit_Web.Models;
+@model UserJournalMapping
 @{
-    string viewJournalUrl = string.Format("publishers/viewjournaldetails?journalId={0}",Model.JournalID.ToString());
+    string viewJournalUrl = string.Format("publishers/viewjournaldetails?journalId={0}", Model.Journal.JournalID.ToString());
 }
 <div class="product">
     <a href="@viewJournalUrl" class="info">
         <span class="holder">
-            <img src="@Model.JournalCoverPhotoPathByte" alt="" asp-append-version="true" />
-            <span class="book-name">@Model.Title</span>
-            <span class="author">@Model.ISSN</span>
-            <span class="description"> 
-                @if (Model.Description.Length < 30)
+            <img src="@Model.Journal.JournalCoverPhotoPathByte" alt="" asp-append-version="true" />
+            <span class="book-name">@Model.Journal.Title</span>
+            <span class="author">@Model.Journal.ISSN</span>
+            <span class="description">
+                @if (Model.Journal.Description.Length < 30)
                 {
-                    @Model.Description
+                    @Model.Journal.Description
                 }
                 else
                 {
-                    @(Model.Description.Substring(0, 30) + " more..")
+                    @(Model.Journal.Description.Substring(0, 30) + " more..")
                 }
             </span>
         </span>
     </a>
-    <a href="@viewJournalUrl" class="buy-btn">SUBSCRIBE<span class="price"><span class="low">$</span>@Model.Price</span></a>
+    @if (Model?.Journal?.Subscribers?.Where(obj => obj.UserId == Model?.User?.UserId).Count() == 1)
+    {
+        <a href="@viewJournalUrl" class="buy-btn" style="background: green !important;text-align: center">Read</a>
+    }
+    else
+    {
+        <a href="@viewJournalUrl" class="buy-btn">SUBSCRIBE<span class="price"><span class="low">$</span>@Model.Journal.Price</span></a>
+    }
 </div>

@@ -3,6 +3,7 @@ using HealthFit_Web.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Options;
+using NUnit.Framework.Interfaces;
 using User = HealthFit.Object_Provider.Model.User;
 
 namespace HealthFit_Web.Pages
@@ -29,17 +30,28 @@ namespace HealthFit_Web.Pages
         public List<User>? PublishersCollections { get; set; }
         public void OnGet()
         {
+
+            JournalCollections = journalProxy.GetAllJournal((Object_Provider.Enum.UserType)1, 0, true);
+            CategoryCollections = journalProxy.GetAllCategoryList();
+            PublishersCollections = userlProxy.GetAllPublisherList();
+
             if (LoggedInUser?.UserId > 0)
             {
-                JournalCollections = journalProxy.GetAllJournal((Object_Provider.Enum.UserType)LoggedInUser.UserType, LoggedInUser.UserId);
-                CategoryCollections = journalProxy.GetAllCategoryList(LoggedInUser.UserId);
-                PublishersCollections = userlProxy.GetAllPublisherList(LoggedInUser.UserId);
-            }
-            else
-            {
-                JournalCollections = journalProxy.GetAllJournal((Object_Provider.Enum.UserType)1, 0, true);
-                CategoryCollections = journalProxy.GetAllCategoryList();
-                PublishersCollections = userlProxy.GetAllPublisherList();
+                List<int>? ListJournalCollections = LoggedInUser.Journals.Select(obj => obj.JournalID)?.ToList();
+
+                if (ListJournalCollections?.Count > 0)
+                {
+                    for (int index = 0; index < JournalCollections.Count(); index++)
+                    {
+                        if (ListJournalCollections.Contains(JournalCollections[index].JournalID))
+                        {
+                            if (JournalCollections[index].Subscribers == null)
+                                JournalCollections[index].Subscribers = new List<User>();
+
+                            JournalCollections[index].Subscribers.Add(LoggedInUser);
+                        }
+                    }
+                }
             }
 
             if (JournalCollections == null) JournalCollections = new List<Journal>();

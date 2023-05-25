@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using HealthFit.Object_Provider.Model;
+using Microsoft.AspNetCore.Mvc;
 using System.ComponentModel.DataAnnotations;
 
 namespace HealthFit_Web.Models
@@ -20,5 +21,11 @@ namespace HealthFit_Web.Models
         [BindProperty]
         [Compare("Password")]
         public string ConfirmPassword { get; set; }
+    }
+
+    public class UserJournalMapping
+    {
+        public HealthFit.Object_Provider.Model.User User { get; set; }
+        public Journal Journal { get; set; }
     }
 }

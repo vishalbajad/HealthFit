@@ -1,5 +1,6 @@
 ﻿@page
 @using HealthFit.Object_Provider.Model
+@using HealthFit_Web.Models;
 @model IndexModel
 @{
     ViewData["Title"] = "Home page";
@@ -48,7 +49,7 @@
             <ul id="journallistListForSearch">
                 @foreach (Journal journal in Model.JournalCollections)
                 {
-                    <li>@await Html.PartialAsync("Partial Views/_ProductWidgetViewPartial",journal) </li>
+                    <li>@await Html.PartialAsync("Partial Views/_ProductWidgetViewPartial", new UserJournalMapping{ User = Model.LoggedInUser, Journal =  journal}) </li>
                 }
             </ul>
             <!-- End Products -->
