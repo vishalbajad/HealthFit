@@ -104,6 +104,7 @@ namespace HealthFit_APIs.Controllers
                         }
                         coverPhotofileUploadedName = uniqueFileName;
                         coverPhotofileUploadStatus = true;
+                        //string filepath = AzureFileUpload.UploadBlob(filePath);
                     }
 
                     if (JournalFile != null && JournalFile.Length > 0)
@@ -121,7 +122,9 @@ namespace HealthFit_APIs.Controllers
                         }
                         JournalFileUploadedName = uniqueFileName;
                         JournalFileUploadStatus = true;
+                        // string filepath = AzureFileUpload.UploadBlob(filePath);
                     }
+
 
                     if (coverPhotofileUploadStatus)
                         journal.JournalCoverPhotoPath = coverPhotofileUploadedName;

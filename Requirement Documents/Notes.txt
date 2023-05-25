@@ -17,6 +17,10 @@ https://shop.lww.com/ACSM-s-Health---Fitness-Journal--Online/p/1536-593X
 ** used HTTPS for secure connection
 ** Showing journals cover and document in base 64 for more security
 ** disabled right click
+** Azure Blob service to stoared journals
+
+
+
 
 1. Home Page Design
 2. Register Publisher
