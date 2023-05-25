@@ -3,15 +3,16 @@ using HealthFit.Object_Provider.Model;
 using Microsoft.EntityFrameworkCore;
 using System.Data.Entity;
 using System.Data.Entity.Migrations;
+using System.Net;
 using System.Security.Policy;
 
 namespace Data_Layer.Repositories
 {
     public class JournalRepository
     {
-        private readonly JournalContext _dbContext;
+        private readonly HealthFitDbContext _dbContext;
 
-        public JournalRepository(JournalContext dbContext)
+        public JournalRepository(HealthFitDbContext dbContext)
         {
             _dbContext = dbContext;
         }
@@ -23,7 +24,7 @@ namespace Data_Layer.Repositories
                 var entity = _dbContext.Journals.Find(journal.JournalID);
                 if (entity != null)
                 {
-                    _dbContext.Journals.AddOrUpdate(journal);
+                    _dbContext.Entry(entity).CurrentValues.SetValues(journal);
                     _dbContext.SaveChanges();
                 }
             }

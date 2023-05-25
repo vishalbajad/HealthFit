@@ -57,15 +57,14 @@ namespace HealthFit_Web.Pages
 
             if (LoggedInUser?.UserId > 0)
             {
-                IsSubscribedForJournal = true;
+                bool responce = userProxy.SubscribeForJournal(LoggedInUser.UserId, JournalVM.JournalID);
 
-                // bool responce = userProxy.CreateUser(UserDetails.UserDetails);
-
-                //if (responce)
-                //{
-                responseMessage = "Congradulations ! . You have been successfully Subscribed for the journal !!";
-                responseCode = "success";
-                //}
+                if (responce)
+                {
+                    responseMessage = "Congradulations ! . You have been successfully Subscribed for the journal !!";
+                    responseCode = "success";
+                    IsSubscribedForJournal = true;
+                }
             }
             else
             {

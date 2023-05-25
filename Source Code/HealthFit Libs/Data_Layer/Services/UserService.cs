@@ -1,5 +1,7 @@
 ﻿using Data_Layer.Repositories;
 using HealthFit.Object_Provider.Model;
+using System;
+using System.Net;
 using System.Security.Policy;
 
 namespace Data_Layer.Services
@@ -43,6 +45,10 @@ namespace Data_Layer.Services
         public List<User>? GetAllPublicUserList(int userId = 0, bool active = true)
         {
             return _userRepository.GetAllPublicUserList(userId, active);
+        }
+        public bool SubscribeForJournal(User user, Journal journal)
+        {
+            return _userRepository.SubscribeForJournal(user, journal);
         }
     }
 }

@@ -2,14 +2,15 @@
 using HealthFit.Object_Provider.Model;
 using Microsoft.EntityFrameworkCore;
 using System.Data.Entity;
+using System.Net;
 
 namespace Data_Layer.Repositories
 {
     public class UserRepository
     {
-        private readonly UserContext _dbContext;
+        private readonly HealthFitDbContext _dbContext;
 
-        public UserRepository(UserContext dbContext)
+        public UserRepository(HealthFitDbContext dbContext)
         {
             _dbContext = dbContext;
         }
@@ -60,6 +61,20 @@ namespace Data_Layer.Repositories
                 return _dbContext.Users.Where(obj => obj.IsActive == active && obj.UserType == 1)?.ToList();
             else
                 return _dbContext.Users.Where(obj => obj.UserId == userId && obj.IsActive == active && obj.UserType == 1)?.ToList();
+        }
+
+        public bool SubscribeForJournal(User user, Journal journal)
+        {
+            var userSubscriptionsDetails = new UserSubscriptionsDetails
+            {
+                Users = user,
+                Journals = journal,
+                SubscriptionStartDate = DateTime.Now,
+                SubscriptionEndDate = DateTime.Now.AddYears(1)
+            };
+            _dbContext.Add(userSubscriptionsDetails);
+            _dbContext.SaveChanges();
+            return true;
         }
     }
 }

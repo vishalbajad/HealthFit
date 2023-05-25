@@ -37,7 +37,7 @@ namespace HealthFit_Web.Pages
             if (user != null)
             {
                 this.LoggedInUser = user;
-                return RedirectToPage("Publishers/JournalList");
+                return RedirectToPage("Index");
             }
             else
             {

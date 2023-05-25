@@ -16,19 +16,19 @@ namespace HealthFit_APIs.Controllers
     public class JournalController : ControllerBase
     {
         private readonly ILogger<JournalController> _logger;
-        private readonly JournalContext journalContext;
+        private readonly HealthFitDbContext _dbContext;
         private readonly JournalRepository journalRepository;
         private readonly JournalService journalService;
         private readonly IWebHostEnvironment _environment;
         private readonly AppSettingsConfigurations appSettingsConfigurations;
         public JournalController(IOptions<AppSettingsConfigurations> options, ILogger<JournalController> logger, IWebHostEnvironment environment)
         {
+            appSettingsConfigurations = options.Value;
             _logger = logger;
-            journalContext = new JournalContext();
-            journalRepository = new JournalRepository(journalContext);
+            _dbContext = new HealthFitDbContext(appSettingsConfigurations.HealthFitDBConnectionString);
+            journalRepository = new JournalRepository(_dbContext);
             journalService = new JournalService(journalRepository);
             _environment = environment;
-            appSettingsConfigurations = options.Value;
         }
 
         [HttpGet]

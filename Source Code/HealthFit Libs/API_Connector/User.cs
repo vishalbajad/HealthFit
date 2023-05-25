@@ -37,5 +37,12 @@ namespace API_Connector
         {
             return apiConnector.SendJsonRequest<List<HealthFit.Object_Provider.Model.User>?>("/User/GetAllPublicUserList/", HTTPConnector.RequestMethod.GET, string.Empty, string.Format("userId={0}&active={1}", userId, true));
         }
+
+        public bool SubscribeForJournal(int userId, int journalId)
+        {
+            return apiConnector.SendJsonRequest<bool>("/User/SubscribeForJournal/", HTTPConnector.RequestMethod.GET, string.Empty, string.Format("userId={0}&journalId={1}", userId, journalId));
+        }
+
+        
     }
 }

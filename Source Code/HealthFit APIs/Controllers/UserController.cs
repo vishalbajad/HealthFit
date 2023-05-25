@@ -6,6 +6,8 @@ using Data_Layer.DBContext;
 using HealthFit_Libs.InterfaceLibrary;
 using Microsoft.AspNetCore.Identity;
 using HealthFit.Utilities;
+using HealthFit_APIs.Model;
+using Microsoft.Extensions.Options;
 
 namespace HealthFit_APIs.Controllers
 {
@@ -14,15 +16,22 @@ namespace HealthFit_APIs.Controllers
     public class UserController : ControllerBase
     {
         private readonly ILogger<UserController> _logger;
-        private readonly UserContext userContext;
+        private readonly HealthFitDbContext _dbContext;
         private readonly UserRepository userRepository;
         private readonly UserService userService;
-        public UserController(ILogger<UserController> logger)
+        private readonly JournalRepository journalRepository;
+        private readonly JournalService journalService;
+        private readonly AppSettingsConfigurations appSettingsConfigurations;
+        public UserController(IOptions<AppSettingsConfigurations> options, ILogger<UserController> logger, IWebHostEnvironment environment)
         {
+            appSettingsConfigurations = options.Value;
             _logger = logger;
-            userContext = new UserContext();
-            userRepository = new UserRepository(userContext);
+            _dbContext = new HealthFitDbContext(appSettingsConfigurations.HealthFitDBConnectionString);
+            userRepository = new UserRepository(_dbContext);
             userService = new UserService(userRepository);
+            journalRepository = new JournalRepository(_dbContext);
+            journalService = new JournalService(journalRepository);
+
 
         }
 
@@ -79,6 +88,19 @@ namespace HealthFit_APIs.Controllers
         public List<User>? GetAllPublicUserList(int userId = 0, bool active = true)
         {
             return userService.GetAllPublicUserList(userId, active);
+        }
+        [HttpGet]
+        public bool SubscribeForJournal(int userId, int journalId)
+        {
+            User? user = userService.GetUser(userId);
+            Journal? journal = journalService.GetJournal(journalId);
+            if (user?.UserId > 0 && journal?.JournalID > 0)
+            {
+                return userService.SubscribeForJournal(user, journal);
+            }
+
+            return false;
+
         }
 
     }

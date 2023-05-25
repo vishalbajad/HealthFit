@@ -1,4 +1,3 @@
-G:\Personal\Varian-HealthFit\Source Code\HealthFit APIs\bin\Debug\net6.0\EntityFramework.dll
 G:\Personal\Varian-HealthFit\Source Code\HealthFit APIs\bin\Debug\net6.0\appsettings.Development.json
 G:\Personal\Varian-HealthFit\Source Code\HealthFit APIs\bin\Debug\net6.0\appsettings.json
 G:\Personal\Varian-HealthFit\Source Code\HealthFit APIs\bin\Debug\net6.0\HealthFit APIs.exe
@@ -9,6 +8,7 @@ G:\Personal\Varian-HealthFit\Source Code\HealthFit APIs\bin\Debug\net6.0\HealthF
 G:\Personal\Varian-HealthFit\Source Code\HealthFit APIs\bin\Debug\net6.0\Azure.Core.dll
 G:\Personal\Varian-HealthFit\Source Code\HealthFit APIs\bin\Debug\net6.0\Azure.Identity.dll
 G:\Personal\Varian-HealthFit\Source Code\HealthFit APIs\bin\Debug\net6.0\EntityFramework.SqlServer.dll
+G:\Personal\Varian-HealthFit\Source Code\HealthFit APIs\bin\Debug\net6.0\EntityFramework.dll
 G:\Personal\Varian-HealthFit\Source Code\HealthFit APIs\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
 G:\Personal\Varian-HealthFit\Source Code\HealthFit APIs\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
 G:\Personal\Varian-HealthFit\Source Code\HealthFit APIs\bin\Debug\net6.0\Microsoft.DotNet.PlatformAbstractions.dll

@@ -2,6 +2,7 @@
 using HealthFit.Object_Provider.Model;
 using HealthFit_APIs.Model;
 using Microsoft.EntityFrameworkCore;
+using System.Data.Entity;
 
 namespace HealthFit_APIs
 {
@@ -34,12 +35,11 @@ namespace HealthFit_APIs
                 app.UseExceptionHandler("/Error");
                 app.UseHsts();
             }
-
             app.UseStaticFiles();
             app.UseRouting();
             app.UseAuthentication();
             app.UseAuthorization();
-
+            
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapRazorPages();

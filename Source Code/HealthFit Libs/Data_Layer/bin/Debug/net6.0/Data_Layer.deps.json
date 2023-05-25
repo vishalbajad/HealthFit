@@ -1272,7 +1272,8 @@
       },
       "Object_Provider/1.0.0": {
         "dependencies": {
-          "Microsoft.AspNetCore.Mvc.Core": "2.2.5"
+          "Microsoft.AspNetCore.Mvc.Core": "2.2.5",
+          "Microsoft.EntityFrameworkCore": "7.0.5"
         },
         "runtime": {
           "Object_Provider.dll": {}
