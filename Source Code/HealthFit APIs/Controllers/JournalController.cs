@@ -9,6 +9,7 @@ using HealthFit.Utilities;
 using Microsoft.Extensions.Options;
 using HealthFit_APIs.Model;
 using Object_Provider.Enum;
+using HealthFit.AzureCompoenents;
 
 namespace HealthFit_APIs.Controllers
 {
@@ -22,6 +23,8 @@ namespace HealthFit_APIs.Controllers
         private readonly JournalService journalService;
         private readonly IWebHostEnvironment _environment;
         private readonly AppSettingsConfigurations appSettingsConfigurations;
+        private readonly AzureFileUploadComponent _azureFileUploadComponent;
+
         public JournalController(IOptions<AppSettingsConfigurations> options, ILogger<JournalController> logger, IWebHostEnvironment environment)
         {
             appSettingsConfigurations = options.Value;
@@ -30,24 +33,26 @@ namespace HealthFit_APIs.Controllers
             journalRepository = new JournalRepository(_dbContext);
             journalService = new JournalService(journalRepository);
             _environment = environment;
+            _azureFileUploadComponent = new AzureFileUploadComponent(appSettingsConfigurations.AzureBlobStoarageConnectionString, appSettingsConfigurations.BlobContainerName, appSettingsConfigurations.StorageSharedKeyCredential_AccountName, appSettingsConfigurations.StorageSharedKeyCredential_AccountKey);
         }
 
         [HttpGet]
         public List<Journal>? GetAllJournal(UserType userType, int userId, bool active, bool pdfByteData = false)
         {
-            return journalService.GetAllJournals(userType, userId, active)?.Select(x => { x.JournalCoverPhotoPathByte = HealthFit.Utilities.FileOperationsUtility.ImageToBase64(appSettingsConfigurations.FileServerPath, x.JournalCoverPhotoPath, "Default.jpg"); return x; }).ToList();
+            return journalService.GetAllJournals(userType, userId, active);
+            //return journalService.GetAllJournals(userType, userId, active)?.Select(x => { x.JournalCoverPhotoPathByte = HealthFit.Utilities.FileOperationsUtility.ImageToBase64(appSettingsConfigurations.FileServerPath, x.JournalCoverPhotoPath, "Default.jpg"); return x; }).ToList();
         }
 
         [HttpGet]
         public Journal? GetJournal(int id, bool pdfByteData = false)
         {
             Journal? journal = journalService.GetJournal(id);
-            if (journal != null && journal.JournalID > 0)
-            {
-                journal.JournalCoverPhotoPathByte = HealthFit.Utilities.FileOperationsUtility.ImageToBase64(appSettingsConfigurations.FileServerPath, journal.JournalCoverPhotoPath, "Default.jpg");
-                if (pdfByteData)
-                    journal.JournalPdfPathByte = HealthFit.Utilities.FileOperationsUtility.PdfToBytes(appSettingsConfigurations.FileServerPath, journal.JournalPdfPath, "Default.pdf");
-            }
+            //if (journal != null && journal.JournalID > 0)
+            //{
+            //    journal.JournalCoverPhotoPathByte = HealthFit.Utilities.FileOperationsUtility.ImageToBase64(appSettingsConfigurations.FileServerPath, journal.JournalCoverPhotoPath, "Default.jpg");
+            //    if (pdfByteData)
+            //        journal.JournalPdfPathByte = HealthFit.Utilities.FileOperationsUtility.PdfToBytes(appSettingsConfigurations.FileServerPath, journal.JournalPdfPath, "Default.pdf");
+            //}
             return journal;
         }
 
@@ -104,7 +109,7 @@ namespace HealthFit_APIs.Controllers
                         }
                         coverPhotofileUploadedName = uniqueFileName;
                         coverPhotofileUploadStatus = true;
-                        //string filepath = AzureFileUpload.UploadBlob(filePath);
+                        // string filepath = AzureFileUpload.UploadBlob(filePath);
                     }
 
                     if (JournalFile != null && JournalFile.Length > 0)
@@ -120,6 +125,7 @@ namespace HealthFit_APIs.Controllers
                         {
                             await JournalFile.CopyToAsync(fileStream);
                         }
+
                         JournalFileUploadedName = uniqueFileName;
                         JournalFileUploadStatus = true;
                         // string filepath = AzureFileUpload.UploadBlob(filePath);

@@ -47,9 +47,14 @@
                 </select>
             </div>
             <ul id="journallistListForSearch">
-                @foreach (Journal journal in Model.JournalCollections)
-                {
-                    <li>@await Html.PartialAsync("Partial Views/_ProductWidgetViewPartial", new UserJournalMapping{ User = Model.LoggedInUser, Journal =  journal}) </li>
+                @{
+                    string fileserverpath = Model.HealthFitSystemConfigurations.FileServerBaseUrl;
+                    foreach (Journal journal in Model.JournalCollections)
+                    {
+                        journal.JournalCoverPhotoPath = System.IO.Path.Join(fileserverpath, journal.JournalCoverPhotoPath);
+
+                        <li>@await Html.PartialAsync("Partial Views/_ProductWidgetViewPartial", new UserJournalMapping{ User = Model.LoggedInUser, Journal =  journal}) </li>
+                    }
                 }
             </ul>
             <!-- End Products -->

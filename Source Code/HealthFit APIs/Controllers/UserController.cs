@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Identity;
 using HealthFit.Utilities;
 using HealthFit_APIs.Model;
 using Microsoft.Extensions.Options;
+using HealthFit.AzureCompoenents;
 
 namespace HealthFit_APIs.Controllers
 {
@@ -22,6 +23,8 @@ namespace HealthFit_APIs.Controllers
         private readonly JournalRepository journalRepository;
         private readonly JournalService journalService;
         private readonly AppSettingsConfigurations appSettingsConfigurations;
+        private readonly AzureFileUploadComponent _azureFileUploadComponent;
+
         public UserController(IOptions<AppSettingsConfigurations> options, ILogger<UserController> logger, IWebHostEnvironment environment)
         {
             appSettingsConfigurations = options.Value;
@@ -31,8 +34,7 @@ namespace HealthFit_APIs.Controllers
             userService = new UserService(userRepository);
             journalRepository = new JournalRepository(_dbContext);
             journalService = new JournalService(journalRepository);
-
-
+            _azureFileUploadComponent = new AzureFileUploadComponent(appSettingsConfigurations.AzureBlobStoarageConnectionString, appSettingsConfigurations.BlobContainerName, appSettingsConfigurations.StorageSharedKeyCredential_AccountName, appSettingsConfigurations.StorageSharedKeyCredential_AccountKey);
         }
 
         [HttpGet]

@@ -24,5 +24,6 @@ namespace HealthFit.Object_Provider.Model
         public string APIServerUsername { get; set; }
         public string APIServerPassword { get; set; }
         public string APIServerToken { get; set; }
+        public string FileServerBaseUrl { get; set; }
     }
 }

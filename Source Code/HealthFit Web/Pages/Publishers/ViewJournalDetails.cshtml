@@ -14,7 +14,7 @@
         </ul>
         <table style="width:100%; vertical-align:top">
             <tr>
-                <td style="width:10%; vertical-align:top"><img class="book-cover" src="@Model.JournalVM.JournalCoverPhotoPathByte" alt="Book Cover" asp-append-version="true"></td>
+                <td style="width:10%; vertical-align:top"><img class="book-cover" src="@System.IO.Path.Join(Model.HealthFitSystemConfigurations.FileServerBaseUrl , Model.JournalVM.JournalCoverPhotoPath)" alt="Book Cover" asp-append-version="true"></td>
                 <td style="width:80%; vertical-align:top">
                     <div class="book-info">
                         <h2 class="book-title">@Model.JournalVM.Title</h2>

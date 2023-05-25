@@ -23,6 +23,7 @@ namespace HealthFit_Web.Pages
         [BindProperty]
         public List<Journal> JournalCollections { get; set; }
 
+
         [BindProperty]
         public List<string>? CategoryCollections { get; set; }
 

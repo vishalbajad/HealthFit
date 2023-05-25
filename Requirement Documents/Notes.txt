@@ -74,3 +74,11 @@ Error Handling and Information Leakage: Implement appropriate error handling to 
 ** Make Sure you have installed SQL Server 
 ** Keep Default.jpg in file server path
 ** Make sure shared folder path having valid access permission
+** Configure File Folder in IIS and add fileserver in appsetting.json
+
+https://healthfit.blob.core.windows.net/healthfitcontainer/77a2466d-6bb3-4795-9148-2a61c295ce87_Journal%203.jpgsv=2022-11-02&st=2023-05-25T15%3A06%3A57Z&se=2023-05-25T16%3A06%3A57Z&sr=b&sp=r&sig=qJUbDr9vYkONqPVP0Jh%2BWJkXL34F5HApExTgG%2BlQUng%3D
+
+https://healthfit.blob.core.windows.net/healthfitcontainer/e6ecab79-cf2d-4585-a5c9-1f41b021a84e_pdf journal 3.pdf?sv=2022-11-02&st=2023-05-25T15%3A07%3A57Z&se=2023-05-25T16%3A07%3A57Z&sr=b&sp=r&sig=TZRXKHCXrafP6meZyOQf0gp6an5xToeItv1GhfM6kts%3D
+
+
+\\VISHAL\Users\vishal\Documents\HealthFit File Server\0d25453d-a19b-4139-82d0-e621bdbfa0c6_IMG_20230314_225610.jpg

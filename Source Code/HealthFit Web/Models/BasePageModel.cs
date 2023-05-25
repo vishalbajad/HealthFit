@@ -20,6 +20,29 @@ namespace HealthFit_Web.Models
             _httpContextAccessor = httpContextAccessor;
         }
 
+        public SystemConfigurations HealthFitSystemConfigurations
+        {
+            get
+            {
+                SystemConfigurations systemConfigurations = new SystemConfigurations();
+
+                string? serializedObject = _httpContextAccessor.HttpContext?.Session?.GetString("HealthFitSystemConfigurations");
+
+                if (string.IsNullOrWhiteSpace(serializedObject))
+                {
+                    systemConfigurations.FileServerBaseUrl = sysConfig.FileServerBaseUrl;
+
+                    string serializedapiObject = JsonSerializer.Serialize(systemConfigurations);
+                    _httpContextAccessor.HttpContext?.Session?.SetString("HealthFitSystemConfigurations", serializedapiObject);
+                    
+                    return systemConfigurations;
+                }
+
+                return JsonSerializer.Deserialize<SystemConfigurations>(serializedObject) ?? new SystemConfigurations();
+
+
+            }
+        }
         public APIServer GetAPIServerDetails()
         {
             string? serializedObject = _httpContextAccessor.HttpContext?.Session?.GetString("APIServer");
