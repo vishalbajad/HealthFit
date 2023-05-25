@@ -35,7 +35,10 @@ namespace Data_Layer.Repositories
 
         public User? GetUserByUsername(string userName)
         {
-            return _dbContext.Users.FirstOrDefault(obj => obj.UserName == userName);
+            User? usr = _dbContext.Users.FirstOrDefault(obj => obj.UserName == userName);
+            if (usr != null && usr.UserId > 0)
+                usr = GetUser(usr.UserId);
+            return usr;
         }
 
         public bool CreateUser(User user)

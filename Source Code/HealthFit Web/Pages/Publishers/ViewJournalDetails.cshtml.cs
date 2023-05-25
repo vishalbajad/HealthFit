@@ -36,15 +36,20 @@ namespace HealthFit_Web.Pages
             {
 
                 string decruptedjournalId = journalId; //  HealthFit.Utilities.EncryptionHelper.Decrypt(journalId);
+                
                 if (!string.IsNullOrEmpty(decruptedjournalId))
                 {
                     int journalid = 0;
+                    
                     int.TryParse(decruptedjournalId, out journalid);
+                    
                     if (journalid > 0)
                     {
                         JournalVM = journalProxy.GetJournal(journalid);
+                        
                         PublisherName = userlProxy.GetAllPublisherList(JournalVM.PublisherID).SingleOrDefault().FullName;
-                        IsSubscribedForJournal = JournalVM.PublisherID == LoggedInUser?.UserId;
+
+                        IsSubscribedForJournal = (JournalVM.PublisherID == LoggedInUser?.UserId) || (LoggedInUser?.Journals?.Where(obj => obj.JournalID == JournalVM.JournalID).Count() > 0);
                     }
                 }
             }
@@ -63,7 +68,10 @@ namespace HealthFit_Web.Pages
                 {
                     responseMessage = "Congradulations ! . You have been successfully Subscribed for the journal !!";
                     responseCode = "success";
-                    IsSubscribedForJournal = true;
+                    
+                    bool isSubscribed = LoggedInUser?.Journals?.Where(obj => obj.JournalID == JournalVM.JournalID).Count() > 0;
+                    if (!isSubscribed)
+                        LoggedInUser?.Journals.Add(JournalVM);
                 }
             }
             else
@@ -71,6 +79,7 @@ namespace HealthFit_Web.Pages
                 responseMessage = "Please login to subscive for the journal !!";
                 responseCode = "error";
             }
+
             return RedirectToPage("ViewJournalDetails", new { journalId = JournalVM.JournalID });
         }
     }
