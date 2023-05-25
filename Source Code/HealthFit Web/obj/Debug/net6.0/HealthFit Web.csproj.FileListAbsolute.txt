@@ -272,3 +272,4 @@ G:\Personal\Varian-HealthFit\Source Code\HealthFit Web\bin\Debug\net6.0\Microsof
 G:\Personal\Varian-HealthFit\Source Code\HealthFit Web\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
 G:\Personal\Varian-HealthFit\Source Code\HealthFit Web\bin\Debug\net6.0\Microsoft.Extensions.Options.dll
 G:\Personal\Varian-HealthFit\Source Code\HealthFit Web\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll
+G:\Personal\Varian-HealthFit\Source Code\HealthFit Web\obj\Debug\net6.0\HealthFit Web.MvcApplicationPartsAssemblyInfo.cs
