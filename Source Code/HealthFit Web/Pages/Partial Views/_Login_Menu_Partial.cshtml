@@ -2,12 +2,12 @@
 @model User?
 @if (Model?.UserId > 0 && (Model?.UserId == 1 || Model?.UserId == 2))
 {
-    <div id="login-details">
-        <p><a href="/Index" id="user">Home </a> | <a href="/Publishers/JournalList">My Jouranls</a> | <a href="/Login?logout=1" id="user">Logout</a></p>
+    <div id="login-details" style="text-align:right">
+        <p>Welcome @Model.FullName <br> <a href="/Index" id="user">Home </a> | <a href="/Publishers/JournalList">My Jouranls</a> | <a href="/Login?logout=1" id="user">Logout</a></p>
     </div>
 }else
 {
-    <div id="login-details">
-        <p><a href="/Index" id="user">Home </a> | <a href="/Login" id="user">Login </a> | <a href="/signup" id="user">Signup</a></p>
+    <div id="login-details" style="text-align:right">
+        <p>Welcome Guest <br> <a href="/Index" id="user">Home </a> | <a href="/Login" id="user">Login </a> | <a href="/signup" id="user">Signup</a></p>
     </div>
 }

@@ -2,6 +2,7 @@
 using HealthFit.Object_Provider.Model;
 using HealthFit_Web.Models;
 using Microsoft.Extensions.Options;
+using API_Connector;
 
 namespace HealthFit_Web.Pages
 {
@@ -18,12 +19,15 @@ namespace HealthFit_Web.Pages
             userlProxy = new API_Connector.User(this.GetAPIServerDetails());
         }
         [BindProperty]
-        public Journal JournalVM { get; set; }
+        public HealthFit.Object_Provider.Model.Journal JournalVM { get; set; }
         [BindProperty]
         public bool IsSubscribedForJournal { get; set; }
 
         [BindProperty]
         public string PublisherName { get; set; }
+
+        public string responseMessage { get; set; }
+        public string responseCode { get; set; }
 
         public void OnGet(string journalId)
         {
@@ -44,6 +48,31 @@ namespace HealthFit_Web.Pages
                     }
                 }
             }
+        }
+
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> OnPostAsync()
+        {
+            API_Connector.User userProxy = new API_Connector.User(this.GetAPIServerDetails());
+
+            if (LoggedInUser?.UserId > 0)
+            {
+                IsSubscribedForJournal = true;
+
+                // bool responce = userProxy.CreateUser(UserDetails.UserDetails);
+
+                //if (responce)
+                //{
+                responseMessage = "Congradulations ! . You have been successfully Subscribed for the journal !!";
+                responseCode = "success";
+                //}
+            }
+            else
+            {
+                responseMessage = "Please login to subscive for the journal !!";
+                responseCode = "error";
+            }
+            return RedirectToPage("ViewJournalDetails", new { journalId = JournalVM.JournalID });
         }
     }
 }

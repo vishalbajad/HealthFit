@@ -4,117 +4,138 @@
     ViewData["Title"] = "Home page";
     Layout = "../Layouts/_Form_Layout.cshtml";
 }
-<div class="container">
-    <ul class="breadcrumbs">
-        <li><a href="../Index">Home</a></li>
-        <li class="current">@Model.JournalVM.Title</li>
-    </ul>
-    <table style="width:100%; vertical-align:top">
-        <tr>
-            <td style="width:10%; vertical-align:top"><img class="book-cover" src="@Model.JournalVM.JournalCoverPhotoPathByte" alt="Book Cover"></td>
-            <td style="width:80%; vertical-align:top">
-                <div class="book-info">
-                    <h2 class="book-title">@Model.JournalVM.Title</h2>
-                    <p>
-                        <div class="rating-snapshot">
-                            <div class="rating">
-                                <span class="rating-value">4.5</span>
-                                <span class="out-of">out of 5</span>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="container">
+        <ul class="breadcrumbs">
+            <li><a href="../Index">Home</a></li>
+            <li class="current">@Model.JournalVM.Title</li>
+        </ul>
+        <table style="width:100%; vertical-align:top">
+            <tr>
+                <td style="width:10%; vertical-align:top"><img class="book-cover" src="@Model.JournalVM.JournalCoverPhotoPathByte" alt="Book Cover"></td>
+                <td style="width:80%; vertical-align:top">
+                    <div class="book-info">
+                        <h2 class="book-title">@Model.JournalVM.Title</h2>
+                        <p>
+                            <div class="rating-snapshot">
+                                <div class="rating">
+                                    <span class="rating-value">4.5</span>
+                                    <span class="out-of">out of 5</span>
+                                </div>
+                                <div class="stars">
+                                    <span class="filled-stars"></span>
+                                    <span class="empty-stars"></span>
+                                </div>
+                                <div class="reviews">
+                                    <span class="total-reviews">542</span>
+                                    <span class="reviews-text">reviews</span>
+                                </div>
                             </div>
-                            <div class="stars">
-                                <span class="filled-stars"></span>
-                                <span class="empty-stars"></span>
-                            </div>
-                            <div class="reviews">
-                                <span class="total-reviews">542</span>
-                                <span class="reviews-text">reviews</span>
-                            </div>
-                        </div>
-                    </p>
-                    <p class="book-author">@Model.PublisherName</p>
-                    <p class="book-description">ISSN : @Model.JournalVM.ISSN</p>
-                    <p class="book-description">Publication Frequency : @Model.JournalVM.PublicationFrequency</p>
-                    <p class="book-description">Category : @Model.JournalVM.Category</p>
-                    <p class="book-description">@Model.JournalVM.Description.</p>
-                </div>
-            </td>
-            <td style="width:10%; vertical-align:top">
-                <script>
-                    function selectOption(option) {
-                        var options = document.getElementsByClassName('buy-option');
-                        for (var i = 0; i < options.length; i++) {
-                            options[i].classList.remove('selected');
+                        </p>
+                        <p class="book-author">@Model.PublisherName</p>
+                        <p class="book-description">ISSN : @Model.JournalVM.ISSN</p>
+                        <p class="book-description">Publication Frequency : @Model.JournalVM.PublicationFrequency</p>
+                        <p class="book-description">Category : @Model.JournalVM.Category</p>
+                        <p class="book-description">@Model.JournalVM.Description.</p>
+                    </div>
+                </td>
+                <td style="width:10%; vertical-align:top">
+                    <script>
+                        function selectOption(option) {
+                            var options = document.getElementsByClassName('buy-option');
+                            for (var i = 0; i < options.length; i++) {
+                                options[i].classList.remove('selected');
+                            }
+                            option.classList.add('selected');
                         }
-                        option.classList.add('selected');
+                    </script>
+                    @if (!Model.IsSubscribedForJournal)
+                    {
+                        <div class="buy-options">
+                            <div class="buy-option selected" onclick="selectOption(this)">
+                                <h2>1 Year</h2>
+                                <p>$@Model.JournalVM.Price</p>
+                            </div>
+                            <div class="buy-option" onclick="selectOption(this)">
+                                <h2>2 Years</h2>
+                                <p>$@(Model.JournalVM.Price * 2)</p>
+                            </div>
+                            <div class="buy-option" onclick="selectOption(this)">
+                                <h2>Lifetime</h2>
+                                <p>$@(Model.JournalVM.Price * 10) </p>
+                            </div>
+                            @if (Model?.LoggedInUser?.UserId > 0)
+                            {
+                                <div class="form-group">
+                                    <button type="submit" class="green" style="margin-left:25%" name="submit" formmethod="post">Buy Now</button>
+                                </div>
+                            }
+                            else
+                            {
+                                <div class="form-group">
+                                    <button type="button" class="green" style="width: 50%;margin-left:25%" onclick="location.href ='/Login'">Login to Buy</button>
+                                </div>
+                            }
+                        </div>
                     }
-                </script>
-                @if (!Model.IsSubscribedForJournal)
-                {
-                    <div class="buy-options">
-                        <div class="buy-option selected" onclick="selectOption(this)">
-                            <h2>1 Year</h2>
-                            <p>$@Model.JournalVM.Price</p>
-                        </div>
-                        <div class="buy-option" onclick="selectOption(this)">
-                            <h2>2 Years</h2>
-                            <p>$@(Model.JournalVM.Price * 2)</p>
-                        </div>
-                        <div class="buy-option" onclick="selectOption(this)">
-                            <h2>Lifetime</h2>
-                            <p>$@(Model.JournalVM.Price * 10) </p>
-                        </div>
+                </td>
+            </tr>
+            <tr>
+                <td style="width:10%; vertical-align:top">
+                    @if (Model.IsSubscribedForJournal)
+                    {
                         <div class="form-group">
-                            <button type="submit" class="green" style="margin-left:25%">Buy Now</button>
+                            <button id="btnViewJournal" type="submit" class="green" style="margin-left:25%" onclick="location.href='PdfViewer?journalId=@Model.JournalVM.JournalID'">View Journal</button>
                         </div>
+                        <br />
+                    }
+                    <div class="social-logos">
+                        <a href="#"><i class="fab fa-facebook-f"><img src="~/images/fb.png" width="40" /></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"><img src="~/images/instalgram.png" width="40" /></i></a>
+                        <a href="#"><i class="fab fa-twitter"><img src="~/images/twitter.png" width="40" /></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"><img src="~/images/linkedin.png" width="40" /></i></a>
                     </div>
-                }
-            </td>
-        </tr>
-        <tr>
-            <td style="width:10%; vertical-align:top">
-                @if (Model.IsSubscribedForJournal)
-                {
-                    <div class="form-group">
-                        <button id="btnViewJournal" type="submit" class="green" style="margin-left:25%" onclick="location.href='PdfViewer?journalId=@Model.JournalVM.JournalID'">View Journal</button>
-                    </div>
-                    <br />
-                }
-                <div class="social-logos">
-                    <a href="#"><i class="fab fa-facebook-f"><img src="~/images/fb.png" width="40" /></i></a>
-                    <a href="#"><i class="fab fa-facebook-f"><img src="~/images/instalgram.png" width="40" /></i></a>
-                    <a href="#"><i class="fab fa-twitter"><img src="~/images/twitter.png" width="40" /></i></a>
-                    <a href="#"><i class="fab fa-linkedin-in"><img src="~/images/linkedin.png" width="40" /></i></a>
-                </div>
-            </td>
-            <td style="vertical-align:top" colspan="2">
-                <ul class="comments">
-                    <li class="comment">
-                        <div class="author">Vishal Bajad</div>
-                        <div class="rating" data-rating="4"></div>
-                        <div class="date">May 10, 2023</div>
-                        <div class="content">This journal provides valuable insights into the latest advancements in medical research. Highly recommended!</div>
-                    </li>
-                    <li class="comment">
-                        <div class="author">Manisha Bajad </div>
-                        <div class="rating" data-rating="3"></div>
-                        <div class="date">April 28, 2023</div>
-                        <div class="content">I've been a subscriber to this medical journal for years, and it never disappoints. The articles are well-written and cover a wide range of topics.</div>
-                    </li>
-                    <li class="comment">
-                        <div class="author">Shlok Bajad </div>
-                        <div class="rating" data-rating="3.5"></div>
-                        <div class="date">May 5, 2023</div>
-                        <div class="content">The research studies published in this journal have been immensely helpful in my medical practice. It's a valuable resource for staying up-to-date with the latest research findings.</div>
-                    </li>
-                    <li class="comment">
-                        <div class="author">Pratik</div>
-                        <div class="rating" data-rating="5"></div>
-                        <div class="date">May 5, 2023</div>
-                        <div class="content">Good Journal.</div>
-                    </li>
-                </ul>
+                </td>
+                <td style="vertical-align:top" colspan="2">
+                    <ul class="comments">
+                        <li class="comment">
+                            <div class="author">Vishal Bajad</div>
+                            <div class="rating" data-rating="4"></div>
+                            <div class="date">May 10, 2023</div>
+                            <div class="content">This journal provides valuable insights into the latest advancements in medical research. Highly recommended!</div>
+                        </li>
+                        <li class="comment">
+                            <div class="author">Manisha Bajad </div>
+                            <div class="rating" data-rating="3"></div>
+                            <div class="date">April 28, 2023</div>
+                            <div class="content">I've been a subscriber to this medical journal for years, and it never disappoints. The articles are well-written and cover a wide range of topics.</div>
+                        </li>
+                        <li class="comment">
+                            <div class="author">Shlok Bajad </div>
+                            <div class="rating" data-rating="3.5"></div>
+                            <div class="date">May 5, 2023</div>
+                            <div class="content">The research studies published in this journal have been immensely helpful in my medical practice. It's a valuable resource for staying up-to-date with the latest research findings.</div>
+                        </li>
+                        <li class="comment">
+                            <div class="author">Pratik</div>
+                            <div class="rating" data-rating="5"></div>
+                            <div class="date">May 5, 2023</div>
+                            <div class="content">Good Journal.</div>
+                        </li>
+                    </ul>
 
-            </td>
-        </tr>
-    </table>
-</div>
+                </td>
+            </tr>
+        </table>
+        <input asp-for="@Model.JournalVM.JournalID" style="display:none" />
+    </div>
+    @if (!string.IsNullOrWhiteSpace(Model.responseMessage))
+    {
+        <div class="message @Model.responseCode">
+            <span class="icon"></span>
+            <span class="text">@Model.responseMessage</span>
+        </div>
+    }
+}
