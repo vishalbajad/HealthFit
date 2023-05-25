@@ -31,7 +31,7 @@
         <!-- End Navigation -->
         <div class="cl">&nbsp;</div>
         <!-- Login-details -->
-        @await Html.PartialAsync("../Partial Views/_Login_Menu_Partial.cshtml")
+        @await Html.PartialAsync("../Partial Views/_Login_Menu_Partial.cshtml",ViewData["LoggedInUser"])
         <!-- End Login-details -->
     </div>
     <!-- End Header -->

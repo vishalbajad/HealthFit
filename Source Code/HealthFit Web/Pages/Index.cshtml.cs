@@ -27,13 +27,8 @@ namespace HealthFit_Web.Pages
 
         [BindProperty]
         public List<User>? PublishersCollections { get; set; }
-        public void OnGet(int? logout)
+        public void OnGet()
         {
-            if (logout.HasValue && logout.Value == 1)
-            {
-                LoggedInUser = new User();
-            }
-
             if (LoggedInUser?.UserId > 0)
             {
                 JournalCollections = journalProxy.GetAllJournal(LoggedInUser.UserId);
@@ -50,6 +45,8 @@ namespace HealthFit_Web.Pages
             if (JournalCollections == null) JournalCollections = new List<Journal>();
             if (CategoryCollections == null) CategoryCollections = new List<string>();
             if (PublishersCollections == null) PublishersCollections = new List<User>();
+
+            ViewData["LoggedInUser"] = LoggedInUser;
         }
     }
 }

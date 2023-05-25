@@ -4,33 +4,51 @@
     Layout = "../Layouts/_Form_Layout.cshtml";
 }
 <div class="container">
-    <button class="add-button" style="float:right" onclick="location.href ='AddJournal'">New Journal</button>
+    @if (Model.LoggedInUser.UserType == (byte)Object_Provider.Enum.UserType.Publisher)
+    {
+        <button class="add-button" style="float:right" onclick="location.href ='AddJournal'">New Journal</button>
+    }
     <h2 class="login_box">Journal Lists</h2>
-
     <table id="data-table">
         <thead>
             <tr>
-                <th>Title</th>
-                <th>ISSN</th>
-                <th>Description</th>
-                <th>Price</th>
-                <th></th>
+                <th colspan="2" style="vertical-align:central">Jouranl Details <input id="txtSearch" type="text" placeholder="Search" style="border: solid 1px lightgray;padding: 5px;width: 25%;float: right;" /></th>
             </tr>
         </thead>
-        <tbody>
-
+        <tbody id="journallistListForSearch">
             @foreach (var journal in Model.JournalCollections)
             {
-                <tr>
-                    <td>@journal.Title</td>
-                    <td>@journal.ISSN</td>
-                    <td>@journal.Description</td>
-                    <td>$@journal.Price </td>
-                    <td style="width:50px"><img src="../images/Edit.png" alt="Edit" width="20" style="cursor:pointer" onclick="location.href = 'AddJournal?id=@journal.JournalID'">&nbsp;<img src="../images/Delete.png" alt="Delete" width="20" style="cursor:pointer" onclick="DeleteJournal(@journal.JournalID)"></td>
+                <tr class="product">
+                    <td>
+                        <bold>Title :</bold> @journal.Title , <bold>Price : </bold>$@journal.Price<br />
+                        <bold>ISSN : </bold>@journal.ISSN <br />
+                        <bold>Description :</bold>@journal.Description
+                    </td>
+                    @if (Model.LoggedInUser.UserType == (byte)Object_Provider.Enum.UserType.Publisher)
+                    {
+                        <td style="width:70px"><img src="../images/View.png" alt="View" width="20" style="cursor:pointer" onclick="location.href = 'ViewJournalDetails?journalId=@journal.JournalID'">&nbsp;<img src="../images/Edit.png" alt="Edit" width="20" style="cursor:pointer" onclick="location.href = 'AddJournal?id=@journal.JournalID'">&nbsp;<img src="../images/Delete.png" alt="Delete" width="20" style="cursor:pointer" onclick="DeleteJournal(@journal.JournalID)"></td>
+                    }
+                    else if (Model.LoggedInUser.UserType == (byte)Object_Provider.Enum.UserType.PublicUser)
+                    {
+                        <td style="width:70px"><img src="../images/View.png" alt="View" width="20" style="cursor:pointer" onclick="location.href = 'ViewJournalDetails?journalId=@journal.JournalID'"></td>
+                    }
                 </tr>
             }
         </tbody>
     </table>
+    <script>
+        $(document).ready(function () {
+            $("#txtSearch").keyup(function () {
+                var txt = $('#txtSearch').val();
+                $("#journallistListForSearch").find(".product").each(function () {
+                    if ($(this).text().toUpperCase().indexOf(txt.toUpperCase()) != -1) {
+                        $(this).closest("tr").show();
+                    } else
+                        $(this).closest("tr").hide();
+                });
+            });
+        });
+    </script>
 </div>
 <div class="col-lg-1" style="display:none">
     <form asp-page-handler="delete" method="post">

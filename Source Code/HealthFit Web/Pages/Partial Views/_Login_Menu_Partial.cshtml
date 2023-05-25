@@ -1,4 +1,13 @@
-﻿
-<div id="login-details">
-    <p><a href="/Index" id="user">Home </a> &nbsp; | <a href="/Login" id="user">Login </a> &nbsp| <a href="/signup" id="user">Signup</a> .</p>
-</div>
+﻿@using HealthFit.Object_Provider.Model
+@model User?
+@if (Model?.UserId > 0 && (Model?.UserId == 1 || Model?.UserId == 2))
+{
+    <div id="login-details">
+        <p><a href="/Index" id="user">Home </a> | <a href="/Publishers/JournalList">My Jouranls</a> | <a href="/Login?logout=1" id="user">Logout</a></p>
+    </div>
+}else
+{
+    <div id="login-details">
+        <p><a href="/Index" id="user">Home </a> | <a href="/Login" id="user">Login </a> | <a href="/signup" id="user">Signup</a></p>
+    </div>
+}

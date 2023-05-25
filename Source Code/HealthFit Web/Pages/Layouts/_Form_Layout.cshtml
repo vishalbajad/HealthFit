@@ -20,7 +20,7 @@
         <div id="logo"><h1><a href="#">HelathFit</a></h1><span><a href="#">By Varian</a></span></div>
         <div class="cl">&nbsp;</div>
         <!-- Login-details -->
-        @await Html.PartialAsync("../Partial Views/_Login_Menu_Partial.cshtml",model: null)
+        @await Html.PartialAsync("../Partial Views/_Login_Menu_Partial.cshtml",ViewData["LoggedInUser"])
         <!-- End Login-details -->
     </div>
     <!-- End Header -->

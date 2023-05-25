@@ -69,3 +69,4 @@ Error Handling and Information Leakage: Implement appropriate error handling to 
 
 ** Make Sure you have installed SQL Server 
 ** Keep Default.jpg in file server path
+** Make sure shared folder path having valid access permission

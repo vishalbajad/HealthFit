@@ -21,9 +21,13 @@ namespace HealthFit_Web.Pages
         public string responseMessage { get; set; }
         public string responseCode { get; set; }
 
-        public void OnGet()
+        public void OnGet(int logout = 0)
         {
-
+            if (logout == 1)
+            {
+                LoggedInUser = new HealthFit.Object_Provider.Model.User();
+            }
+            ViewData["LoggedInUser"] = LoggedInUser;
         }
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> OnPostAsync()
@@ -33,10 +37,7 @@ namespace HealthFit_Web.Pages
             if (user != null)
             {
                 this.LoggedInUser = user;
-                if (user.UserType == 1)
-                    return RedirectToPage("./Index");
-                else if (user.UserType == 2)
-                    return RedirectToPage("Publishers/JournalList");
+                return RedirectToPage("Publishers/JournalList");
             }
             else
             {

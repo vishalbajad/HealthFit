@@ -26,6 +26,7 @@ namespace HealthFit_Web.Pages.Publishers
 
         public void OnGet()
         {
+            ViewData["LoggedInUser"] = LoggedInUser; 
             JournalCollections = journalProxy.GetAllJournal(LoggedInUser.UserId);
         }
 

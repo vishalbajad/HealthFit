@@ -25,6 +25,7 @@ namespace HealthFit_Web.Pages
         {
             API_Connector.Journal journalProxy = new API_Connector.Journal(this.GetAPIServerDetails());
             JournalVM = journalProxy.GetJournal(id);
+            ViewData["LoggedInUser"] = LoggedInUser;
         }
 
         private bool IsFileExtensionAllowed(string fileName, string[] allowedExtensions)

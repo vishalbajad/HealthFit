@@ -27,6 +27,7 @@ namespace HealthFit_Web.Pages
 
         public void OnGet(string journalId)
         {
+            ViewData["LoggedInUser"] = LoggedInUser;
             if (!string.IsNullOrEmpty(journalId))
             {
 

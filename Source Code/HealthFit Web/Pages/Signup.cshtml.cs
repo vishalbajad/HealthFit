@@ -22,6 +22,7 @@ namespace HealthFit_Web.Pages
        
         public void OnGet()
         {
+            ViewData["LoggedInUser"] = LoggedInUser;
         }
 
         [ValidateAntiForgeryToken]
