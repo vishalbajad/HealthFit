@@ -1,5 +1,6 @@
 ﻿using HealthFit.API_Connector;
 using HealthFit.Object_Provider.Model;
+using HealthFit_Web.CustomAttributes;
 
 namespace HealthFit_Web
 {
@@ -19,6 +20,10 @@ namespace HealthFit_Web
             services.AddScoped<HTTPConnector>();
             services.AddSession();
             services.Configure<SystemConfigurations>(Configuration);
+            services.AddMvc(options =>
+            {
+                options.Filters.Add(new CustomRequireHttpsAttribute());
+            });
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

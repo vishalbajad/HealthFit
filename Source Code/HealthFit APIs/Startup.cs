@@ -1,8 +1,6 @@
-﻿using Data_Layer.DBContext;
-using HealthFit.Object_Provider.Model;
+﻿using HealthFit.CustomAttributes;
 using HealthFit_APIs.Model;
-using Microsoft.EntityFrameworkCore;
-using System.Data.Entity;
+using Microsoft.AspNetCore.Mvc;
 
 namespace HealthFit_APIs
 {
@@ -20,6 +18,12 @@ namespace HealthFit_APIs
             services.AddRazorPages();
             services.AddControllers();
             services.AddDistributedMemoryCache();
+            
+            services.AddMvc(options =>
+            {
+                options.Filters.Add(new CustomRequireHttpsAttribute());
+            });
+
             services.Configure<IISServerOptions>(options => { options.AllowSynchronousIO = true; });
             services.AddAntiforgery(o => o.HeaderName = "30ee3956632c35d9840037633e0110b6");
             services.Configure<AppSettingsConfigurations>(Configuration);
@@ -39,7 +43,7 @@ namespace HealthFit_APIs
             app.UseRouting();
             app.UseAuthentication();
             app.UseAuthorization();
-            
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapRazorPages();
