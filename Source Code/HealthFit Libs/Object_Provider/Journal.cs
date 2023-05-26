@@ -7,6 +7,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace HealthFit.Object_Provider.Model
 {
+
     [Serializable]
     public class Journal
     {
@@ -22,17 +23,18 @@ namespace HealthFit.Object_Provider.Model
 
         [ValidateNever]
         public int PublisherID { get; set; }
-        [RegularExpression(@"^[A-Za-z ]+$", ErrorMessage = "Characters are allowed only")] 
+        
+        [RegularExpression(@"^[a-zA-Z0-9'' '.,]+$", ErrorMessage = "Invalid Input")] 
         private string _PublicationFrequency = string.Empty;
         [Required]
         [Display(Name = "Publication Frequency")]
-        [RegularExpression(@"^[A-Za-z ]+$", ErrorMessage = "Characters are allowed only")]
+        [RegularExpression(@"^[a-zA-Z]+$", ErrorMessage = "Invalid Input")]
         public string? PublicationFrequency { get { return _PublicationFrequency; } set { _PublicationFrequency = value; } }
 
         private string _category = string.Empty;
         [Required]
         [Display(Name = "Category")]
-        [RegularExpression(@"^[A-Za-z ]+$", ErrorMessage = "Characters are allowed only")]
+        [RegularExpression(@"^[a-zA-Z ]+$", ErrorMessage = "Invalid Input")]
         public string? Category { get { return _category; } set { _category = value; } }
 
         [Required]
@@ -40,15 +42,17 @@ namespace HealthFit.Object_Provider.Model
         public string? PublicationStartYear { get; set; }
 
         [Required]
+        [RegularExpression(@"^[a-zA-Z0-9'' '.,]+$", ErrorMessage = "Invalid Input")]
         public string? Description { get; set; }
 
         [Required]
+        [RegularExpression(@"^[0-9.]+$", ErrorMessage = "Invalid Input")]
         public decimal Price { get; set; }
 
         private string _subjectArea = string.Empty;
         [Display(Name = "Subject Area")]
         [ValidateNever]
-        [RegularExpression(@"^[A-Za-z ]+$", ErrorMessage = "Characters are allowed only")]
+        [RegularExpression(@"^[a-zA-Z'' '.,]+$", ErrorMessage = "Invalid Input")]
         public string? SubjectArea { get { return _subjectArea; } set { _subjectArea = value; } }
 
         private string _ImpactFactor = string.Empty;

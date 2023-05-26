@@ -109,6 +109,8 @@ namespace HealthFit_Web.Models
         public void LoggedOut()
         {
             _httpContextAccessor.HttpContext.Session.Clear();
+            foreach (var cookie in Request.Cookies.Keys)
+                Response.Cookies.Delete(cookie);
         }
     }
 }

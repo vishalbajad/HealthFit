@@ -13,22 +13,22 @@ namespace HealthFit.Object_Provider.Model
         public int UserId { get; set; }
 
         [Required]
-        [RegularExpression(@"^[A-Za-z ]+$", ErrorMessage = "Characters are allowed only")]
+        [RegularExpression(@"^[a-zA-Z'' ']+$", ErrorMessage = "Invalid Input")]
         public string FullName { get; set; }
 
         [ValidateNever]
         public string? Address { get; set; }
 
         [ValidateNever]
-        [RegularExpression(@"^[A-Za-z ]+$", ErrorMessage = "Characters are allowed only")]
+        [RegularExpression(@"^[a-zA-Z]+$", ErrorMessage = "Invalid Input")]
         public string? City { get; set; }
 
         [ValidateNever]
-        [RegularExpression(@"^[A-Za-z ]+$", ErrorMessage = "Characters are allowed only")]
+        [RegularExpression(@"^[a-zA-Z]+$", ErrorMessage = "Invalid Input")]
         public string? State { get; set; }
 
         [ValidateNever]
-        [RegularExpression(@"^[A-Za-z ]+$", ErrorMessage = "Characters are allowed only")]
+        [RegularExpression(@"^[a-zA-Z]+$", ErrorMessage = "Invalid Input")]
         public string? Country { get; set; }
 
         [Required]

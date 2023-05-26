@@ -90,5 +90,12 @@ https://healthfit.blob.core.windows.net/healthfitcontainer/e6ecab79-cf2d-4585-a5
 ** Never Print passowrds in logs
 ** @Html.AntiForgeryToken()
 ** File upload control server side validation for png and pdf file
-** URL Query Strings
+** URL Encoding
+** HTML Encoding - Razor pages taken care of it
+** Regular Expression Attributes and Object Model
+** Use is HSTS (HTTP Strict Transport Security)?
+** Clean Coocies and session after logout
+
+
+
 

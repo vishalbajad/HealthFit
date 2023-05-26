@@ -12,6 +12,8 @@ G:\Personal\Varian-HealthFit\Source Code\HealthFit APIs\bin\Debug\net6.0\Azure.S
 G:\Personal\Varian-HealthFit\Source Code\HealthFit APIs\bin\Debug\net6.0\Castle.Core.dll
 G:\Personal\Varian-HealthFit\Source Code\HealthFit APIs\bin\Debug\net6.0\EntityFramework.SqlServer.dll
 G:\Personal\Varian-HealthFit\Source Code\HealthFit APIs\bin\Debug\net6.0\EntityFramework.dll
+G:\Personal\Varian-HealthFit\Source Code\HealthFit APIs\bin\Debug\net6.0\System.Net.Http.Formatting.dll
+G:\Personal\Varian-HealthFit\Source Code\HealthFit APIs\bin\Debug\net6.0\System.Web.Http.dll
 G:\Personal\Varian-HealthFit\Source Code\HealthFit APIs\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
 G:\Personal\Varian-HealthFit\Source Code\HealthFit APIs\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
 G:\Personal\Varian-HealthFit\Source Code\HealthFit APIs\bin\Debug\net6.0\Microsoft.DotNet.PlatformAbstractions.dll
@@ -42,6 +44,7 @@ G:\Personal\Varian-HealthFit\Source Code\HealthFit APIs\bin\Debug\net6.0\Microso
 G:\Personal\Varian-HealthFit\Source Code\HealthFit APIs\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
 G:\Personal\Varian-HealthFit\Source Code\HealthFit APIs\bin\Debug\net6.0\Moq.dll
 G:\Personal\Varian-HealthFit\Source Code\HealthFit APIs\bin\Debug\net6.0\Newtonsoft.Json.dll
+G:\Personal\Varian-HealthFit\Source Code\HealthFit APIs\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
 G:\Personal\Varian-HealthFit\Source Code\HealthFit APIs\bin\Debug\net6.0\nunit.framework.dll
 G:\Personal\Varian-HealthFit\Source Code\HealthFit APIs\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
 G:\Personal\Varian-HealthFit\Source Code\HealthFit APIs\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
@@ -101,6 +104,3 @@ G:\Personal\Varian-HealthFit\Source Code\HealthFit APIs\obj\Debug\net6.0\refint\
 G:\Personal\Varian-HealthFit\Source Code\HealthFit APIs\obj\Debug\net6.0\HealthFit APIs.pdb
 G:\Personal\Varian-HealthFit\Source Code\HealthFit APIs\obj\Debug\net6.0\HealthFit APIs.genruntimeconfig.cache
 G:\Personal\Varian-HealthFit\Source Code\HealthFit APIs\obj\Debug\net6.0\ref\HealthFit APIs.dll
-G:\Personal\Varian-HealthFit\Source Code\HealthFit APIs\bin\Debug\net6.0\System.Net.Http.Formatting.dll
-G:\Personal\Varian-HealthFit\Source Code\HealthFit APIs\bin\Debug\net6.0\System.Web.Http.dll
-G:\Personal\Varian-HealthFit\Source Code\HealthFit APIs\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll

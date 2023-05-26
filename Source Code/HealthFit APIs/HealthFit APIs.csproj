@@ -15,9 +15,15 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\HealthFit Libs\Data_Layer\Data_Layer.csproj" />
-    <ProjectReference Include="..\HealthFit Libs\Object_Provider\Object_Provider.csproj" />
-    <ProjectReference Include="..\HealthFit Libs\Utilities\Utilities.csproj" />
+    <ProjectReference Include="..\HealthFit Libs\Data_Layer\Data_Layer.csproj">
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\HealthFit Libs\Object_Provider\Object_Provider.csproj">
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\HealthFit Libs\Utilities\Utilities.csproj">
+      <Private>True</Private>
+    </ProjectReference>
   </ItemGroup>
 
 </Project>

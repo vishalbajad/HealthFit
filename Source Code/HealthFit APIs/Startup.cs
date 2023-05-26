@@ -16,9 +16,13 @@ namespace HealthFit_APIs
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
-            services.AddControllers();
+            services.AddControllers(options =>
+            {
+                options.Filters.Add<CustomExceptionFilter>();
+            });
+
             services.AddDistributedMemoryCache();
-            
+
             services.AddMvc(options =>
             {
                 options.Filters.Add(new CustomRequireHttpsAttribute());
@@ -43,7 +47,7 @@ namespace HealthFit_APIs
             app.UseRouting();
             app.UseAuthentication();
             app.UseAuthorization();
-
+            app.UseHsts();
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapRazorPages();

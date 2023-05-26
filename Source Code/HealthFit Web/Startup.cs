@@ -1,6 +1,8 @@
 ﻿using HealthFit.API_Connector;
 using HealthFit.Object_Provider.Model;
 using HealthFit_Web.CustomAttributes;
+using Microsoft.AspNetCore.Mvc;
+using System.Reflection;
 
 namespace HealthFit_Web
 {
@@ -15,7 +17,7 @@ namespace HealthFit_Web
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddRazorPages();
+            services.AddRazorPages().AddRazorPagesOptions(options =>{options.Conventions.ConfigureFilter(new IgnoreAntiforgeryTokenAttribute());});
             services.AddDistributedMemoryCache();
             services.AddScoped<HTTPConnector>();
             services.AddSession();
@@ -28,22 +30,14 @@ namespace HealthFit_Web
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
-            else
-            {
-                app.UseExceptionHandler("/Error");
-                app.UseHsts();
-            }
-
+            app.UseExceptionHandler("/Error");
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseRouting();
             app.UseAuthentication();
             app.UseAuthorization();
             app.UseSession();
+            app.UseHsts();
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
