@@ -15,7 +15,6 @@ namespace HealthFit.Object_Provider.Model
         public int JournalID { get { return _JournalID; } set { _JournalID = value; } }
 
         [Required]
-        [StringLength(50, ErrorMessage = "Maximum 50 characters exceeded")]
         public string? Title { get; set; }
 
         [Required]
@@ -23,22 +22,26 @@ namespace HealthFit.Object_Provider.Model
 
         [ValidateNever]
         public int PublisherID { get; set; }
-
+        [RegularExpression(@"^[A-Za-z ]+$", ErrorMessage = "Characters are allowed only")] 
         private string _PublicationFrequency = string.Empty;
         [Required]
         [Display(Name = "Publication Frequency")]
+        [RegularExpression(@"^[A-Za-z ]+$", ErrorMessage = "Characters are allowed only")]
         public string? PublicationFrequency { get { return _PublicationFrequency; } set { _PublicationFrequency = value; } }
 
         private string _category = string.Empty;
         [Required]
         [Display(Name = "Category")]
+        [RegularExpression(@"^[A-Za-z ]+$", ErrorMessage = "Characters are allowed only")]
         public string? Category { get { return _category; } set { _category = value; } }
 
         [Required]
         [Display(Name = "Publication Year")]
+        [RegularExpression(@"^[A-Za-z ]+$", ErrorMessage = "Characters are allowed only")]
         public string? PublicationStartYear { get; set; }
 
         [Required]
+        [RegularExpression(@"^[A-Za-z ]+$", ErrorMessage = "Characters are allowed only")]
         public string? Description { get; set; }
 
         [Required]
@@ -47,11 +50,13 @@ namespace HealthFit.Object_Provider.Model
         private string _subjectArea = string.Empty;
         [Display(Name = "Subject Area")]
         [ValidateNever]
+        [RegularExpression(@"^[A-Za-z ]+$", ErrorMessage = "Characters are allowed only")]
         public string? SubjectArea { get { return _subjectArea; } set { _subjectArea = value; } }
 
         private string _ImpactFactor = string.Empty;
         [Display(Name = "Impatct Factor")]
         [ValidateNever]
+        [RegularExpression(@"^[A-Za-z ]+$", ErrorMessage = "Characters are allowed only")]
         public string? ImpactFactor { get { return _ImpactFactor; } set { _ImpactFactor = value; } }
 
         private string _website;

@@ -29,7 +29,6 @@ namespace HealthFit.Utilities
                 }
             }
         }
-
         public static string Decrypt(string encryptedText)
         {
             using (Aes aes = Aes.Create())
@@ -51,7 +50,6 @@ namespace HealthFit.Utilities
                 }
             }
         }
-
         public static string GenerateHash(string input)
         {
             using (SHA256 sha256 = SHA256.Create())

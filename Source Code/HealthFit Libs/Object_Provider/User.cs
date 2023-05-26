@@ -13,18 +13,22 @@ namespace HealthFit.Object_Provider.Model
         public int UserId { get; set; }
 
         [Required]
+        [RegularExpression(@"^[A-Za-z ]+$", ErrorMessage = "Characters are allowed only")]
         public string FullName { get; set; }
 
         [ValidateNever]
         public string? Address { get; set; }
 
         [ValidateNever]
+        [RegularExpression(@"^[A-Za-z ]+$", ErrorMessage = "Characters are allowed only")]
         public string? City { get; set; }
 
         [ValidateNever]
+        [RegularExpression(@"^[A-Za-z ]+$", ErrorMessage = "Characters are allowed only")]
         public string? State { get; set; }
 
         [ValidateNever]
+        [RegularExpression(@"^[A-Za-z ]+$", ErrorMessage = "Characters are allowed only")]
         public string? Country { get; set; }
 
         [Required]
@@ -45,6 +49,7 @@ namespace HealthFit.Object_Provider.Model
         public byte UserType { get; set; }
 
         [Required]
+        [RegularExpression(@"^[A-Za-z]+$", ErrorMessage = "Characters are allowed only")]
         public string UserName { get; set; }
 
         private string _HashedPassword = string.Empty;

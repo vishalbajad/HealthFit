@@ -84,3 +84,7 @@ https://healthfit.blob.core.windows.net/healthfitcontainer/e6ecab79-cf2d-4585-a5
 \\VISHAL\Users\vishal\Documents\HealthFit File Server\0d25453d-a19b-4139-82d0-e621bdbfa0c6_IMG_20230314_225610.jpg
 
 ** Repository Design Patterns
+** Regualr expression on model be secure input
+** Salt and hashed password stored in database
+** Added adiqute logging using ILogger
+** Never Print passowrds in logs
