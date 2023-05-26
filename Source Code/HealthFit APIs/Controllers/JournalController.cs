@@ -201,5 +201,43 @@ namespace HealthFit_APIs.Controllers
                 return StatusCode(500, $"An error occurred: {ex.Message}");
             }
         }
+
+        /// <summary>
+        /// Copy file to temp path to access
+        /// </summary>
+        /// <param name="userId"></param>
+        /// <param name="journalId"></param>
+        /// <returns></returns>
+        [HttpGet]
+        public string CopyJouranlToTempPath(int userId, int journalId)
+        {
+            _logger.Log(LogLevel.Information, "Start Method Executions copyJouranlToTempPath");
+            try
+            {
+                Journal? journal = journalService.GetJournal(journalId);
+
+                if (journal?.JournalID > 0)
+                {
+                    string tempFolderFilePath = Path.Join("Temp", Guid.NewGuid().ToString("N"));
+                    string tempFullFolderFileDestinationPath = Path.Join(appSettingsConfigurations.FileServerPath, tempFolderFilePath);
+                    string originalJournalFilePath = Path.Join(appSettingsConfigurations.FileServerPath, journal.JournalPdfPath);
+                    string destinationJournalFilePath = Path.Join(tempFullFolderFileDestinationPath, journal.JournalPdfPath);
+                    if (!Directory.Exists(tempFullFolderFileDestinationPath)) Directory.CreateDirectory(tempFullFolderFileDestinationPath);
+
+                    System.IO.File.Copy(originalJournalFilePath, destinationJournalFilePath, true);
+                    string newTempFilePath = Path.Join(tempFolderFilePath, journal.JournalPdfPath);
+                    return newTempFilePath;
+                }
+                else
+                {
+                    _logger.Log(LogLevel.Debug, "Invalid Journal ID");
+                }
+            }
+            catch (Exception ex)
+            {
+                _logger.Log(LogLevel.Error, $"Error Occured during file Copy to temp folder : {ex.InnerException.ToString()}");
+            }
+            return string.Empty;
+        }
     }
 }

@@ -15,5 +15,6 @@ namespace HealthFit_Libs.InterfaceLibrary
         bool EditJournal(Journal journal);
         bool DeleteJournal(int id);
         List<string>? GetAllCategoryList(int publisherId = 0, bool active = true);
+        string CopyJouranlToTempPath(int userId, int journalId);
     }
 }

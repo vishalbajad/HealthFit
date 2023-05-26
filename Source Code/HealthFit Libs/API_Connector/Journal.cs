@@ -20,6 +20,7 @@ namespace API_Connector
         public static readonly string Journal_Api_EndPoint_GetAllJournal = "/Journal/GetAllJournal/";
         public static readonly string Journal_Api_EndPoint_GetJournal = "/Journal/GetJournal/";
         public static readonly string Journal_Api_EndPoint_GetAllCategoryList = "/Journal/GetAllCategoryList/";
+        public static readonly string Journal_Api_EndPoint_CopyJouranlToTempPath = "/Journal/CopyJouranlToTempPath/";
 
         readonly ApiServerDetails _apiserver;
         readonly HTTPConnector apiConnector;
@@ -106,6 +107,17 @@ namespace API_Connector
 
             return responseStatus.ReasonPhrase;
 
+        }
+
+        /// <summary>
+        /// Copy Jouranl To Temp Path
+        /// </summary>
+        /// <param name="userId"></param>
+        /// <param name="journalId"></param>
+        /// <returns></returns>
+        public string CopyJouranlToTempPath(int userId, int journalId)
+        {
+            return apiConnector.SendJsonRequest<string>(Journal_Api_EndPoint_CopyJouranlToTempPath, HTTPConnector.RequestMethod.GET, string.Empty, $"userId={userId}&journalId={journalId}");
         }
     }
 }

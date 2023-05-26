@@ -31,8 +31,12 @@ namespace HealthFit_Web.Pages
             int jourId = 0;
             int.TryParse(decryptedJourID, out jourId);
 
+            if (!(jourId > 0)) throw new Exception("Invalid Journal ID");
+
             ViewData["LoggedInUser"] = LoggedInUser;
             JournalVM = journalProxy.GetJournal(jourId);
+            // Logic to Copy Orignal file to temp and ref from temp folder
+            //JournalVM.JournalPdfPath = journalProxy.CopyJouranlToTempPath(LoggedInUser.UserId, jourId);
         }
     }
 }

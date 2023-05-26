@@ -95,7 +95,7 @@ namespace HealthFit.API_Connector
                     PropertyNameCaseInsensitive = true
                 };
 
-                result = JsonSerializer.Deserialize<T>(ResponseText, options);
+                result = JsonSerializer.Deserialize<T>(@ResponseText, options);
             }
             catch
             {
