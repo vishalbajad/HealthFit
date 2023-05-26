@@ -36,7 +36,7 @@ namespace HealthFit_Web.Models
 
             if (JwtTokenExpired < DateTime.Now)
             {
-                var jwtToekn = authenticateUserProxy.Login(new HealthFit.JwtAuthentication.Model.LoginModel { Username = sysConfig.APIServerUsername, Password = sysConfig.APIServerUsername });
+                var jwtToekn = authenticateUserProxy.Login(new HealthFit.JwtAuthentication.Model.LoginModel { Username = sysConfig.APIServerUsername, Password = sysConfig.APIServerPassword });
                 aPIServer.Token = jwtToekn.Token;
                 aPIServer.Expiration = jwtToekn.Expiration;
                 ApiServerDetails = aPIServer;

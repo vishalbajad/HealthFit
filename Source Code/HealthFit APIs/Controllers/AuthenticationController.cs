@@ -43,7 +43,7 @@ namespace HealthFit_APIs.Controllers
             if (!(string.IsNullOrWhiteSpace(loginModel?.Username)) && !(string.IsNullOrWhiteSpace(loginModel?.Password)))
             {
                 // In real time , this creadentials should be valid from database
-                if (loginModel.Username.Equals(appSettingsConfigurations.JwtAuthenticationUsername) && loginModel.Password.Equals(appSettingsConfigurations.JwtAuthenticationUsername))
+                if (loginModel.Username.Equals(appSettingsConfigurations.JwtAuthenticationUsername) && loginModel.Password.Equals(appSettingsConfigurations.JwtAuthenticationPassword))
                 {
                     var authClaims = new List<Claim>
                 {

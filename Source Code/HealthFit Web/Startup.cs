@@ -17,7 +17,7 @@ namespace HealthFit_Web
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddRazorPages().AddRazorPagesOptions(options =>{options.Conventions.ConfigureFilter(new IgnoreAntiforgeryTokenAttribute());});
+            services.AddRazorPages().AddRazorPagesOptions(options => { options.Conventions.ConfigureFilter(new IgnoreAntiforgeryTokenAttribute()); });
             services.AddDistributedMemoryCache();
             services.AddScoped<HTTPConnector>();
             services.AddSession();
@@ -32,7 +32,7 @@ namespace HealthFit_Web
         {
             app.UseExceptionHandler("/Error");
             app.UseHttpsRedirection();
-            app.UseStaticFiles();
+            app.UseStaticFiles(new StaticFileOptions { OnPrepareResponse = ctx => { ctx.Context.Response.Headers.Append("Cache-Control", "public,max-age=3600"); } });
             app.UseRouting();
             app.UseAuthentication();
             app.UseAuthorization();

@@ -106,4 +106,7 @@ File operation related acitivity logged
 Secure File Storage: Ensure that the storage location for uploaded files has proper access controls and permissions. Only allow the necessary permissions for the application to read, write, and delete files. Restrict access to the storage directory to prevent unauthorized access.
 
 
+Read pdf page by page
+Store on blob stoarage
+Cache static files
 
