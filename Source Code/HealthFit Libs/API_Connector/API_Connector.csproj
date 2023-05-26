@@ -12,7 +12,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Log_Client\Log_Client.csproj" />
     <ProjectReference Include="..\Object_Provider\Object_Provider.csproj" />
   </ItemGroup>
 
