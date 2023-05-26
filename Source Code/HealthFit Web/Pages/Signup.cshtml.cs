@@ -46,7 +46,7 @@ namespace HealthFit_Web.Pages
             UserDetails.UserDetails.HashedPassword = hashedPassword;
             UserDetails.UserDetails.PasswordSalt = salt;
 
-            API_Connector.User userProxy = new API_Connector.User(this.GetAPIServerDetails());
+            API_Connector.User userProxy = new API_Connector.User(this.ApiServerDetails);
 
             _logger.Log(LogLevel.Information, " Sending user to API for creation");
 

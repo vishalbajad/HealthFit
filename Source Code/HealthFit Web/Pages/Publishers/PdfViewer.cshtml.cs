@@ -20,7 +20,7 @@ namespace HealthFit_Web.Pages
         public PdfViewerModel(IOptions<SystemConfigurations> options, ILogger<PdfViewerModel> logger, IHttpContextAccessor httpContextAccessor) : base(options, logger, httpContextAccessor)
         {
             _logger = logger;
-            journalProxy = new API_Connector.Journal(this.GetAPIServerDetails());
+            journalProxy = new API_Connector.Journal(this.ApiServerDetails);
         }
         [ValidateAntiForgeryToken]
         public void OnGet(string journalId)

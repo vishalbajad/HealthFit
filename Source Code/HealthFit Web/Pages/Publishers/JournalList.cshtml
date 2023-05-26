@@ -27,7 +27,7 @@
                     </td>
                     @if (Model.LoggedInUser.UserType == (byte)Object_Provider.Enum.UserType.Publisher)
                     {
-                        <td style="width:70px"><img asp-append-version="true" src="../images/View.png" alt="View" width="20" style="cursor:pointer" onclick="location.href = 'ViewJournalDetails?journalId=@EncryptionHelper.EncryptString(journal.JournalID.ToString())'">&nbsp;<img asp-append-version="true" src="../images/Edit.png" alt="Edit" width="20" style="cursor:pointer" onclick="location.href = 'AddJournal?id=@EncryptionHelper.EncryptString(journal.JournalID.ToString())'">&nbsp;<img asp-append-version="true" src="../images/Delete.png" alt="Delete" width="20" style="cursor:pointer" onclick="DeleteJournal(@EncryptionHelper.EncryptString(journal.JournalID.ToString()))"></td>
+                        <td style="width:70px"><img asp-append-version="true" src="../images/View.png" alt="View" width="20" style="cursor:pointer" onclick="location.href = 'ViewJournalDetails?journalId=@EncryptionHelper.EncryptString(journal.JournalID.ToString())'">&nbsp;<img asp-append-version="true" src="../images/Edit.png" alt="Edit" width="20" style="cursor:pointer" onclick="location.href = 'AddJournal?journalId=@EncryptionHelper.EncryptString(journal.JournalID.ToString())'">&nbsp;<img asp-append-version="true" src="../images/Delete.png" alt="Delete" width="20" style="cursor:pointer" onclick="DeleteJournal(@journal.JournalID.ToString())"></td>
                     }
                     else if (Model.LoggedInUser.UserType == (byte)Object_Provider.Enum.UserType.PublicUser)
                     {

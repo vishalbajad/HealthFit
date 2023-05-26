@@ -5,10 +5,15 @@ using System.Text;
 using System.Text.Json;
 using HealthFit.Object_Provider.Model;
 using HealthFit_LogClient;
+using Newtonsoft.Json.Linq;
+
 namespace HealthFit.API_Connector
 {
     public class HTTPConnector
     {
+        /// <summary>
+        /// Rest API Request Methods
+        /// </summary>
         public struct RequestMethod
         {
             public static string GET = "GET";
@@ -17,15 +22,33 @@ namespace HealthFit.API_Connector
             public static string DELETE = "DELETE";
         }
 
+        /// <summary>
+        /// Content Type
+        /// </summary>
         private string requestContentType = "application/json; charset=utf-8";
 
-        private readonly APIServer _apiserver;
-
-        public HTTPConnector(APIServer apiserver)
+        /// <summary>
+        /// API Server Details
+        /// </summary>
+        private readonly ApiServerDetails _apiserver;
+        /// <summary>
+        /// This Logic is being use to communicate with API ends points
+        /// </summary>
+        /// <param name="apiserver"></param>
+        public HTTPConnector(ApiServerDetails apiserver)
         {
             _apiserver = apiserver;
         }
 
+        /// <summary>
+        /// Send Request to API Endpoint
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="apiUrl"></param>
+        /// <param name="apiMethod"></param>
+        /// <param name="apiJson"></param>
+        /// <param name="queryString"></param>
+        /// <returns></returns>
         public T SendJsonRequest<T>(string apiUrl, string apiMethod, string apiJson = "", string queryString = "")
         {
             T result;
@@ -47,10 +70,11 @@ namespace HealthFit.API_Connector
                 ServicePointManager.SecurityProtocol = (SecurityProtocolType)3072;
                 HttpWebRequest request = WebRequest.Create(actionUri.Uri) as HttpWebRequest;
                 request.Method = apiMethod;
+                request.Headers["Authorization"] = $"Bearer {_apiserver.Token}";
+
                 Logs.WriteMessage(string.Format(" Web Request: {0}{1} Web Request Method: ", actionUri.Uri, Environment.NewLine, apiJson));
                 if (!String.IsNullOrEmpty(apiJson))
                 {
-
                     byte[] bytes = UTF8Encoding.UTF8.GetBytes(apiJson);
                     request.ContentType = requestContentType;
                     request.ContentLength = bytes.Length;
@@ -87,6 +111,9 @@ namespace HealthFit.API_Connector
             return result;
         }
 
+        /// <summary>
+        /// Autherization Types
+        /// </summary>
         public enum AuthorizationType
         {
             BEARER,

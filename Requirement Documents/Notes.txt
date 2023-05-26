@@ -2,6 +2,10 @@ Powerful Search SOLR/Elastic Serch
 File Versions
 Import Documents Over E-mail
 
+
+"JwtAuthenticationUsername": "admin",
+    "JwtAuthenticationPassword": "8542635874125123"
+	
 https://journals.lww.com/acsm-healthfitness/pages/currenttoc.aspx
 
 Page
@@ -95,7 +99,5 @@ https://healthfit.blob.core.windows.net/healthfitcontainer/e6ecab79-cf2d-4585-a5
 ** Regular Expression Attributes and Object Model
 ** Use is HSTS (HTTP Strict Transport Security)?
 ** Clean Coocies and session after logout
-
-
-
-
+** JWT Authentication for APIs
+** Session Management for Web Applications

@@ -13,7 +13,7 @@ namespace HealthFit_Web.Pages
         readonly ILogger<LoginModel> _logger;
         public LoginModel(IOptions<SystemConfigurations> options, ILogger<LoginModel> logger, IHttpContextAccessor httpContextAccessor) : base(options, logger, httpContextAccessor)
         {
-            userProxy = new API_Connector.User(this.GetAPIServerDetails());
+            userProxy = new API_Connector.User(this.ApiServerDetails);
             _logger = logger;
         }
 

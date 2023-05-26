@@ -22,7 +22,7 @@ namespace HealthFit_Web.Pages.Publishers
         public List<Journal> JournalCollections { get; set; }
         public JournalListModel(IOptions<SystemConfigurations> options, ILogger<JournalListModel> logger, IHttpContextAccessor httpContextAccessor) : base(options, logger, httpContextAccessor)
         {
-            journalProxy = new API_Connector.Journal(this.GetAPIServerDetails());
+            journalProxy = new API_Connector.Journal(this.ApiServerDetails);
             _logger = logger;
         }
         [ValidateAntiForgeryToken]

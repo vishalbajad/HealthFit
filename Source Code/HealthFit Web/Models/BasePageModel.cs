@@ -13,6 +13,9 @@ namespace HealthFit_Web.Models
         private readonly SystemConfigurations sysConfig;
         private readonly ILogger<BasePageModel> _logger;
         private readonly IHttpContextAccessor _httpContextAccessor;
+
+        API_Connector.AuthenticateUser authenticateUserProxy;
+
         /// <summary>
         /// This is a base model of applications
         /// </summary>
@@ -24,6 +27,20 @@ namespace HealthFit_Web.Models
             sysConfig = options.Value;
             _logger = logger;
             _httpContextAccessor = httpContextAccessor;
+            
+            authenticateUserProxy = new API_Connector.AuthenticateUser(this.ApiServerDetails);
+
+            ApiServerDetails aPIServer = ApiServerDetails;
+            DateTime JwtTokenExpired = DateTime.Now;
+            DateTime.TryParse(aPIServer?.Expiration, out JwtTokenExpired);
+
+            if (JwtTokenExpired < DateTime.Now)
+            {
+                var jwtToekn = authenticateUserProxy.Login(new HealthFit.JwtAuthentication.Model.LoginModel { Username = sysConfig.APIServerUsername, Password = sysConfig.APIServerUsername });
+                aPIServer.Token = jwtToekn.Token;
+                aPIServer.Expiration = jwtToekn.Expiration;
+                ApiServerDetails = aPIServer;
+            }
         }
 
         /// <summary>
@@ -56,25 +73,32 @@ namespace HealthFit_Web.Models
         /// API Server Details COnfigurations
         /// </summary>
         /// <returns></returns>
-        public APIServer GetAPIServerDetails()
+        public ApiServerDetails ApiServerDetails
         {
-            string? serializedObject = _httpContextAccessor.HttpContext?.Session?.GetString("APIServer");
-            if (string.IsNullOrWhiteSpace(serializedObject))
+            get
             {
-                APIServer apiserver = new APIServer
+                string? serializedObject = _httpContextAccessor.HttpContext?.Session?.GetString("APIServer");
+                if (string.IsNullOrWhiteSpace(serializedObject))
                 {
-                    ServerBaseUrl = sysConfig.APIServerBaseUrl,
-                    Username = sysConfig.APIServerUsername,
-                    Password = sysConfig.APIServerPassword,
-                    Token = sysConfig.APIServerToken
-                };
+                    ApiServerDetails apiserver = new ApiServerDetails
+                    {
+                        ServerBaseUrl = sysConfig.APIServerBaseUrl,
+                        Username = sysConfig.APIServerUsername,
+                        Password = sysConfig.APIServerPassword,
+                    };
 
 
-                string serializedapiObject = JsonSerializer.Serialize(apiserver);
-                _httpContextAccessor.HttpContext?.Session?.SetString("APIServer", serializedapiObject);
-                return apiserver;
+                    string serializedapiObject = JsonSerializer.Serialize(apiserver);
+                    _httpContextAccessor.HttpContext?.Session?.SetString("APIServer", serializedapiObject);
+                    return apiserver;
+                }
+                return JsonSerializer.Deserialize<ApiServerDetails>(serializedObject) ?? new ApiServerDetails();
             }
-            return JsonSerializer.Deserialize<APIServer>(serializedObject) ?? new APIServer();
+            set
+            {
+                _httpContextAccessor.HttpContext?.Session?.SetString("APIServer", JsonSerializer.Serialize<ApiServerDetails>(value));
+            }
+
         }
 
         /// <summary>

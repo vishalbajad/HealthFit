@@ -16,8 +16,8 @@ namespace HealthFit_Web.Pages
         public IndexModel(IOptions<SystemConfigurations> options, ILogger<IndexModel> logger, IHttpContextAccessor httpContextAccessor) : base(options, logger, httpContextAccessor)
         {
             _logger = logger;
-            journalProxy = new API_Connector.Journal(this.GetAPIServerDetails());
-            userlProxy = new API_Connector.User(this.GetAPIServerDetails());
+            journalProxy = new API_Connector.Journal(this.ApiServerDetails);
+            userlProxy = new API_Connector.User(this.ApiServerDetails);
         }
 
         [BindProperty]

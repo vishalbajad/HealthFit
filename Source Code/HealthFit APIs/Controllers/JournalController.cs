@@ -3,17 +3,16 @@ using HealthFit.Object_Provider.Model;
 using Data_Layer.Services;
 using Data_Layer.Repositories;
 using Data_Layer.DBContext;
-using HealthFit_Libs.InterfaceLibrary;
-using Microsoft.AspNetCore.Identity;
-using HealthFit.Utilities;
 using Microsoft.Extensions.Options;
 using HealthFit_APIs.Model;
 using Object_Provider.Enum;
 using HealthFit.AzureCompoenents;
+using Microsoft.AspNetCore.Authorization;
 
 namespace HealthFit_APIs.Controllers
 {
     [ApiController]
+    [Authorize]
     [Route("[controller]/[action]")]
     public class JournalController : ControllerBase
     {

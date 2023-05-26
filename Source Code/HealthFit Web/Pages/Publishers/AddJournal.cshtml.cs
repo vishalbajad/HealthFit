@@ -11,6 +11,7 @@ namespace HealthFit_Web.Pages
     public class AddJournalModel : BasePageModel
     {
         private readonly ILogger<AddJournalModel> _logger;
+        private API_Connector.Journal journalProxy; 
         public string responseMessage { get; set; }
         public string responseCode { get; set; }
 
@@ -20,6 +21,7 @@ namespace HealthFit_Web.Pages
         public AddJournalModel(IOptions<SystemConfigurations> options, ILogger<AddJournalModel> logger, IHttpContextAccessor httpContextAccessor) : base(options, logger, httpContextAccessor)
         {
             _logger = logger;
+            journalProxy = new API_Connector.Journal(this.ApiServerDetails);
         }
         [ValidateAntiForgeryToken]
         public void OnGet(string journalId)
@@ -28,8 +30,7 @@ namespace HealthFit_Web.Pages
             int jourId = 0;
             int.TryParse(decryptedJourID, out jourId);
             if (!(jourId > 0)) throw new Exception("Invalid Journal Id");
-
-            API_Connector.Journal journalProxy = new API_Connector.Journal(this.GetAPIServerDetails());
+            
             JournalVM = journalProxy.GetJournal(jourId);
             ViewData["LoggedInUser"] = LoggedInUser;
         }
@@ -69,8 +70,6 @@ namespace HealthFit_Web.Pages
             {
                 return Page();
             }
-
-            API_Connector.Journal journalProxy = new API_Connector.Journal(this.GetAPIServerDetails());
 
             bool responce = journalProxy.EditJournal(JournalVM);
             _logger.Log(LogLevel.Information, "Joural saved successfuly");

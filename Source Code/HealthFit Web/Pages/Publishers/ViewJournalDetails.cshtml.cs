@@ -16,8 +16,8 @@ namespace HealthFit_Web.Pages
         public JournalDetailsModel(IOptions<SystemConfigurations> options, ILogger<JournalDetailsModel> logger, IHttpContextAccessor httpContextAccessor) : base(options, logger, httpContextAccessor)
         {
             _logger = logger;
-            journalProxy = new API_Connector.Journal(this.GetAPIServerDetails());
-            userlProxy = new API_Connector.User(this.GetAPIServerDetails());
+            journalProxy = new API_Connector.Journal(this.ApiServerDetails);
+            userlProxy = new API_Connector.User(this.ApiServerDetails);
         }
         [BindProperty]
         public HealthFit.Object_Provider.Model.Journal JournalVM { get; set; }
@@ -57,7 +57,7 @@ namespace HealthFit_Web.Pages
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> OnPostAsync()
         {
-            API_Connector.User userProxy = new API_Connector.User(this.GetAPIServerDetails());
+            API_Connector.User userProxy = new API_Connector.User(this.ApiServerDetails);
 
             if (LoggedInUser?.UserId > 0)
             {
@@ -85,7 +85,7 @@ namespace HealthFit_Web.Pages
                 responseCode = "error";
             }
 
-            return RedirectToPage("ViewJournalDetails", new { journalId = EncryptionHelper.EncryptString(JournalVM.JournalID.ToString())});
+            return RedirectToPage("ViewJournalDetails", new { journalId = EncryptionHelper.EncryptString(JournalVM.JournalID.ToString()) });
         }
     }
 }
