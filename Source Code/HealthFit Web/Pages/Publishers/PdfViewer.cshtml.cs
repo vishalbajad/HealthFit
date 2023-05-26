@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Options;
 using System.Collections;
 using System.Text;
+using HealthFit.Utilities;
 
 namespace HealthFit_Web.Pages
 {
@@ -22,11 +23,16 @@ namespace HealthFit_Web.Pages
             journalProxy = new API_Connector.Journal(this.GetAPIServerDetails());
         }
         [ValidateAntiForgeryToken]
-        public void OnGet(int journalId)
+        public void OnGet(string journalId)
         {
             _logger.Log(LogLevel.Information, "Start get Method execution for  pdf viewer");
+
+            string decryptedJourID = EncryptionHelper.DecryptString(journalId);
+            int jourId = 0;
+            int.TryParse(decryptedJourID, out jourId);
+
             ViewData["LoggedInUser"] = LoggedInUser;
-            JournalVM = journalProxy.GetJournal(journalId);
+            JournalVM = journalProxy.GetJournal(jourId);
         }
     }
 }

@@ -1,8 +1,9 @@
 ﻿@using HealthFit.Object_Provider.Model;
 @using HealthFit_Web.Models;
+@using HealthFit.Utilities;
 @model UserJournalMapping
 @{
-    string viewJournalUrl = string.Format("publishers/viewjournaldetails?journalId={0}", Model.Journal.JournalID.ToString());
+    string viewJournalUrl = string.Format("publishers/viewjournaldetails?journalId={0}", EncryptionHelper.EncryptString(Model.Journal.JournalID.ToString()));
 }
 <div class="product">
     <a href="@viewJournalUrl" class="info">

@@ -3,6 +3,7 @@ using HealthFit.Object_Provider.Model;
 using HealthFit_Web.Models;
 using Microsoft.Extensions.Options;
 using API_Connector;
+using HealthFit.Utilities;
 
 namespace HealthFit_Web.Pages
 {
@@ -31,28 +32,23 @@ namespace HealthFit_Web.Pages
         [ValidateAntiForgeryToken]
         public void OnGet(string journalId)
         {
+            string decryptedJourID = EncryptionHelper.DecryptString(journalId);
+            int jourId = 0;
+            int.TryParse(decryptedJourID, out jourId);
+            if (!(jourId > 0)) throw new Exception("Invalid Journal Id");
+
             _logger.Log(LogLevel.Information, "Start GET Method execution for ViewJornal");
 
             ViewData["LoggedInUser"] = LoggedInUser;
-            if (!string.IsNullOrEmpty(journalId))
+
+            if (jourId > 0)
             {
-                string decruptedjournalId = journalId; //  HealthFit.Utilities.EncryptionHelper.Decrypt(journalId);
+                JournalVM = journalProxy.GetJournal(jourId);
 
-                if (!string.IsNullOrEmpty(decruptedjournalId))
-                {
-                    int journalid = 0;
+                PublisherName = userlProxy.GetAllPublisherList(JournalVM.PublisherID).SingleOrDefault().FullName;
 
-                    int.TryParse(decruptedjournalId, out journalid);
+                IsSubscribedForJournal = (JournalVM.PublisherID == LoggedInUser?.UserId) || (LoggedInUser?.Journals?.Where(obj => obj.JournalID == JournalVM.JournalID).Count() > 0);
 
-                    if (journalid > 0)
-                    {
-                        JournalVM = journalProxy.GetJournal(journalid);
-
-                        PublisherName = userlProxy.GetAllPublisherList(JournalVM.PublisherID).SingleOrDefault().FullName;
-
-                        IsSubscribedForJournal = (JournalVM.PublisherID == LoggedInUser?.UserId) || (LoggedInUser?.Journals?.Where(obj => obj.JournalID == JournalVM.JournalID).Count() > 0);
-                    }
-                }
             }
             else
                 _logger.Log(LogLevel.Information, "Journal Id invalid or empty");
@@ -89,7 +85,7 @@ namespace HealthFit_Web.Pages
                 responseCode = "error";
             }
 
-            return RedirectToPage("ViewJournalDetails", new { journalId = JournalVM.JournalID });
+            return RedirectToPage("ViewJournalDetails", new { journalId = EncryptionHelper.EncryptString(JournalVM.JournalID.ToString())});
         }
     }
 }

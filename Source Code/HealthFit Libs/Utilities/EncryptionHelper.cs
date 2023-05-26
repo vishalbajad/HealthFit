@@ -1,65 +1,54 @@
 ﻿using System;
 using System.Security.Cryptography;
 using System.Text;
+using System.Web;
 
 namespace HealthFit.Utilities
 {
     public class EncryptionHelper
     {
-        private static readonly byte[] Key = Encoding.UTF8.GetBytes("YourEncryptionKey123");
-        private static readonly byte[] IV = Encoding.UTF8.GetBytes("YourEncryptionIV456");
-        public static string Encrypt(string plainText)
+        static readonly string EncryptionKey = "HealthFit";
+
+        public static string EncryptString(string clearText)
         {
-            using (Aes aes = Aes.Create())
+            byte[] clearBytes = Encoding.Unicode.GetBytes(clearText);
+            using (Aes encryptor = Aes.Create())
             {
-                aes.Key = Key;
-                aes.IV = IV;
-
-                ICryptoTransform encryptor = aes.CreateEncryptor(aes.Key, aes.IV);
-
-                using (var ms = new System.IO.MemoryStream())
-                using (var cs = new CryptoStream(ms, encryptor, CryptoStreamMode.Write))
+                Rfc2898DeriveBytes pdb = new Rfc2898DeriveBytes(EncryptionKey, new byte[] { 0x49, 0x76, 0x61, 0x6e, 0x20, 0x4d, 0x65, 0x64, 0x76, 0x65, 0x64, 0x65, 0x76 });
+                encryptor.Key = pdb.GetBytes(32);
+                encryptor.IV = pdb.GetBytes(16);
+                using (MemoryStream ms = new MemoryStream())
                 {
-                    byte[] plainBytes = Encoding.UTF8.GetBytes(plainText);
-                    cs.Write(plainBytes, 0, plainBytes.Length);
-                    cs.FlushFinalBlock();
-
-                    byte[] encryptedBytes = ms.ToArray();
-                    return Convert.ToBase64String(encryptedBytes);
+                    using (CryptoStream cs = new CryptoStream(ms, encryptor.CreateEncryptor(), CryptoStreamMode.Write))
+                    {
+                        cs.Write(clearBytes, 0, clearBytes.Length);
+                        cs.Close();
+                    }
+                    clearText = Convert.ToBase64String(ms.ToArray());
                 }
             }
+            return HttpUtility.UrlEncode(clearText);
         }
-        public static string Decrypt(string encryptedText)
+        public static string DecryptString(string cipherText)
         {
-            using (Aes aes = Aes.Create())
+            cipherText = cipherText.Replace(" ", "+");
+            byte[] cipherBytes = Convert.FromBase64String(HttpUtility.UrlDecode(cipherText));
+            using (Aes encryptor = Aes.Create())
             {
-                aes.Key = Key;
-                aes.IV = IV;
-
-                ICryptoTransform decryptor = aes.CreateDecryptor(aes.Key, aes.IV);
-
-                using (var ms = new System.IO.MemoryStream())
-                using (var cs = new CryptoStream(ms, decryptor, CryptoStreamMode.Write))
+                Rfc2898DeriveBytes pdb = new Rfc2898DeriveBytes(EncryptionKey, new byte[] { 0x49, 0x76, 0x61, 0x6e, 0x20, 0x4d, 0x65, 0x64, 0x76, 0x65, 0x64, 0x65, 0x76 });
+                encryptor.Key = pdb.GetBytes(32);
+                encryptor.IV = pdb.GetBytes(16);
+                using (MemoryStream ms = new MemoryStream())
                 {
-                    byte[] encryptedBytes = Convert.FromBase64String(encryptedText);
-                    cs.Write(encryptedBytes, 0, encryptedBytes.Length);
-                    cs.FlushFinalBlock();
-
-                    byte[] decryptedBytes = ms.ToArray();
-                    return Encoding.UTF8.GetString(decryptedBytes);
+                    using (CryptoStream cs = new CryptoStream(ms, encryptor.CreateDecryptor(), CryptoStreamMode.Write))
+                    {
+                        cs.Write(cipherBytes, 0, cipherBytes.Length);
+                        cs.Close();
+                    }
+                    cipherText = Encoding.Unicode.GetString(ms.ToArray());
                 }
             }
-        }
-        public static string GenerateHash(string input)
-        {
-            using (SHA256 sha256 = SHA256.Create())
-            {
-                byte[] inputBytes = Encoding.UTF8.GetBytes(input);
-                byte[] hashBytes = sha256.ComputeHash(inputBytes);
-                string hash = BitConverter.ToString(hashBytes).Replace("-", "").ToLower();
-
-                return hash;
-            }
+            return cipherText;
         }
     }
 }

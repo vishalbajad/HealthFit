@@ -89,3 +89,6 @@ https://healthfit.blob.core.windows.net/healthfitcontainer/e6ecab79-cf2d-4585-a5
 ** Added adiqute logging using ILogger
 ** Never Print passowrds in logs
 ** @Html.AntiForgeryToken()
+** File upload control server side validation for png and pdf file
+** URL Query Strings
+

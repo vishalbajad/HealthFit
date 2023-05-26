@@ -1,5 +1,6 @@
 ﻿using API_Connector;
 using HealthFit.Object_Provider.Model;
+using HealthFit.Utilities;
 using HealthFit_Web.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -21,10 +22,15 @@ namespace HealthFit_Web.Pages
             _logger = logger;
         }
         [ValidateAntiForgeryToken]
-        public void OnGet(int id)
+        public void OnGet(string journalId)
         {
+            string decryptedJourID = EncryptionHelper.DecryptString(journalId);
+            int jourId = 0;
+            int.TryParse(decryptedJourID, out jourId);
+            if (!(jourId > 0)) throw new Exception("Invalid Journal Id");
+
             API_Connector.Journal journalProxy = new API_Connector.Journal(this.GetAPIServerDetails());
-            JournalVM = journalProxy.GetJournal(id);
+            JournalVM = journalProxy.GetJournal(jourId);
             ViewData["LoggedInUser"] = LoggedInUser;
         }
 

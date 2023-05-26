@@ -1,3 +1,11 @@
+G:\Personal\Varian-HealthFit\Source Code\HealthFit Web\obj\Debug\net6.0\HealthFit Web.csproj.AssemblyReference.cache
+G:\Personal\Varian-HealthFit\Source Code\HealthFit Web\obj\Debug\net6.0\HealthFit Web.GeneratedMSBuildEditorConfig.editorconfig
+G:\Personal\Varian-HealthFit\Source Code\HealthFit Web\obj\Debug\net6.0\HealthFit Web.AssemblyInfoInputs.cache
+G:\Personal\Varian-HealthFit\Source Code\HealthFit Web\obj\Debug\net6.0\HealthFit Web.AssemblyInfo.cs
+G:\Personal\Varian-HealthFit\Source Code\HealthFit Web\obj\Debug\net6.0\HealthFit Web.csproj.CoreCompileInputs.cache
+G:\Personal\Varian-HealthFit\Source Code\HealthFit Web\obj\Debug\net6.0\HealthFit Web.MvcApplicationPartsAssemblyInfo.cache
+G:\Personal\Varian-HealthFit\Source Code\HealthFit Web\obj\Debug\net6.0\HealthFit Web.RazorAssemblyInfo.cache
+G:\Personal\Varian-HealthFit\Source Code\HealthFit Web\obj\Debug\net6.0\HealthFit Web.RazorAssemblyInfo.cs
 G:\Personal\Varian-HealthFit\Source Code\HealthFit Web\bin\Debug\net6.0\appsettings.Development.json
 G:\Personal\Varian-HealthFit\Source Code\HealthFit Web\bin\Debug\net6.0\appsettings.json
 G:\Personal\Varian-HealthFit\Source Code\HealthFit Web\bin\Debug\net6.0\bundleconfig.json
@@ -248,15 +256,6 @@ G:\Personal\Varian-HealthFit\Source Code\HealthFit Web\bin\Debug\net6.0\API_Conn
 G:\Personal\Varian-HealthFit\Source Code\HealthFit Web\bin\Debug\net6.0\Object_Provider.pdb
 G:\Personal\Varian-HealthFit\Source Code\HealthFit Web\bin\Debug\net6.0\Utilities.pdb
 G:\Personal\Varian-HealthFit\Source Code\HealthFit Web\bin\Debug\net6.0\Log_Client.pdb
-G:\Personal\Varian-HealthFit\Source Code\HealthFit Web\obj\Debug\net6.0\HealthFit Web.csproj.AssemblyReference.cache
-G:\Personal\Varian-HealthFit\Source Code\HealthFit Web\obj\Debug\net6.0\HealthFit Web.GeneratedMSBuildEditorConfig.editorconfig
-G:\Personal\Varian-HealthFit\Source Code\HealthFit Web\obj\Debug\net6.0\HealthFit Web.AssemblyInfoInputs.cache
-G:\Personal\Varian-HealthFit\Source Code\HealthFit Web\obj\Debug\net6.0\HealthFit Web.AssemblyInfo.cs
-G:\Personal\Varian-HealthFit\Source Code\HealthFit Web\obj\Debug\net6.0\HealthFit Web.csproj.CoreCompileInputs.cache
-G:\Personal\Varian-HealthFit\Source Code\HealthFit Web\obj\Debug\net6.0\HealthFit Web.MvcApplicationPartsAssemblyInfo.cs
-G:\Personal\Varian-HealthFit\Source Code\HealthFit Web\obj\Debug\net6.0\HealthFit Web.MvcApplicationPartsAssemblyInfo.cache
-G:\Personal\Varian-HealthFit\Source Code\HealthFit Web\obj\Debug\net6.0\HealthFit Web.RazorAssemblyInfo.cache
-G:\Personal\Varian-HealthFit\Source Code\HealthFit Web\obj\Debug\net6.0\HealthFit Web.RazorAssemblyInfo.cs
 G:\Personal\Varian-HealthFit\Source Code\HealthFit Web\obj\Debug\net6.0\staticwebassets\msbuild.HealthFit Web.Microsoft.AspNetCore.StaticWebAssets.props
 G:\Personal\Varian-HealthFit\Source Code\HealthFit Web\obj\Debug\net6.0\staticwebassets\msbuild.build.HealthFit Web.props
 G:\Personal\Varian-HealthFit\Source Code\HealthFit Web\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.HealthFit Web.props
