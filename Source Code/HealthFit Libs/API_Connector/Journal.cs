@@ -1,7 +1,6 @@
 ﻿using HealthFit.API_Connector;
 using HealthFit.Object_Provider.Model;
 using HealthFit_Libs.InterfaceLibrary;
-using HealthFit_LogClient;
 using Object_Provider.Enum;
 using System;
 using System.Collections.Generic;

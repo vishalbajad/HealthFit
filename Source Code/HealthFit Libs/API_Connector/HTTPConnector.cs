@@ -4,7 +4,6 @@ using System.Net;
 using System.Text;
 using System.Text.Json;
 using HealthFit.Object_Provider.Model;
-using HealthFit_LogClient;
 using Newtonsoft.Json.Linq;
 
 namespace HealthFit.API_Connector
@@ -72,13 +71,11 @@ namespace HealthFit.API_Connector
                 request.Method = apiMethod;
                 request.Headers["Authorization"] = $"Bearer {_apiserver.Token}";
 
-                Logs.WriteMessage(string.Format(" Web Request: {0}{1} Web Request Method: ", actionUri.Uri, Environment.NewLine, apiJson));
                 if (!String.IsNullOrEmpty(apiJson))
                 {
                     byte[] bytes = UTF8Encoding.UTF8.GetBytes(apiJson);
                     request.ContentType = requestContentType;
                     request.ContentLength = bytes.Length;
-                    Logs.WriteMessage(string.Format(" Web Request ContentType: {0}{1}Web Request ContentLength: {2}{1}Web Request Content: {3}", requestContentType, Environment.NewLine, bytes.Length, apiJson));
                     using (Stream postStream = request.GetRequestStream())
                     {
                         postStream.Write(bytes, 0, bytes.Length);
@@ -92,9 +89,6 @@ namespace HealthFit.API_Connector
                     {
                         ResponseText = reader.ReadToEnd();
                     }
-
-                    Logs.WriteMessage(" Response: " + ResponseText);
-
                 }
                 var options = new JsonSerializerOptions
                 {
