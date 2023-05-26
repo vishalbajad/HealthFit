@@ -21,9 +21,10 @@ namespace HealthFit_Web.Pages
             _logger = logger;
             journalProxy = new API_Connector.Journal(this.GetAPIServerDetails());
         }
-
+        [ValidateAntiForgeryToken]
         public void OnGet(int journalId)
         {
+            _logger.Log(LogLevel.Information, "Start get Method execution for  pdf viewer");
             ViewData["LoggedInUser"] = LoggedInUser;
             JournalVM = journalProxy.GetJournal(journalId);
         }

@@ -32,7 +32,17 @@ G:\Personal\Varian-HealthFit\Source Code\HealthFit Web\bin\Debug\net6.0\Microsof
 G:\Personal\Varian-HealthFit\Source Code\HealthFit Web\bin\Debug\net6.0\Microsoft.DiaSymReader.dll
 G:\Personal\Varian-HealthFit\Source Code\HealthFit Web\bin\Debug\net6.0\Microsoft.DotNet.PlatformAbstractions.dll
 G:\Personal\Varian-HealthFit\Source Code\HealthFit Web\bin\Debug\net6.0\Microsoft.DotNet.Scaffolding.Shared.dll
+G:\Personal\Varian-HealthFit\Source Code\HealthFit Web\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+G:\Personal\Varian-HealthFit\Source Code\HealthFit Web\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+G:\Personal\Varian-HealthFit\Source Code\HealthFit Web\bin\Debug\net6.0\Microsoft.Extensions.Caching.Abstractions.dll
+G:\Personal\Varian-HealthFit\Source Code\HealthFit Web\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+G:\Personal\Varian-HealthFit\Source Code\HealthFit Web\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
+G:\Personal\Varian-HealthFit\Source Code\HealthFit Web\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
 G:\Personal\Varian-HealthFit\Source Code\HealthFit Web\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
+G:\Personal\Varian-HealthFit\Source Code\HealthFit Web\bin\Debug\net6.0\Microsoft.Extensions.Logging.dll
+G:\Personal\Varian-HealthFit\Source Code\HealthFit Web\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
+G:\Personal\Varian-HealthFit\Source Code\HealthFit Web\bin\Debug\net6.0\Microsoft.Extensions.Options.dll
+G:\Personal\Varian-HealthFit\Source Code\HealthFit Web\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll
 G:\Personal\Varian-HealthFit\Source Code\HealthFit Web\bin\Debug\net6.0\Microsoft.NET.StringTools.dll
 G:\Personal\Varian-HealthFit\Source Code\HealthFit Web\bin\Debug\net6.0\Microsoft.VisualStudio.Debugger.Contracts.dll
 G:\Personal\Varian-HealthFit\Source Code\HealthFit Web\bin\Debug\net6.0\Microsoft.VisualStudio.Web.CodeGeneration.dll
@@ -243,6 +253,7 @@ G:\Personal\Varian-HealthFit\Source Code\HealthFit Web\obj\Debug\net6.0\HealthFi
 G:\Personal\Varian-HealthFit\Source Code\HealthFit Web\obj\Debug\net6.0\HealthFit Web.AssemblyInfoInputs.cache
 G:\Personal\Varian-HealthFit\Source Code\HealthFit Web\obj\Debug\net6.0\HealthFit Web.AssemblyInfo.cs
 G:\Personal\Varian-HealthFit\Source Code\HealthFit Web\obj\Debug\net6.0\HealthFit Web.csproj.CoreCompileInputs.cache
+G:\Personal\Varian-HealthFit\Source Code\HealthFit Web\obj\Debug\net6.0\HealthFit Web.MvcApplicationPartsAssemblyInfo.cs
 G:\Personal\Varian-HealthFit\Source Code\HealthFit Web\obj\Debug\net6.0\HealthFit Web.MvcApplicationPartsAssemblyInfo.cache
 G:\Personal\Varian-HealthFit\Source Code\HealthFit Web\obj\Debug\net6.0\HealthFit Web.RazorAssemblyInfo.cache
 G:\Personal\Varian-HealthFit\Source Code\HealthFit Web\obj\Debug\net6.0\HealthFit Web.RazorAssemblyInfo.cs
@@ -262,14 +273,3 @@ G:\Personal\Varian-HealthFit\Source Code\HealthFit Web\obj\Debug\net6.0\refint\H
 G:\Personal\Varian-HealthFit\Source Code\HealthFit Web\obj\Debug\net6.0\HealthFit Web.pdb
 G:\Personal\Varian-HealthFit\Source Code\HealthFit Web\obj\Debug\net6.0\HealthFit Web.genruntimeconfig.cache
 G:\Personal\Varian-HealthFit\Source Code\HealthFit Web\obj\Debug\net6.0\ref\HealthFit Web.dll
-G:\Personal\Varian-HealthFit\Source Code\HealthFit Web\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
-G:\Personal\Varian-HealthFit\Source Code\HealthFit Web\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
-G:\Personal\Varian-HealthFit\Source Code\HealthFit Web\bin\Debug\net6.0\Microsoft.Extensions.Caching.Abstractions.dll
-G:\Personal\Varian-HealthFit\Source Code\HealthFit Web\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
-G:\Personal\Varian-HealthFit\Source Code\HealthFit Web\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
-G:\Personal\Varian-HealthFit\Source Code\HealthFit Web\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
-G:\Personal\Varian-HealthFit\Source Code\HealthFit Web\bin\Debug\net6.0\Microsoft.Extensions.Logging.dll
-G:\Personal\Varian-HealthFit\Source Code\HealthFit Web\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
-G:\Personal\Varian-HealthFit\Source Code\HealthFit Web\bin\Debug\net6.0\Microsoft.Extensions.Options.dll
-G:\Personal\Varian-HealthFit\Source Code\HealthFit Web\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll
-G:\Personal\Varian-HealthFit\Source Code\HealthFit Web\obj\Debug\net6.0\HealthFit Web.MvcApplicationPartsAssemblyInfo.cs

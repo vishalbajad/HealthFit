@@ -20,24 +20,28 @@ namespace HealthFit_Web.Pages.Publishers
 
         [BindProperty]
         public List<Journal> JournalCollections { get; set; }
-        public JournalListModel(IOptions<SystemConfigurations> options, ILogger<IndexModel> logger, IHttpContextAccessor httpContextAccessor) : base(options, logger, httpContextAccessor)
+        public JournalListModel(IOptions<SystemConfigurations> options, ILogger<JournalListModel> logger, IHttpContextAccessor httpContextAccessor) : base(options, logger, httpContextAccessor)
         {
             journalProxy = new API_Connector.Journal(this.GetAPIServerDetails());
+            _logger = logger;
         }
-
+        [ValidateAntiForgeryToken]
         public void OnGet()
         {
-            ViewData["LoggedInUser"] = LoggedInUser; 
-            JournalCollections = journalProxy.GetAllJournal((Object_Provider.Enum.UserType)LoggedInUser.UserType , LoggedInUser.UserId);
+            ViewData["LoggedInUser"] = LoggedInUser;
+            JournalCollections = journalProxy.GetAllJournal((Object_Provider.Enum.UserType)LoggedInUser.UserType, LoggedInUser.UserId);
         }
-
-        public void OnPostDelete()
+        [ValidateAntiForgeryToken]
+        public void OnPost()
         {
             if (JournalIdToDelete > 0)
             {
                 journalProxy.DeleteJournal(JournalIdToDelete);
+                _logger.Log(LogLevel.Information, "Journal Deleted successfully");
                 RedirectToPage("JournalList");
             }
+            else
+                _logger.Log(LogLevel.Information, " No Journal ID found for deletion");
         }
     }
 }

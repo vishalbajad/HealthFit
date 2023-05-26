@@ -28,31 +28,34 @@ namespace HealthFit_Web.Pages
 
         public string responseMessage { get; set; }
         public string responseCode { get; set; }
-
+        [ValidateAntiForgeryToken]
         public void OnGet(string journalId)
         {
+            _logger.Log(LogLevel.Information, "Start GET Method execution for ViewJornal");
+
             ViewData["LoggedInUser"] = LoggedInUser;
             if (!string.IsNullOrEmpty(journalId))
             {
-
                 string decruptedjournalId = journalId; //  HealthFit.Utilities.EncryptionHelper.Decrypt(journalId);
-                
+
                 if (!string.IsNullOrEmpty(decruptedjournalId))
                 {
                     int journalid = 0;
-                    
+
                     int.TryParse(decruptedjournalId, out journalid);
-                    
+
                     if (journalid > 0)
                     {
                         JournalVM = journalProxy.GetJournal(journalid);
-                        
+
                         PublisherName = userlProxy.GetAllPublisherList(JournalVM.PublisherID).SingleOrDefault().FullName;
 
                         IsSubscribedForJournal = (JournalVM.PublisherID == LoggedInUser?.UserId) || (LoggedInUser?.Journals?.Where(obj => obj.JournalID == JournalVM.JournalID).Count() > 0);
                     }
                 }
             }
+            else
+                _logger.Log(LogLevel.Information, "Journal Id invalid or empty");
         }
 
         [ValidateAntiForgeryToken]
@@ -68,10 +71,16 @@ namespace HealthFit_Web.Pages
                 {
                     responseMessage = "Congradulations ! . You have been successfully Subscribed for the journal !!";
                     responseCode = "success";
-                    
+
                     bool isSubscribed = LoggedInUser?.Journals?.Where(obj => obj.JournalID == JournalVM.JournalID).Count() > 0;
+
                     if (!isSubscribed)
-                        LoggedInUser?.Journals.Add(JournalVM);
+                    {
+                        HealthFit.Object_Provider.Model.User usr = LoggedInUser;
+                        usr.Journals.Add(JournalVM);
+                        LoggedInUser = usr;
+                    }
+
                 }
             }
             else

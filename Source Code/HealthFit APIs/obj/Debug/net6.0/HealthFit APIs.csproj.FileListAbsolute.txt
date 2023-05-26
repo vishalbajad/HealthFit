@@ -7,6 +7,9 @@ G:\Personal\Varian-HealthFit\Source Code\HealthFit APIs\bin\Debug\net6.0\HealthF
 G:\Personal\Varian-HealthFit\Source Code\HealthFit APIs\bin\Debug\net6.0\HealthFit APIs.pdb
 G:\Personal\Varian-HealthFit\Source Code\HealthFit APIs\bin\Debug\net6.0\Azure.Core.dll
 G:\Personal\Varian-HealthFit\Source Code\HealthFit APIs\bin\Debug\net6.0\Azure.Identity.dll
+G:\Personal\Varian-HealthFit\Source Code\HealthFit APIs\bin\Debug\net6.0\Azure.Storage.Blobs.dll
+G:\Personal\Varian-HealthFit\Source Code\HealthFit APIs\bin\Debug\net6.0\Azure.Storage.Common.dll
+G:\Personal\Varian-HealthFit\Source Code\HealthFit APIs\bin\Debug\net6.0\Castle.Core.dll
 G:\Personal\Varian-HealthFit\Source Code\HealthFit APIs\bin\Debug\net6.0\EntityFramework.SqlServer.dll
 G:\Personal\Varian-HealthFit\Source Code\HealthFit APIs\bin\Debug\net6.0\EntityFramework.dll
 G:\Personal\Varian-HealthFit\Source Code\HealthFit APIs\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
@@ -37,7 +40,9 @@ G:\Personal\Varian-HealthFit\Source Code\HealthFit APIs\bin\Debug\net6.0\Microso
 G:\Personal\Varian-HealthFit\Source Code\HealthFit APIs\bin\Debug\net6.0\Microsoft.OpenApi.dll
 G:\Personal\Varian-HealthFit\Source Code\HealthFit APIs\bin\Debug\net6.0\Microsoft.SqlServer.Server.dll
 G:\Personal\Varian-HealthFit\Source Code\HealthFit APIs\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+G:\Personal\Varian-HealthFit\Source Code\HealthFit APIs\bin\Debug\net6.0\Moq.dll
 G:\Personal\Varian-HealthFit\Source Code\HealthFit APIs\bin\Debug\net6.0\Newtonsoft.Json.dll
+G:\Personal\Varian-HealthFit\Source Code\HealthFit APIs\bin\Debug\net6.0\nunit.framework.dll
 G:\Personal\Varian-HealthFit\Source Code\HealthFit APIs\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
 G:\Personal\Varian-HealthFit\Source Code\HealthFit APIs\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 G:\Personal\Varian-HealthFit\Source Code\HealthFit APIs\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
@@ -46,6 +51,7 @@ G:\Personal\Varian-HealthFit\Source Code\HealthFit APIs\bin\Debug\net6.0\System.
 G:\Personal\Varian-HealthFit\Source Code\HealthFit APIs\bin\Debug\net6.0\System.Data.SqlClient.dll
 G:\Personal\Varian-HealthFit\Source Code\HealthFit APIs\bin\Debug\net6.0\System.Drawing.Common.dll
 G:\Personal\Varian-HealthFit\Source Code\HealthFit APIs\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+G:\Personal\Varian-HealthFit\Source Code\HealthFit APIs\bin\Debug\net6.0\System.IO.Hashing.dll
 G:\Personal\Varian-HealthFit\Source Code\HealthFit APIs\bin\Debug\net6.0\System.Memory.Data.dll
 G:\Personal\Varian-HealthFit\Source Code\HealthFit APIs\bin\Debug\net6.0\System.Runtime.Caching.dll
 G:\Personal\Varian-HealthFit\Source Code\HealthFit APIs\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
@@ -95,9 +101,3 @@ G:\Personal\Varian-HealthFit\Source Code\HealthFit APIs\obj\Debug\net6.0\refint\
 G:\Personal\Varian-HealthFit\Source Code\HealthFit APIs\obj\Debug\net6.0\HealthFit APIs.pdb
 G:\Personal\Varian-HealthFit\Source Code\HealthFit APIs\obj\Debug\net6.0\HealthFit APIs.genruntimeconfig.cache
 G:\Personal\Varian-HealthFit\Source Code\HealthFit APIs\obj\Debug\net6.0\ref\HealthFit APIs.dll
-G:\Personal\Varian-HealthFit\Source Code\HealthFit APIs\bin\Debug\net6.0\Azure.Storage.Blobs.dll
-G:\Personal\Varian-HealthFit\Source Code\HealthFit APIs\bin\Debug\net6.0\Azure.Storage.Common.dll
-G:\Personal\Varian-HealthFit\Source Code\HealthFit APIs\bin\Debug\net6.0\System.IO.Hashing.dll
-G:\Personal\Varian-HealthFit\Source Code\HealthFit APIs\bin\Debug\net6.0\Castle.Core.dll
-G:\Personal\Varian-HealthFit\Source Code\HealthFit APIs\bin\Debug\net6.0\Moq.dll
-G:\Personal\Varian-HealthFit\Source Code\HealthFit APIs\bin\Debug\net6.0\nunit.framework.dll

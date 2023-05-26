@@ -29,8 +29,11 @@ namespace HealthFit_Web.Pages
 
         [BindProperty]
         public List<User>? PublishersCollections { get; set; }
+
+        [ValidateAntiForgeryToken]
         public void OnGet()
         {
+            _logger.Log(LogLevel.Information, " Start Lodding the Dashboards");
 
             JournalCollections = journalProxy.GetAllJournal((Object_Provider.Enum.UserType)1, 0, true);
             CategoryCollections = journalProxy.GetAllCategoryList();
@@ -42,6 +45,7 @@ namespace HealthFit_Web.Pages
 
                 if (ListJournalCollections?.Count > 0)
                 {
+                    _logger.Log(LogLevel.Information, " Mapped user journal subscriptions details");
                     for (int index = 0; index < JournalCollections.Count(); index++)
                     {
                         if (ListJournalCollections.Contains(JournalCollections[index].JournalID))

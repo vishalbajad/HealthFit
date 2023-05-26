@@ -18,9 +18,9 @@ namespace HealthFit_Web.Pages
 
         public AddJournalModel(IOptions<SystemConfigurations> options, ILogger<AddJournalModel> logger, IHttpContextAccessor httpContextAccessor) : base(options, logger, httpContextAccessor)
         {
-
+            _logger = logger;
         }
-
+        [ValidateAntiForgeryToken]
         public void OnGet(int id)
         {
             API_Connector.Journal journalProxy = new API_Connector.Journal(this.GetAPIServerDetails());
@@ -37,10 +37,13 @@ namespace HealthFit_Web.Pages
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> OnPostAsync(IFormFile journalCoverPhoto, IFormFile journalDataFile)
         {
+            _logger.Log(LogLevel.Information, " Starting adding journal details");
+
             string[] allowedExtensionsForJournalCoverPhoto = { ".png", ".jpg", ".jpeg" };
-            if (journalCoverPhoto!=null && !IsFileExtensionAllowed(journalCoverPhoto.FileName, allowedExtensionsForJournalCoverPhoto))
+            if (journalCoverPhoto != null && !IsFileExtensionAllowed(journalCoverPhoto.FileName, allowedExtensionsForJournalCoverPhoto))
             {
                 ModelState.AddModelError("", "Only .png, .jpg, .jpeg files are allowed.");
+                _logger.Log(LogLevel.Warning, "Cover photo extension valiation failed");
                 return Page();
             }
 
@@ -48,6 +51,7 @@ namespace HealthFit_Web.Pages
             if (journalDataFile != null && !IsFileExtensionAllowed(journalDataFile.FileName, allowedExtensionsForJournalDataFile))
             {
                 ModelState.AddModelError("", "Only PDF files are allowed.");
+                _logger.Log(LogLevel.Warning, "Joural file extension valiation failed");
                 return Page();
             }
 
@@ -63,14 +67,14 @@ namespace HealthFit_Web.Pages
             API_Connector.Journal journalProxy = new API_Connector.Journal(this.GetAPIServerDetails());
 
             bool responce = journalProxy.EditJournal(JournalVM);
+            _logger.Log(LogLevel.Information, "Joural saved successfuly");
 
             journalProxy.UploadJournalCoverPhotoAndJournalFile(new JournalFileUpload { JournalId = JournalVM.JournalID, CoverPhotofile = journalCoverPhoto, JournalFile = journalDataFile });
 
-            if (responce)
-            {
-                responseMessage = "Journal have been successfully saved!!";
-                responseCode = "success";
-            }
+            _logger.Log(LogLevel.Information, "Joural Cover photo and files uploaded successfully !");
+
+            responseMessage = "Journal have been successfully saved!!";
+            responseCode = "success";
 
             return Page();
         }

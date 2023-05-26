@@ -37,11 +37,9 @@ namespace HealthFit.Object_Provider.Model
 
         [Required]
         [Display(Name = "Publication Year")]
-        [RegularExpression(@"^[A-Za-z ]+$", ErrorMessage = "Characters are allowed only")]
         public string? PublicationStartYear { get; set; }
 
         [Required]
-        [RegularExpression(@"^[A-Za-z ]+$", ErrorMessage = "Characters are allowed only")]
         public string? Description { get; set; }
 
         [Required]
