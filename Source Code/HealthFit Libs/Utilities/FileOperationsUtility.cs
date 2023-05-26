@@ -43,7 +43,7 @@ namespace HealthFit.Utilities
                 return default(byte[]);
             }
         }
-        private static string GetMimeTypeFromExtension(string fileExtension)
+        public static string GetMimeTypeFromExtension(string fileExtension)
         {
             switch (fileExtension)
             {
@@ -62,6 +62,13 @@ namespace HealthFit.Utilities
                 default:
                     return "application/octet-stream";
             }
+        }
+        public static string SanitizeFileName(string name)
+        {
+            string invalidChars = System.Text.RegularExpressions.Regex.Escape(new string(System.IO.Path.GetInvalidFileNameChars()));
+            string invalidRegStr = string.Format(@"([{0}]*\.+$)|([{0}]+)", invalidChars);
+
+            return System.Text.RegularExpressions.Regex.Replace(name, invalidRegStr, "_");
         }
     }
 }

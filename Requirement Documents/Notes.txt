@@ -15,17 +15,6 @@ https://shop.lww.com/ACSM-s-Health---Fitness-Journal-/p/1091-5397
 IMP : https://shop.lww.com/ACSM-s-Health---Fitness-Journal--Online/p/1536-593X
 https://shop.lww.com/ACSM-s-Health---Fitness-Journal--Online/p/1536-593X
 
-** ValidateAntiForgeryToken
-** Salt and Hashed Password
-** Bundle and minify static assets in ASP.NET Core
-** used HTTPS for secure connection
-** Showing journals cover and document in base 64 for more security
-** disabled right click
-** Azure Blob service to stoared journals
-
-
-
-
 1. Home Page Design
 2. Register Publisher
 3. Register Public User
@@ -101,3 +90,20 @@ https://healthfit.blob.core.windows.net/healthfitcontainer/e6ecab79-cf2d-4585-a5
 ** Clean Coocies and session after logout
 ** JWT Authentication for APIs
 ** Session Management for Web Applications
+** Bundle and minify static assets in ASP.NET Core
+** used HTTPS for secure connection
+
+
+Secure file upload
+Enable HTTPS
+JWT authenticate to upload file
+Validate File Types and Size
+Sanitize File Names
+Set File Storage Location: Determine the storage location for uploaded files. It is recommended to store files outside of the web root directory to prevent direct access to uploaded files. This ensures that files can only be accessed through controlled mechanisms, such as download endpoints.
+Protect Upload Endpoints: with jwt token
+File operation related acitivity logged 
+
+Secure File Storage: Ensure that the storage location for uploaded files has proper access controls and permissions. Only allow the necessary permissions for the application to read, write, and delete files. Restrict access to the storage directory to prevent unauthorized access.
+
+
+

@@ -8,7 +8,7 @@ using HealthFit_APIs.Model;
 using Object_Provider.Enum;
 using HealthFit.AzureCompoenents;
 using Microsoft.AspNetCore.Authorization;
-
+using HealthFit.Utilities;
 namespace HealthFit_APIs.Controllers
 {
     [ApiController]
@@ -137,7 +137,7 @@ namespace HealthFit_APIs.Controllers
                     if (coverPhotofile != null && coverPhotofile.Length > 0)
                     {
                         string uploadsFolder = appSettingsConfigurations.FileServerPath;
-                        string uniqueFileName = Guid.NewGuid().ToString() + "_" + coverPhotofile.FileName;
+                        string uniqueFileName = FileOperationsUtility.SanitizeFileName(Guid.NewGuid().ToString() + "_" + coverPhotofile.FileName);
 
                         if (!Directory.Exists(uploadsFolder)) Directory.CreateDirectory(uploadsFolder);
 
@@ -156,7 +156,7 @@ namespace HealthFit_APIs.Controllers
                     if (JournalFile != null && JournalFile.Length > 0)
                     {
                         string uploadsFolder = appSettingsConfigurations.FileServerPath;
-                        string uniqueFileName = Guid.NewGuid().ToString() + "_" + JournalFile.FileName;
+                        string uniqueFileName = FileOperationsUtility.SanitizeFileName(Guid.NewGuid().ToString() + "_" + JournalFile.FileName);
 
                         if (!Directory.Exists(uploadsFolder)) Directory.CreateDirectory(uploadsFolder);
 
@@ -197,7 +197,7 @@ namespace HealthFit_APIs.Controllers
             }
             catch (Exception ex)
             {
-                _logger.Log(LogLevel.Error, ex.InnerException.ToString());
+                _logger.Log(LogLevel.Error, $"Error Occured during file upload : {ex.InnerException.ToString()}");
                 return StatusCode(500, $"An error occurred: {ex.Message}");
             }
         }

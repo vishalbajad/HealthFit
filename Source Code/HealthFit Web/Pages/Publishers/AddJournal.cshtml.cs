@@ -11,7 +11,7 @@ namespace HealthFit_Web.Pages
     public class AddJournalModel : BasePageModel
     {
         private readonly ILogger<AddJournalModel> _logger;
-        private API_Connector.Journal journalProxy; 
+        private API_Connector.Journal journalProxy;
         public string responseMessage { get; set; }
         public string responseCode { get; set; }
 
@@ -26,12 +26,15 @@ namespace HealthFit_Web.Pages
         [ValidateAntiForgeryToken]
         public void OnGet(string journalId)
         {
-            string decryptedJourID = EncryptionHelper.DecryptString(journalId);
-            int jourId = 0;
-            int.TryParse(decryptedJourID, out jourId);
-            if (!(jourId > 0)) throw new Exception("Invalid Journal Id");
-            
-            JournalVM = journalProxy.GetJournal(jourId);
+            if (!string.IsNullOrWhiteSpace(journalId))
+            {
+                string decryptedJourID = EncryptionHelper.DecryptString(journalId);
+                int jourId = 0;
+                int.TryParse(decryptedJourID, out jourId);
+                if (!(jourId > 0)) throw new Exception("Invalid Journal Id");
+                JournalVM = journalProxy.GetJournal(jourId);
+            }
+
             ViewData["LoggedInUser"] = LoggedInUser;
         }
 
@@ -60,6 +63,17 @@ namespace HealthFit_Web.Pages
                 ModelState.AddModelError("", "Only PDF files are allowed.");
                 _logger.Log(LogLevel.Warning, "Joural file extension valiation failed");
                 return Page();
+            }
+
+            if (journalCoverPhoto?.Length >0)
+            {
+                var journalCoverPhotoFileSize = (journalCoverPhoto.Length / 1024f) / 1024f;
+                if (journalCoverPhotoFileSize > 2) ModelState.AddModelError("", "Cover photo with Max 2 MB files are allowed.");
+            }
+            if (journalDataFile?.Length > 0)
+            {
+                var journalDataFileFileSize = (journalDataFile.Length / 1024f) / 1024f;
+                if (journalDataFileFileSize > 5) ModelState.AddModelError("", "Journal with Max 5 MB files are allowed.");
             }
 
             JournalVM.PublisherID = LoggedInUser.UserId;

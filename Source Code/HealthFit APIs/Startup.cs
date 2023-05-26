@@ -1,6 +1,8 @@
 ﻿using HealthFit.CustomAttributes;
 using HealthFit_APIs.Model;
 using Microsoft.AspNetCore.Mvc;
+using AspNetCoreRateLimit;
+using HealthFit_APIs.CustomAttributes;
 
 namespace HealthFit_APIs
 {
@@ -28,6 +30,11 @@ namespace HealthFit_APIs
                 options.Filters.Add(new CustomRequireHttpsAttribute());
             });
 
+            services.Configure<IpRateLimitOptions>(Configuration.GetSection("IpRateLimiting"));
+            services.AddSingleton<IIpPolicyStore, MemoryCacheIpPolicyStore>();
+            services.AddSingleton<IRateLimitCounterStore, MemoryCacheRateLimitCounterStore>();
+            services.AddSingleton<IRateLimitConfiguration, RateLimitConfiguration>();
+
             services.Configure<IISServerOptions>(options => { options.AllowSynchronousIO = true; });
             services.AddAntiforgery(o => o.HeaderName = "30ee3956632c35d9840037633e0110b6");
             services.Configure<AppSettingsConfigurations>(Configuration);
@@ -43,7 +50,10 @@ namespace HealthFit_APIs
                 app.UseExceptionHandler("/Error");
                 app.UseHsts();
             }
+
             app.UseStaticFiles();
+            app.UseIpRateLimiting();
+            app.UseMiddleware<UploadRequestValidationMiddleware>();
             app.UseRouting();
             app.UseAuthentication();
             app.UseAuthorization();
