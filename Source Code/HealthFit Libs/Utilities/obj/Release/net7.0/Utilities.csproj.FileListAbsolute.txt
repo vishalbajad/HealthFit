@@ -1,0 +1,12 @@
+G:\Personal\Varian-HealthFit\Source Code\HealthFit Libs\Utilities\bin\Release\net7.0\Utilities.deps.json
+G:\Personal\Varian-HealthFit\Source Code\HealthFit Libs\Utilities\bin\Release\net7.0\Utilities.dll
+G:\Personal\Varian-HealthFit\Source Code\HealthFit Libs\Utilities\bin\Release\net7.0\Utilities.pdb
+G:\Personal\Varian-HealthFit\Source Code\HealthFit Libs\Utilities\obj\Release\net7.0\Utilities.csproj.AssemblyReference.cache
+G:\Personal\Varian-HealthFit\Source Code\HealthFit Libs\Utilities\obj\Release\net7.0\Utilities.GeneratedMSBuildEditorConfig.editorconfig
+G:\Personal\Varian-HealthFit\Source Code\HealthFit Libs\Utilities\obj\Release\net7.0\Utilities.AssemblyInfoInputs.cache
+G:\Personal\Varian-HealthFit\Source Code\HealthFit Libs\Utilities\obj\Release\net7.0\Utilities.AssemblyInfo.cs
+G:\Personal\Varian-HealthFit\Source Code\HealthFit Libs\Utilities\obj\Release\net7.0\Utilities.csproj.CoreCompileInputs.cache
+G:\Personal\Varian-HealthFit\Source Code\HealthFit Libs\Utilities\obj\Release\net7.0\Utilities.dll
+G:\Personal\Varian-HealthFit\Source Code\HealthFit Libs\Utilities\obj\Release\net7.0\refint\Utilities.dll
+G:\Personal\Varian-HealthFit\Source Code\HealthFit Libs\Utilities\obj\Release\net7.0\Utilities.pdb
+G:\Personal\Varian-HealthFit\Source Code\HealthFit Libs\Utilities\obj\Release\net7.0\ref\Utilities.dll

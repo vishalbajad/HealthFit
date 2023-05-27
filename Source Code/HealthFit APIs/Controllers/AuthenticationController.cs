@@ -40,6 +40,7 @@ namespace HealthFit_APIs.Controllers
         [HttpPost]
         public async Task<IActionResult> Login([FromBody] LoginModel loginModel)
         {
+            _logger.Log(LogLevel.Information, "Start Method Executions");
             if (!(string.IsNullOrWhiteSpace(loginModel?.Username)) && !(string.IsNullOrWhiteSpace(loginModel?.Password)))
             {
                 // In real time , this creadentials should be valid from database
@@ -59,6 +60,7 @@ namespace HealthFit_APIs.Controllers
                     });
                 }
             }
+            _logger.Log(LogLevel.Warning, "Unauthorized users");
             return Unauthorized();
         }
 

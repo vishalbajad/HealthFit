@@ -3,6 +3,8 @@ using HealthFit.Object_Provider.Model;
 using HealthFit_Web.CustomAttributes;
 using Microsoft.AspNetCore.Mvc;
 using System.Reflection;
+using Serilog;
+using Serilog.Events;
 
 namespace HealthFit_Web
 {
@@ -25,6 +27,19 @@ namespace HealthFit_Web
             services.AddMvc(options =>
             {
                 options.Filters.Add(new CustomRequireHttpsAttribute());
+            });
+            Log.Logger = new LoggerConfiguration()
+            .MinimumLevel.Debug()
+            .MinimumLevel.Override("Microsoft", LogEventLevel.Error)
+            .Enrich.FromLogContext()
+            .WriteTo.File("logs/log.txt", rollingInterval: RollingInterval.Day)
+            .CreateLogger();
+
+            // Add Serilog to the logging pipeline
+            services.AddLogging(loggingBuilder =>
+            {
+                loggingBuilder.ClearProviders();
+                loggingBuilder.AddSerilog();
             });
         }
 
