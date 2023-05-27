@@ -1,6 +1,6 @@
 # Health & Fitness Journal Portal
 
-1.Prerequisites Installations:
+1.  Prerequisites Installations:
     1.	Visual Studio Community Version 2022 (Free Edition) Download 
     2.	.Net Core framework (Latest 7) Download
     3.	.Net hosting setup: dotnet-hosting-7.0.5-win.exe Download
