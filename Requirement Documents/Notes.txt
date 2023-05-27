@@ -1,80 +1,27 @@
-Powerful Search SOLR/Elastic Serch
-File Versions
-Import Documents Over E-mail
-
+Default Jwt Credentials
 
 "JwtAuthenticationUsername": "admin",
-    "JwtAuthenticationPassword": "8542635874125123"
-	
-https://journals.lww.com/acsm-healthfitness/pages/currenttoc.aspx
+"JwtAuthenticationPassword": "8542635874125123"
 
-Page
-https://shop.lww.com/cms/files/524c0aef-06dd-45e7-8deb-5db59620bb31?max=350&quality=75
-https://shop.lww.com/ACSM-s-Health---Fitness-Journal-/p/1091-5397
-
-IMP : https://shop.lww.com/ACSM-s-Health---Fitness-Journal--Online/p/1536-593X
-https://shop.lww.com/ACSM-s-Health---Fitness-Journal--Online/p/1536-593X
-
+Step by Step Developement Guide , 	
 1. Home Page Design
 2. Register Publisher
 3. Register Public User
 3. Login User
 4. Manage Health and fitness Journals.
 5. Add / Edit / Delete health and fitness Journals.
-6. Edit/ Delete Registered Users
 7. Subscribe the health and fitness Journals.
 8. View or download the health and fitness Journals.
 
  
-Admin
-Publisher
-- Create / Update/ Delete Publisher User
-- health and fitness Journals.
-	- Manage list of health and fitness Journals.
-	- Add / Update / Delete health and fitness Journals.
-	- Add Review 
-	
-Public User
-
-
 Setup Steps
 https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-aspnetcore-7.0.5-windows-hosting-bundle-installer
-
-
-Input Validation: Validate and sanitize all user inputs to prevent common attacks like cross-site scripting (XSS), SQL injection, and cross-site request forgery (CSRF). Use built-in validation attributes, such as [Required], [StringLength], or implement custom validation logic.
-
-Authentication and Authorization: Implement proper authentication and authorization mechanisms to control access to your application. Use ASP.NET Core Identity or third-party authentication providers like OAuth or OpenID Connect for user authentication. Apply role-based or claims-based authorization to restrict access to sensitive resources.
-
-Password Security: Follow best practices for password storage. Hash passwords using a strong hashing algorithm (e.g., bcrypt or Argon2) with unique per-user salts. Implement password policies to enforce strong passwords.
-
-Secure Session Management: Ensure secure session management by using appropriate session storage mechanisms, setting secure cookie options, and applying session timeouts. Consider using cookie authentication with secure settings.
-
-Cross-Site Scripting (XSS) Protection: Enable XSS protection by properly encoding and validating user-generated content before displaying it in the application. Use security-focused frameworks and libraries to handle user input safely.
-
-Cross-Site Request Forgery (CSRF) Protection: Protect against CSRF attacks by applying CSRF tokens to sensitive requests and verifying them on the server side. Utilize the built-in anti-forgery features in ASP.NET Core.
-
-Secure Configuration: Safeguard sensitive configuration values (e.g., database connection strings, API keys) by using built-in configuration providers and storing secrets outside the source code. Consider using Azure Key Vault or other secure storage solutions.
-
-Logging and Monitoring: Implement logging and monitoring mechanisms to detect and respond to security incidents. Monitor application logs, set up alerts for suspicious activities, and enable application-level logging to capture security-related events.
-
-Regular Updates and Patching: Keep your application and dependencies up to date with the latest security patches and updates. Regularly review and update the versions of ASP.NET Core, frameworks, and libraries used in your application.
-
-Security Testing: Perform security testing, including vulnerability scanning, penetration testing, and code reviews, to identify and address potential security flaws. Consider using security tools and services for automated scanning and testing.
-
-Error Handling and Information Leakage: Implement appropriate error handling to avoid exposing sensitive information to users. Use custom error pages or response filters to display generic error messages to users, while logging detailed errors for troubleshooting purposes.
-
 
 ** Make Sure you have installed SQL Server 
 ** Keep Default.jpg in file server path
 ** Make sure shared folder path having valid access permission
 ** Configure File Folder in IIS and add fileserver in appsetting.json
 
-https://healthfit.blob.core.windows.net/healthfitcontainer/77a2466d-6bb3-4795-9148-2a61c295ce87_Journal%203.jpgsv=2022-11-02&st=2023-05-25T15%3A06%3A57Z&se=2023-05-25T16%3A06%3A57Z&sr=b&sp=r&sig=qJUbDr9vYkONqPVP0Jh%2BWJkXL34F5HApExTgG%2BlQUng%3D
-
-https://healthfit.blob.core.windows.net/healthfitcontainer/e6ecab79-cf2d-4585-a5c9-1f41b021a84e_pdf journal 3.pdf?sv=2022-11-02&st=2023-05-25T15%3A07%3A57Z&se=2023-05-25T16%3A07%3A57Z&sr=b&sp=r&sig=TZRXKHCXrafP6meZyOQf0gp6an5xToeItv1GhfM6kts%3D
-
-
-\\VISHAL\Users\vishal\Documents\HealthFit File Server\0d25453d-a19b-4139-82d0-e621bdbfa0c6_IMG_20230314_225610.jpg
 
 ** Repository Design Patterns
 ** Regualr expression on model be secure input
@@ -92,18 +39,11 @@ https://healthfit.blob.core.windows.net/healthfitcontainer/e6ecab79-cf2d-4585-a5
 ** Session Management for Web Applications
 ** Bundle and minify static assets in ASP.NET Core
 ** used HTTPS for secure connection
-
-
-Secure file upload
-Enable HTTPS
-JWT authenticate to upload file
-Validate File Types and Size
-Sanitize File Names
-Set File Storage Location: Determine the storage location for uploaded files. It is recommended to store files outside of the web root directory to prevent direct access to uploaded files. This ensures that files can only be accessed through controlled mechanisms, such as download endpoints.
-Protect Upload Endpoints: with jwt token
-File operation related acitivity logged 
-
-Secure File Storage: Ensure that the storage location for uploaded files has proper access controls and permissions. Only allow the necessary permissions for the application to read, write, and delete files. Restrict access to the storage directory to prevent unauthorized access.
+** Sanitize File Names
+** Set File Storage Location: 
+** Secured File Upload ENdpoint with JWT
+** File operation related acitivity logged 
+** Secure File Storage with user access
 
 
 Read pdf page by page
@@ -119,3 +59,27 @@ For publishers
 For public users
 1. Web portal to find and subscribe to health Journal.
 2. Once subscribed the users are able to browse and read health Journals online.
+
+Technology Used :
+Framework : .NET Core 7
+Front End : .NET Razor Pages 
+Back End Service : .NET 7 Web API
+Database : Sql Server
+Design Pattern : Repository Design Patterns , The Repository Design Pattern is a widely used design pattern in software development, particularly in the context of data access and persistence. after considering following reason , we have use the Repository Design Pattern:
+Separation of concerns
+Abstraction of data access logic
+Centralized data access logic
+Encapsulation of querying and persistence operations
+Testing and mocking
+Flexibility in data storage implementations
+Standardization and consistency
+
+
+Security :
+Encrypted User password stoared in database ( Salt and hashed password)
+AntiForgeryToken for razor pages
+URL Encoding to send parameters over server
+Used Https protocol
+JWT Authentication for APIs
+Separate File Server with token based file access 
+We can use checksum to verify no duplicate file has saved
