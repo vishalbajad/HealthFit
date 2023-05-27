@@ -13,23 +13,23 @@
                 <td style="max-width:50%;vertical-align: top;">
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                     <div class="form-group">
-                        <label asp-for="JournalVM.Title"></label>
-                        <input asp-for="JournalVM.Title" />
+                        <label asp-for="JournalVM.Title"></label><span class="mandatoryfield">*</span>
+                        <input asp-for="JournalVM.Title" required />
                         <span asp-validation-for="JournalVM.Title" class="text-danger"></span>
                     </div>
                     <div class="form-group">
-                        <label asp-for="JournalVM.ISSN"></label>
-                        <input asp-for="JournalVM.ISSN" />
+                        <label asp-for="JournalVM.ISSN"></label><span class="mandatoryfield">*</span>
+                        <input asp-for="JournalVM.ISSN" required />
                         <span asp-validation-for="JournalVM.ISSN" class="text-danger"></span>
                     </div>
                     <div class="form-group">
-                        <label asp-for="JournalVM.PublicationStartYear"></label>
-                        <input asp-for="JournalVM.PublicationStartYear" />
+                        <label asp-for="JournalVM.PublicationStartYear"></label><span class="mandatoryfield">*</span>
+                        <input asp-for="JournalVM.PublicationStartYear" required />
                         <span asp-validation-for="JournalVM.PublicationStartYear" class="text-danger"></span>
                     </div>
                     <div class="form-group">
-                        <label asp-for="JournalVM.Price"></label>
-                        <input asp-for="JournalVM.Price" />
+                        <label asp-for="JournalVM.Price"></label><span class="mandatoryfield">*</span>
+                        <input asp-for="JournalVM.Price" required />
                         <span asp-validation-for="JournalVM.Price" class="text-danger"></span>
                     </div>
                     <div class="form-group">
@@ -61,18 +61,18 @@
                 </td>
                 <td style="max-width:50%;vertical-align: top;">
                     <div class="form-group">
-                        <label asp-for="JournalVM.Description"></label>
-                        <input asp-for="JournalVM.Description" />
+                        <label asp-for="JournalVM.Description"></label><span class="mandatoryfield">*</span>
+                        <input asp-for="JournalVM.Description" required />
                         <span asp-validation-for="JournalVM.Description" class="text-danger"></span>
                     </div>
                     <div class="form-group">
-                        <label asp-for="JournalVM.Category"></label>
-                        <input asp-for="JournalVM.Category" />
+                        <label asp-for="JournalVM.Category"></label><span class="mandatoryfield">*</span>
+                        <input asp-for="JournalVM.Category" required />
                         <span asp-validation-for="JournalVM.Category" class="text-danger"></span>
                     </div>
                     <div class="form-group">
-                        <label asp-for="JournalVM.PublicationFrequency"></label>
-                        <input asp-for="JournalVM.PublicationFrequency" />
+                        <label asp-for="JournalVM.PublicationFrequency"></label><span class="mandatoryfield">*</span>
+                        <input asp-for="JournalVM.PublicationFrequency" required />
                         <span asp-validation-for="JournalVM.PublicationFrequency" class="text-danger"></span>
                     </div>
                     <div class="form-group">
@@ -96,12 +96,12 @@
                         <span asp-validation-for="JournalVM.SubmissionGuidelines" class="text-danger"></span>
                     </div>
                     <div class="form-group">
-                        <label for="file1">Journal Cover Photo</label>
-                        <input type="file" id="journalCoverPhoto" name="journalCoverPhoto" accept=".png,.jpg,.jpeg" />
+                        <label for="file1">Journal Cover Photo</label><span class="mandatoryfield">*</span>
+                        <input type="file" id="journalCoverPhoto" name="journalCoverPhoto" accept=".png,.jpg,.jpeg" required />
                     </div>
                     <div class="form-group">
-                        <label for="file2">Journal File (.pdf Only)</label>
-                        <input type="file" id="journalDataFile" name="journalDataFile" accept=".pdf" />
+                        <label for="file2">Journal File (.pdf Only)</label><span class="mandatoryfield">*</span>
+                        <input type="file" id="journalDataFile" name="journalDataFile" accept=".pdf" required />
                     </div>
                 </td>
             </tr>

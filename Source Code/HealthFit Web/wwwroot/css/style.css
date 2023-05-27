@@ -175,3 +175,4 @@ table td.actions a:hover {background-color: #45a049;}
 .add-button:hover {background-color: #45a049;}
 .add-button:active {background-color: #3e8e41;}
 .text-danger {color:red}
+.mandatoryfield {color: red;font-weight: bold;float: left;margin-left: -10px;margin-top: -20px;}

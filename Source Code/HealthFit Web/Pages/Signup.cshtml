@@ -27,12 +27,12 @@
             <tr>
                 <td style="max-width:48%;vertical-align: top;">
                     <div class="form-group">
-                        <label asp-for="UserDetails.UserDetails.FullName"></label>
+                        <label asp-for="UserDetails.UserDetails.FullName"></label><span class="mandatoryfield">*</span>
                         <input asp-for="UserDetails.UserDetails.FullName" class="txtOnly" placeholder="Enter your full name" required maxlength="50" />
                         <span asp-validation-for="UserDetails.UserDetails.FullName" class="text-danger"></span>
                     </div>
                     <div class="form-group">
-                        <label asp-for="UserDetails.UserDetails.PhoneNo"></label>
+                        <label asp-for="UserDetails.UserDetails.PhoneNo"></label><span class="mandatoryfield">*</span>
                         <input asp-for="UserDetails.UserDetails.PhoneNo" placeholder="Enter your PhoneNo" maxlength="12" />
                         <span asp-validation-for="UserDetails.UserDetails.PhoneNo" class="text-danger"></span>
                     </div>
@@ -59,7 +59,7 @@
                 </td>
                 <td style="max-width:48%;vertical-align: top;">
                     <div class="form-group">
-                        <label asp-for="UserDetails.UserDetails.Email"></label>
+                        <label asp-for="UserDetails.UserDetails.Email"></label><span class="mandatoryfield">*</span>
                         <input asp-for="UserDetails.UserDetails.Email" placeholder="Enter your email" required maxlength="100" />
                         <span asp-validation-for="UserDetails.UserDetails.Email" class="text-danger"></span>
                     </div>
@@ -69,17 +69,17 @@
                         <span asp-validation-for="UserDetails.UserDetails.Website" class="text-danger"></span>
                     </div>
                     <div class="form-group">
-                        <label asp-for="UserDetails.UserDetails.UserName"></label>
+                        <label asp-for="UserDetails.UserDetails.UserName"></label><span class="mandatoryfield">*</span>
                         <input asp-for="UserDetails.UserDetails.UserName" placeholder="Enter your UserName" class="txtOnly" maxlength="30" required />
                         <span asp-validation-for="UserDetails.UserDetails.UserName" class="text-danger"></span>
                     </div>
                     <div class="form-group">
-                        <label asp-for="UserDetails.Password"></label>
+                        <label asp-for="UserDetails.Password"></label><span class="mandatoryfield">*</span>
                         <input asp-for="UserDetails.Password" placeholder="Enter your Password" maxlength="30" required />
                         <span asp-validation-for="UserDetails.Password" class="text-danger"></span>
                     </div>
                     <div class="form-group">
-                        <label asp-for="UserDetails.ConfirmPassword"></label>
+                        <label asp-for="UserDetails.ConfirmPassword"></label><span class="mandatoryfield">*</span>
                         <input asp-for="UserDetails.ConfirmPassword" placeholder="Enter your Password" maxlength="30" required />
                         <span asp-validation-for="UserDetails.ConfirmPassword" class="text-danger"></span>
                     </div>
