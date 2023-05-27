@@ -35,8 +35,15 @@ namespace HealthFit_Web.Pages
 
             ViewData["LoggedInUser"] = LoggedInUser;
             JournalVM = journalProxy.GetJournal(jourId);
+            JournalVM.JournalPdfPath = Path.Combine(HealthFitSystemConfigurations.FileServerBaseUrl, JournalVM.JournalPdfPath);
+
+            // Logic to retrive file from server , convert to byte and display pdf in byte format
+            //JournalVM.JournalPdfPathByte = HealthFit.Utilities.FileOperationsUtility.PdfToBytes(HealthFitSystemConfigurations.FileServerBaseUrl, JournalVM.JournalPdfPath, "Default.pdf");
+            
             // Logic to Copy Orignal file to temp and ref from temp folder
             //JournalVM.JournalPdfPath = journalProxy.CopyJouranlToTempPath(LoggedInUser.UserId, jourId);
+
+            // If we are using Azure blob service then we directly bind path to iframe 
         }
     }
 }
