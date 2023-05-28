@@ -12,7 +12,7 @@ namespace Data_Layer.DBContext
 
         public HealthFitDbContext(string connectionString) : base(GetOptions(connectionString))
         {
-            this.Database.EnsureCreated();
+            try { this.Database.EnsureCreated(); } catch { }
         }
 
         private static DbContextOptions GetOptions(string connectionString)

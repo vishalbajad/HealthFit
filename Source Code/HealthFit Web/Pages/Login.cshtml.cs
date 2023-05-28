@@ -22,16 +22,15 @@ namespace HealthFit_Web.Pages
 
         public string responseMessage { get; set; }
         public string responseCode { get; set; }
-        
+
         [ValidateAntiForgeryToken]
         public void OnGet(int logout = 0)
         {
-            if (logout == 1)
-                LoggedOut();
+            if (logout == 1) { LoggedOut(); }
 
             ViewData["LoggedInUser"] = LoggedInUser;
         }
-        
+
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> OnPostAsync()
         {
