@@ -1,7 +1,6 @@
 Default Jwt Credentials
-
-"JwtAuthenticationUsername": "admin",
-"JwtAuthenticationPassword": "8542635874125123"
+Username / "JwtAuthenticationUsername": "admin",
+Password / "JwtAuthenticationPassword": "8542635874125123"
 
 Step by Step Developement Guide , 	
 1. Home Page Design
@@ -12,15 +11,6 @@ Step by Step Developement Guide ,
 5. Add / Edit / Delete health and fitness Journals.
 7. Subscribe the health and fitness Journals.
 8. View or download the health and fitness Journals.
-
- 
-Setup Steps
-https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-aspnetcore-7.0.5-windows-hosting-bundle-installer
-
-** Make Sure you have installed SQL Server 
-** Keep Default.jpg in file server path
-** Make sure shared folder path having valid access permission
-** Configure File Folder in IIS and add fileserver in appsetting.json
 
 
 ** Repository Design Patterns

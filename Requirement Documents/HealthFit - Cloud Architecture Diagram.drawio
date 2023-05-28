@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2023-05-27T13:24:56.672Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36" etag="tIyYnU00mcYK_-qJwXe9" version="21.3.4" type="device">
+<mxfile host="app.diagrams.net" modified="2023-05-28T06:39:40.474Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36" etag="drIbPEGqnM3BZoLaIFh1" version="21.3.4" type="device">
   <diagram name="Page-1" id="9zt_uhlV35OjN0zecJz6">
-    <mxGraphModel dx="3241" dy="1010" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="2819" dy="832" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -79,8 +79,8 @@
         <mxCell id="bHNSuGKCr-GM2xsOopNB-206" value="" style="verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.sql_database_sql_azure;" parent="1" vertex="1">
           <mxGeometry x="1020" y="323" width="47.5" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="XOguo-oPfblvn3olAEpq-1" value="HealthFit - Cloud Infrastructure" style="text;html=1;strokeColor=none;fillColor=#00FF00;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1" parent="1" vertex="1">
-          <mxGeometry x="-30" y="20" width="340" height="65" as="geometry" />
+        <mxCell id="XOguo-oPfblvn3olAEpq-1" value="&lt;font style=&quot;font-size: 36px;&quot;&gt;HealthFit - Cloud Infrastructure&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="-150" y="40" width="720" height="65" as="geometry" />
         </mxCell>
         <mxCell id="XOguo-oPfblvn3olAEpq-2" value="Services" style="html=1;whiteSpace=wrap;strokeColor=none;fillColor=#0079D6;labelPosition=center;verticalLabelPosition=middle;verticalAlign=top;align=center;fontSize=12;outlineConnect=0;spacingTop=-6;fontColor=#FFFFFF;sketch=0;shape=mxgraph.sitemap.services;" parent="1" vertex="1">
           <mxGeometry x="627.9300000000001" y="523" width="97" height="56" as="geometry" />
