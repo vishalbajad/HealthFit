@@ -35,21 +35,6 @@ Step by Step Developement Guide ,
 ** File operation related acitivity logged 
 ** Secure File Storage with user access
 
-
-Read pdf page by page
-Store on blob stoarage
-Cache static files
-
-
-About Project : 
-The system allows publishing and subscribing to Health Journals in a secure way. The system implements the following specifications and its contains th eimplementation for below requirements
-For publishers
-1. Web portal to upload and manage list of health and fitness Journals.
-2. Supported format for health Journal - Pdf
-For public users
-1. Web portal to find and subscribe to health Journal.
-2. Once subscribed the users are able to browse and read health Journals online.
-
 Technology Used :
 Framework : .NET Core 7
 Front End : .NET Razor Pages 
@@ -65,29 +50,3 @@ Flexibility in data storage implementations
 Standardization and consistency
 
 
-Security :
-Encrypted User password stoared in database ( Salt and hashed password)
-AntiForgeryToken for razor pages
-URL Encoding to send parameters over server
-Used Https protocol
-JWT Authentication for APIs
-Separate File Server with token based file access 
-We can use checksum to verify no duplicate file has saved
-
-
-Prerequisites Installations:
-Visual Studio Community Version 2022 (Free Edition)
-.Net Core framework (Lastest 7)
-Dotnet hosting setup : dotnet-hosting-7.0.5-win.exe
-Microsoft Sql Server 
-
-Download the Repository from the git. Github Url : https://github.com/vishalbajad/HealthFit
-Nevigate to \Source Code\HealthFit APIs
-Open the Solution HealthFit APIs.sln (Make sure Visual Studio should be run as administrator)
-Build the solution unless the Build successfully message not show up. (Nuget packages will get restored automatically)
-\Source Code\HealthFit Web folder 
-Open the Solution HealthFit Web.sln (Make sure Visual Studio should be run as administrator)
-Build the solution unless the Build successfully message not show up. (Nuget packages will get restored automatically)
-
-
- What is most precius thing in our life ?
